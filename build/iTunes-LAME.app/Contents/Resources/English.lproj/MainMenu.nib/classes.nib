@@ -1,0 +1,67 @@
+{
+    IBClasses = (
+        {
+            ACTIONS = {
+                cancelEncoding = id; 
+                closeChooseCDPanel = id; 
+                encode = id; 
+                endContainingSheet = id; 
+                openWebsiteForToolTip = id; 
+                optionsHelp = id; 
+                populatePrefs = id; 
+                setEncodingOptions = id; 
+                setPrefsForSender = id; 
+                setValueForSender = id; 
+                showAbout = id; 
+                showPrefs = id; 
+            }; 
+            CLASS = BTEncoderController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                aboutButton = NSButton; 
+                aboutPanel = NSPanel; 
+                alternateNameField = NSTextField; 
+                alternateNameSwitch = NSButton; 
+                cacheLocationPopUp = NSPopUpButton; 
+                cacheSwitch = NSButton; 
+                cancelButton = NSButton; 
+                cdPopUp = NSPopUpButton; 
+                chooseCDPanel = NSPanel; 
+                destinationPopUp = NSPopUpButton; 
+                encodeButton = NSButton; 
+                encoderWindow = NSWindow; 
+                encodingBox = NSBox; 
+                helpButton = NSButton; 
+                helpOptionsField = NSTextField; 
+                helpPanel = NSPanel; 
+                helpValidButton = NSButton; 
+                helpView = NSTextView; 
+                lameVersionField = NSTextField; 
+                multiSwitch = NSButton; 
+                optionsField = NSComboBox; 
+                prefsButton = NSButton; 
+                prefsPanel = NSPanel; 
+                progressField = NSTextField; 
+                progressFieldBevel = NSTextField; 
+                progressIndicator = NSProgressIndicator; 
+                trackName2Field = NSTextField; 
+                trackNameField = NSTextField; 
+                trackNumberField = NSTextField; 
+                trackProgress2Bar = ILProgressView; 
+                trackProgress2Field = NSTextField; 
+                trackProgressBar = ILProgressView; 
+                trackProgressField = NSTextField; 
+                useSelectionSwitch = NSButton; 
+                vCommentSwitch = NSButton; 
+                validButton = NSButton; 
+                versonField = NSTextField; 
+            }; 
+            SUPERCLASS = NSWindowController; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {CLASS = ILNonClickThruView; LANGUAGE = ObjC; SUPERCLASS = NSView; }, 
+        {CLASS = ILProgressView; LANGUAGE = ObjC; SUPERCLASS = NSView; }, 
+        {CLASS = ILWindow; LANGUAGE = ObjC; SUPERCLASS = NSPanel; }
+    ); 
+    IBVersion = 1; 
+}

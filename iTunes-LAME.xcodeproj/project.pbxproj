@@ -1,0 +1,740 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E1CEBFDA06D394D5000918F3 /* BackgroundLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CEBFCE06D394D5000918F3 /* BackgroundLogo.png */; };
+		E1CEBFDB06D394D5000918F3 /* Cancel_Pressed.tif in Resources */ = {isa = PBXBuildFile; fileRef = E1CEBFCF06D394D5000918F3 /* Cancel_Pressed.tif */; };
+		E1CEBFDC06D394D5000918F3 /* Cancel.tif in Resources */ = {isa = PBXBuildFile; fileRef = E1CEBFD006D394D5000918F3 /* Cancel.tif */; };
+		E1CEBFDD06D394D5000918F3 /* EncodingComplete.aif in Resources */ = {isa = PBXBuildFile; fileRef = E1CEBFD106D394D5000918F3 /* EncodingComplete.aif */; };
+		E1CEBFDE06D394D5000918F3 /* Import with LAME....scpt in Resources */ = {isa = PBXBuildFile; fileRef = E1CEBFD206D394D5000918F3 /* Import with LAME....scpt */; };
+		E1CEBFDF06D394D5000918F3 /* ImportButton.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CEBFD306D394D5000918F3 /* ImportButton.png */; };
+		E1CEBFE006D394D5000918F3 /* ImportButtonI.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CEBFD406D394D5000918F3 /* ImportButtonI.png */; };
+		E1CEBFE106D394D5000918F3 /* ImportButtonIP.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CEBFD506D394D5000918F3 /* ImportButtonIP.png */; };
+		E1CEBFE206D394D5000918F3 /* ImportButtonS.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CEBFD606D394D5000918F3 /* ImportButtonS.png */; };
+		E1CEBFE306D394D5000918F3 /* ImportButtonSP.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CEBFD706D394D5000918F3 /* ImportButtonSP.png */; };
+		E1CEBFE406D394D5000918F3 /* iTunes-LAME.icns in Resources */ = {isa = PBXBuildFile; fileRef = E1CEBFD806D394D5000918F3 /* iTunes-LAME.icns */; };
+		E1CEBFE506D394D5000918F3 /* lame in Resources */ = {isa = PBXBuildFile; fileRef = E1CEBFD906D394D5000918F3 /* lame */; };
+		E1CEC00306D394F8000918F3 /* BDAlias.h in Headers */ = {isa = PBXBuildFile; fileRef = E1CEBFEB06D394F8000918F3 /* BDAlias.h */; };
+		E1CEC00406D394F8000918F3 /* BDAlias.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CEBFEC06D394F8000918F3 /* BDAlias.m */; };
+		E1CEC00506D394F8000918F3 /* BLITApp.h in Headers */ = {isa = PBXBuildFile; fileRef = E1CEBFED06D394F8000918F3 /* BLITApp.h */; };
+		E1CEC00606D394F8000918F3 /* BLITApp.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CEBFEE06D394F8000918F3 /* BLITApp.m */; };
+		E1CEC00906D394F8000918F3 /* BTEncoderController.h in Headers */ = {isa = PBXBuildFile; fileRef = E1CEBFF106D394F8000918F3 /* BTEncoderController.h */; };
+		E1CEC00A06D394F8000918F3 /* BTEncoderController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CEBFF206D394F8000918F3 /* BTEncoderController.m */; };
+		E1CEC00B06D394F8000918F3 /* ILNonClickThruView.h in Headers */ = {isa = PBXBuildFile; fileRef = E1CEBFF306D394F8000918F3 /* ILNonClickThruView.h */; };
+		E1CEC00C06D394F8000918F3 /* ILNonClickThruView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CEBFF406D394F8000918F3 /* ILNonClickThruView.m */; };
+		E1CEC00D06D394F8000918F3 /* ILProgressView.h in Headers */ = {isa = PBXBuildFile; fileRef = E1CEBFF506D394F8000918F3 /* ILProgressView.h */; };
+		E1CEC00E06D394F8000918F3 /* ILProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CEBFF606D394F8000918F3 /* ILProgressView.m */; };
+		E1CEC00F06D394F8000918F3 /* ILWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = E1CEBFF706D394F8000918F3 /* ILWindow.h */; };
+		E1CEC01006D394F8000918F3 /* ILWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CEBFF806D394F8000918F3 /* ILWindow.m */; };
+		E1CEC01106D394F8000918F3 /* NSAppleScript_BLTRExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = E1CEBFF906D394F8000918F3 /* NSAppleScript_BLTRExtensions.h */; };
+		E1CEC01206D394F8000918F3 /* NSAppleScript_BLTRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CEBFFA06D394F8000918F3 /* NSAppleScript_BLTRExtensions.m */; };
+		E1CEC01306D394F8000918F3 /* NSApplication_BLTRExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = E1CEBFFB06D394F8000918F3 /* NSApplication_BLTRExtensions.h */; };
+		E1CEC01406D394F8000918F3 /* NSApplication_BLTRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CEBFFC06D394F8000918F3 /* NSApplication_BLTRExtensions.m */; };
+		E1CEC01506D394F8000918F3 /* NSFileManager_BLTRExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = E1CEBFFD06D394F8000918F3 /* NSFileManager_BLTRExtensions.h */; };
+		E1CEC01606D394F8000918F3 /* NSFileManager_BLTRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CEBFFE06D394F8000918F3 /* NSFileManager_BLTRExtensions.m */; };
+		E1CEC01706D394F8000918F3 /* NSString_BLTRExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = E1CEBFFF06D394F8000918F3 /* NSString_BLTRExtensions.h */; };
+		E1CEC01806D394F8000918F3 /* NSString_BLTRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CEC00006D394F8000918F3 /* NSString_BLTRExtensions.m */; };
+		E1CEC01906D394F8000918F3 /* NSWorkspace_BLTRExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = E1CEC00106D394F8000918F3 /* NSWorkspace_BLTRExtensions.h */; };
+		E1CEC01A06D394F8000918F3 /* NSWorkspace_BLTRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CEC00206D394F8000918F3 /* NSWorkspace_BLTRExtensions.m */; };
+		E1CEC03706D3958A000918F3 /* qtaiff.c in Sources */ = {isa = PBXBuildFile; fileRef = E1CEC02406D39526000918F3 /* qtaiff.c */; };
+		E1CEC03806D3958A000918F3 /* qtaiff.h in Headers */ = {isa = PBXBuildFile; fileRef = E1CEC02506D39526000918F3 /* qtaiff.h */; };
+		E1E1774B0502C11B0014EE93 /* iTunes-LAME_Prefix.h in Headers */ = {isa = PBXBuildFile; fileRef = 32CA4F630368D1EE00C91783 /* iTunes-LAME_Prefix.h */; };
+		E1E1775D0502C11B0014EE93 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97318FDCFA39411CA2CEA /* MainMenu.nib */; };
+		E1E1776A0502C11B0014EE93 /* EncodingHelp.rtf in Resources */ = {isa = PBXBuildFile; fileRef = E1656F050487A0BF00000009 /* EncodingHelp.rtf */; };
+		E1E1776B0502C11B0014EE93 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E1656EE204879E2100000009 /* Localizable.strings */; };
+		E1E1776F0502C11B0014EE93 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
+		E1E177800502C11B0014EE93 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		E1E177810502C11B0014EE93 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1F9A85203F0086700D3C7A0 /* Carbon.framework */; };
+		E1E177820502C11B0014EE93 /* QuickTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E19ABD6704EE574A00C2F9F2 /* QuickTime.framework */; };
+		E1EA32B906B6D930007178DA /* lame in Resources */ = {isa = PBXBuildFile; fileRef = E1EA32B806B6D930007178DA /* lame */; };
+		E1F6EF2305DB04780035C30A /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1F9A85203F0086700D3C7A0 /* Carbon.framework */; };
+		E1F6EF2405DB04790035C30A /* QuickTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E19ABD6704EE574A00C2F9F2 /* QuickTime.framework */; };
+		E1F6EF3105DB11A50035C30A /* qtaiff in Resources */ = {isa = PBXBuildFile; fileRef = E1F6EE8605DB03790035C30A /* qtaiff */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXBuildStyle section */
+		4A9504CCFFE6A4B311CA0CBA /* Development */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OPTIMIZATION_CFLAGS = "-O0";
+				ZERO_LINK = YES;
+			};
+			name = Development;
+		};
+		4A9504CDFFE6A4B311CA0CBA /* Deployment */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEPLOYMENT_POSTPROCESSING = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				ZERO_LINK = NO;
+			};
+			name = Deployment;
+		};
+/* End PBXBuildStyle section */
+
+/* Begin PBXContainerItemProxy section */
+		E1F6EF2F05DB11980035C30A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E1F6EE8505DB03790035C30A;
+			remoteInfo = qtaiff;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		29B97319FDCFA39411CA2CEA /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/MainMenu.nib; sourceTree = "<group>"; };
+		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		32CA4F630368D1EE00C91783 /* iTunes-LAME_Prefix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "iTunes-LAME_Prefix.h"; sourceTree = "<group>"; };
+		E1656EDB0487903700000009 /* English */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = English; path = English.lproj/EncodingHelp.rtf; sourceTree = "<group>"; };
+		E1656EE004879D4900000009 /* English */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E19ABD6704EE574A00C2F9F2 /* QuickTime.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickTime.framework; path = /System/Library/Frameworks/QuickTime.framework; sourceTree = "<absolute>"; };
+		E1CEBFCE06D394D5000918F3 /* BackgroundLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BackgroundLogo.png; path = Resources/BackgroundLogo.png; sourceTree = "<group>"; };
+		E1CEBFCF06D394D5000918F3 /* Cancel_Pressed.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = Cancel_Pressed.tif; path = Resources/Cancel_Pressed.tif; sourceTree = "<group>"; };
+		E1CEBFD006D394D5000918F3 /* Cancel.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = Cancel.tif; path = Resources/Cancel.tif; sourceTree = "<group>"; };
+		E1CEBFD106D394D5000918F3 /* EncodingComplete.aif */ = {isa = PBXFileReference; lastKnownFileType = file; name = EncodingComplete.aif; path = Resources/EncodingComplete.aif; sourceTree = "<group>"; };
+		E1CEBFD206D394D5000918F3 /* Import with LAME....scpt */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.scpt; name = "Import with LAME....scpt"; path = "Resources/Import with LAME....scpt"; sourceTree = "<group>"; };
+		E1CEBFD306D394D5000918F3 /* ImportButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ImportButton.png; path = Resources/ImportButton.png; sourceTree = "<group>"; };
+		E1CEBFD406D394D5000918F3 /* ImportButtonI.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ImportButtonI.png; path = Resources/ImportButtonI.png; sourceTree = "<group>"; };
+		E1CEBFD506D394D5000918F3 /* ImportButtonIP.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ImportButtonIP.png; path = Resources/ImportButtonIP.png; sourceTree = "<group>"; };
+		E1CEBFD606D394D5000918F3 /* ImportButtonS.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ImportButtonS.png; path = Resources/ImportButtonS.png; sourceTree = "<group>"; };
+		E1CEBFD706D394D5000918F3 /* ImportButtonSP.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ImportButtonSP.png; path = Resources/ImportButtonSP.png; sourceTree = "<group>"; };
+		E1CEBFD806D394D5000918F3 /* iTunes-LAME.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = "iTunes-LAME.icns"; path = "Resources/iTunes-LAME.icns"; sourceTree = "<group>"; };
+		E1CEBFD906D394D5000918F3 /* lame */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = lame; path = Resources/lame; sourceTree = "<group>"; };
+		E1CEBFEB06D394F8000918F3 /* BDAlias.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = BDAlias.h; path = Code/BDAlias.h; sourceTree = "<group>"; };
+		E1CEBFEC06D394F8000918F3 /* BDAlias.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = BDAlias.m; path = Code/BDAlias.m; sourceTree = "<group>"; };
+		E1CEBFED06D394F8000918F3 /* BLITApp.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = BLITApp.h; path = Code/BLITApp.h; sourceTree = "<group>"; };
+		E1CEBFEE06D394F8000918F3 /* BLITApp.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = BLITApp.m; path = Code/BLITApp.m; sourceTree = "<group>"; };
+		E1CEBFF106D394F8000918F3 /* BTEncoderController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = BTEncoderController.h; path = Code/BTEncoderController.h; sourceTree = "<group>"; };
+		E1CEBFF206D394F8000918F3 /* BTEncoderController.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = BTEncoderController.m; path = Code/BTEncoderController.m; sourceTree = "<group>"; };
+		E1CEBFF306D394F8000918F3 /* ILNonClickThruView.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = ILNonClickThruView.h; path = Code/ILNonClickThruView.h; sourceTree = "<group>"; };
+		E1CEBFF406D394F8000918F3 /* ILNonClickThruView.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = ILNonClickThruView.m; path = Code/ILNonClickThruView.m; sourceTree = "<group>"; };
+		E1CEBFF506D394F8000918F3 /* ILProgressView.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = ILProgressView.h; path = Code/ILProgressView.h; sourceTree = "<group>"; };
+		E1CEBFF606D394F8000918F3 /* ILProgressView.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = ILProgressView.m; path = Code/ILProgressView.m; sourceTree = "<group>"; };
+		E1CEBFF706D394F8000918F3 /* ILWindow.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = ILWindow.h; path = Code/ILWindow.h; sourceTree = "<group>"; };
+		E1CEBFF806D394F8000918F3 /* ILWindow.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = ILWindow.m; path = Code/ILWindow.m; sourceTree = "<group>"; };
+		E1CEBFF906D394F8000918F3 /* NSAppleScript_BLTRExtensions.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = NSAppleScript_BLTRExtensions.h; path = Code/NSAppleScript_BLTRExtensions.h; sourceTree = "<group>"; };
+		E1CEBFFA06D394F8000918F3 /* NSAppleScript_BLTRExtensions.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = NSAppleScript_BLTRExtensions.m; path = Code/NSAppleScript_BLTRExtensions.m; sourceTree = "<group>"; };
+		E1CEBFFB06D394F8000918F3 /* NSApplication_BLTRExtensions.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = NSApplication_BLTRExtensions.h; path = Code/NSApplication_BLTRExtensions.h; sourceTree = "<group>"; };
+		E1CEBFFC06D394F8000918F3 /* NSApplication_BLTRExtensions.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = NSApplication_BLTRExtensions.m; path = Code/NSApplication_BLTRExtensions.m; sourceTree = "<group>"; };
+		E1CEBFFD06D394F8000918F3 /* NSFileManager_BLTRExtensions.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = NSFileManager_BLTRExtensions.h; path = Code/NSFileManager_BLTRExtensions.h; sourceTree = "<group>"; };
+		E1CEBFFE06D394F8000918F3 /* NSFileManager_BLTRExtensions.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = NSFileManager_BLTRExtensions.m; path = Code/NSFileManager_BLTRExtensions.m; sourceTree = "<group>"; };
+		E1CEBFFF06D394F8000918F3 /* NSString_BLTRExtensions.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = NSString_BLTRExtensions.h; path = Code/NSString_BLTRExtensions.h; sourceTree = "<group>"; };
+		E1CEC00006D394F8000918F3 /* NSString_BLTRExtensions.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = NSString_BLTRExtensions.m; path = Code/NSString_BLTRExtensions.m; sourceTree = "<group>"; };
+		E1CEC00106D394F8000918F3 /* NSWorkspace_BLTRExtensions.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = NSWorkspace_BLTRExtensions.h; path = Code/NSWorkspace_BLTRExtensions.h; sourceTree = "<group>"; };
+		E1CEC00206D394F8000918F3 /* NSWorkspace_BLTRExtensions.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = NSWorkspace_BLTRExtensions.m; path = Code/NSWorkspace_BLTRExtensions.m; sourceTree = "<group>"; };
+		E1CEC02406D39526000918F3 /* qtaiff.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = qtaiff.c; path = Code/qtaiff.c; sourceTree = "<group>"; };
+		E1CEC02506D39526000918F3 /* qtaiff.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = qtaiff.h; path = Code/qtaiff.h; sourceTree = "<group>"; };
+		E1E177850502C11B0014EE93 /* iTunes-LAME.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iTunes-LAME.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1EA32B806B6D930007178DA /* lame */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = lame; path = /usr/local/bin/lame; sourceTree = "<absolute>"; };
+		E1F6EE8605DB03790035C30A /* qtaiff */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = qtaiff; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1F9A85203F0086700D3C7A0 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E1E1777F0502C11B0014EE93 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1E177800502C11B0014EE93 /* Cocoa.framework in Frameworks */,
+				E1E177810502C11B0014EE93 /* Carbon.framework in Frameworks */,
+				E1E177820502C11B0014EE93 /* QuickTime.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1F6EE8405DB03790035C30A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1F6EF2305DB04780035C30A /* Carbon.framework in Frameworks */,
+				E1F6EF2405DB04790035C30A /* QuickTime.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				E1CEBFEB06D394F8000918F3 /* BDAlias.h */,
+				E1CEBFEC06D394F8000918F3 /* BDAlias.m */,
+				E1CEBFED06D394F8000918F3 /* BLITApp.h */,
+				E1CEBFEE06D394F8000918F3 /* BLITApp.m */,
+				E1CEBFF106D394F8000918F3 /* BTEncoderController.h */,
+				E1CEBFF206D394F8000918F3 /* BTEncoderController.m */,
+				E1CEBFF306D394F8000918F3 /* ILNonClickThruView.h */,
+				E1CEBFF406D394F8000918F3 /* ILNonClickThruView.m */,
+				E1CEBFF506D394F8000918F3 /* ILProgressView.h */,
+				E1CEBFF606D394F8000918F3 /* ILProgressView.m */,
+				E1CEBFF706D394F8000918F3 /* ILWindow.h */,
+				E1CEBFF806D394F8000918F3 /* ILWindow.m */,
+				E1CEBFF906D394F8000918F3 /* NSAppleScript_BLTRExtensions.h */,
+				E1CEBFFA06D394F8000918F3 /* NSAppleScript_BLTRExtensions.m */,
+				E1CEBFFB06D394F8000918F3 /* NSApplication_BLTRExtensions.h */,
+				E1CEBFFC06D394F8000918F3 /* NSApplication_BLTRExtensions.m */,
+				E1CEBFFD06D394F8000918F3 /* NSFileManager_BLTRExtensions.h */,
+				E1CEBFFE06D394F8000918F3 /* NSFileManager_BLTRExtensions.m */,
+				E1CEBFFF06D394F8000918F3 /* NSString_BLTRExtensions.h */,
+				E1CEC00006D394F8000918F3 /* NSString_BLTRExtensions.m */,
+				E1CEC00106D394F8000918F3 /* NSWorkspace_BLTRExtensions.h */,
+				E1CEC00206D394F8000918F3 /* NSWorkspace_BLTRExtensions.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
+				E1F9A85203F0086700D3C7A0 /* Carbon.framework */,
+				E19ABD6704EE574A00C2F9F2 /* QuickTime.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
+				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E1E177850502C11B0014EE93 /* iTunes-LAME.app */,
+				E1F6EE8605DB03790035C30A /* qtaiff */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* iTunes-LAME */ = {
+			isa = PBXGroup;
+			children = (
+				E1EA32B806B6D930007178DA /* lame */,
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = "iTunes-LAME";
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				E1CEC02406D39526000918F3 /* qtaiff.c */,
+				E1CEC02506D39526000918F3 /* qtaiff.h */,
+				32CA4F630368D1EE00C91783 /* iTunes-LAME_Prefix.h */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E1CEBFCE06D394D5000918F3 /* BackgroundLogo.png */,
+				E1CEBFCF06D394D5000918F3 /* Cancel_Pressed.tif */,
+				E1CEBFD006D394D5000918F3 /* Cancel.tif */,
+				E1CEBFD106D394D5000918F3 /* EncodingComplete.aif */,
+				E1CEBFD206D394D5000918F3 /* Import with LAME....scpt */,
+				E1CEBFD306D394D5000918F3 /* ImportButton.png */,
+				E1CEBFD406D394D5000918F3 /* ImportButtonI.png */,
+				E1CEBFD506D394D5000918F3 /* ImportButtonIP.png */,
+				E1CEBFD606D394D5000918F3 /* ImportButtonS.png */,
+				E1CEBFD706D394D5000918F3 /* ImportButtonSP.png */,
+				E1CEBFD806D394D5000918F3 /* iTunes-LAME.icns */,
+				E1CEBFD906D394D5000918F3 /* lame */,
+				29B97318FDCFA39411CA2CEA /* MainMenu.nib */,
+				E1656EE204879E2100000009 /* Localizable.strings */,
+				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
+				E1656F050487A0BF00000009 /* EncodingHelp.rtf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
+				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		E1E1774A0502C11B0014EE93 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1E1774B0502C11B0014EE93 /* iTunes-LAME_Prefix.h in Headers */,
+				E1CEC00306D394F8000918F3 /* BDAlias.h in Headers */,
+				E1CEC00506D394F8000918F3 /* BLITApp.h in Headers */,
+				E1CEC00906D394F8000918F3 /* BTEncoderController.h in Headers */,
+				E1CEC00B06D394F8000918F3 /* ILNonClickThruView.h in Headers */,
+				E1CEC00D06D394F8000918F3 /* ILProgressView.h in Headers */,
+				E1CEC00F06D394F8000918F3 /* ILWindow.h in Headers */,
+				E1CEC01106D394F8000918F3 /* NSAppleScript_BLTRExtensions.h in Headers */,
+				E1CEC01306D394F8000918F3 /* NSApplication_BLTRExtensions.h in Headers */,
+				E1CEC01506D394F8000918F3 /* NSFileManager_BLTRExtensions.h in Headers */,
+				E1CEC01706D394F8000918F3 /* NSString_BLTRExtensions.h in Headers */,
+				E1CEC01906D394F8000918F3 /* NSWorkspace_BLTRExtensions.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1F6EE8105DB03790035C30A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1CEC03806D3958A000918F3 /* qtaiff.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		E1E177490502C11B0014EE93 /* iTunes-LAME */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D5E1D0860C876CC100D01C21 /* Build configuration list for PBXNativeTarget "iTunes-LAME" */;
+			buildPhases = (
+				E1E1774A0502C11B0014EE93 /* Headers */,
+				E1E1775C0502C11B0014EE93 /* Resources */,
+				E1E1776E0502C11B0014EE93 /* Sources */,
+				E1E1777F0502C11B0014EE93 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			buildSettings = {
+				CC = "/usr/bin/gcc-3.3";
+				CPLUSPLUS = "/usr/bin/g++-3.3";
+				FRAMEWORK_SEARCH_PATHS = "";
+				GCC_PREFIX_HEADER = "iTunes-LAME_Prefix.h";
+				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
+				GCC_WARN_UNKNOWN_PRAGMAS = NO;
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "iTunes-LAME";
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = "-Wmost";
+				WRAPPER_EXTENSION = app;
+			};
+			dependencies = (
+				E1F6EF3005DB11980035C30A /* PBXTargetDependency */,
+			);
+			name = "iTunes-LAME";
+			productInstallPath = "$(HOME)/Applications";
+			productName = "iTunes-LAME";
+			productReference = E1E177850502C11B0014EE93 /* iTunes-LAME.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E1F6EE8505DB03790035C30A /* qtaiff */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D5E1D0820C876CC100D01C21 /* Build configuration list for PBXNativeTarget "qtaiff" */;
+			buildPhases = (
+				E1F6EE8105DB03790035C30A /* Headers */,
+				E1F6EE8205DB03790035C30A /* Sources */,
+				E1F6EE8305DB03790035C30A /* Rez */,
+				E1F6EE8405DB03790035C30A /* Frameworks */,
+			);
+			buildRules = (
+			);
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Headers/Carbon.h";
+				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
+				GCC_WARN_UNKNOWN_PRAGMAS = NO;
+				INSTALL_PATH = /usr/local/bin;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Carbon,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = qtaiff;
+				REZ_EXECUTABLE = YES;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = "-Wmost";
+			};
+			dependencies = (
+			);
+			name = qtaiff;
+			productName = QTExport;
+			productReference = E1F6EE8605DB03790035C30A /* qtaiff */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = D5E1D08A0C876CC100D01C21 /* Build configuration list for PBXProject "iTunes-LAME" */;
+			buildSettings = {
+			};
+			buildStyles = (
+				4A9504CCFFE6A4B311CA0CBA /* Development */,
+				4A9504CDFFE6A4B311CA0CBA /* Deployment */,
+			);
+			hasScannedForEncodings = 1;
+			knownPlatforms = (
+				macos,
+				macosclassic,
+				windows,
+				solaris,
+				hpux,
+				macosx,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* iTunes-LAME */;
+			projectDirPath = "";
+			targets = (
+				E1E177490502C11B0014EE93 /* iTunes-LAME */,
+				E1F6EE8505DB03790035C30A /* qtaiff */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E1E1775C0502C11B0014EE93 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1E1775D0502C11B0014EE93 /* MainMenu.nib in Resources */,
+				E1E1776A0502C11B0014EE93 /* EncodingHelp.rtf in Resources */,
+				E1E1776B0502C11B0014EE93 /* Localizable.strings in Resources */,
+				E1F6EF3105DB11A50035C30A /* qtaiff in Resources */,
+				E1EA32B906B6D930007178DA /* lame in Resources */,
+				E1CEBFDA06D394D5000918F3 /* BackgroundLogo.png in Resources */,
+				E1CEBFDB06D394D5000918F3 /* Cancel_Pressed.tif in Resources */,
+				E1CEBFDC06D394D5000918F3 /* Cancel.tif in Resources */,
+				E1CEBFDD06D394D5000918F3 /* EncodingComplete.aif in Resources */,
+				E1CEBFDE06D394D5000918F3 /* Import with LAME....scpt in Resources */,
+				E1CEBFDF06D394D5000918F3 /* ImportButton.png in Resources */,
+				E1CEBFE006D394D5000918F3 /* ImportButtonI.png in Resources */,
+				E1CEBFE106D394D5000918F3 /* ImportButtonIP.png in Resources */,
+				E1CEBFE206D394D5000918F3 /* ImportButtonS.png in Resources */,
+				E1CEBFE306D394D5000918F3 /* ImportButtonSP.png in Resources */,
+				E1CEBFE406D394D5000918F3 /* iTunes-LAME.icns in Resources */,
+				E1CEBFE506D394D5000918F3 /* lame in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXRezBuildPhase section */
+		E1F6EE8305DB03790035C30A /* Rez */ = {
+			isa = PBXRezBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXRezBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E1E1776E0502C11B0014EE93 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1E1776F0502C11B0014EE93 /* main.m in Sources */,
+				E1CEC00406D394F8000918F3 /* BDAlias.m in Sources */,
+				E1CEC00606D394F8000918F3 /* BLITApp.m in Sources */,
+				E1CEC00A06D394F8000918F3 /* BTEncoderController.m in Sources */,
+				E1CEC00C06D394F8000918F3 /* ILNonClickThruView.m in Sources */,
+				E1CEC00E06D394F8000918F3 /* ILProgressView.m in Sources */,
+				E1CEC01006D394F8000918F3 /* ILWindow.m in Sources */,
+				E1CEC01206D394F8000918F3 /* NSAppleScript_BLTRExtensions.m in Sources */,
+				E1CEC01406D394F8000918F3 /* NSApplication_BLTRExtensions.m in Sources */,
+				E1CEC01606D394F8000918F3 /* NSFileManager_BLTRExtensions.m in Sources */,
+				E1CEC01806D394F8000918F3 /* NSString_BLTRExtensions.m in Sources */,
+				E1CEC01A06D394F8000918F3 /* NSWorkspace_BLTRExtensions.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1F6EE8205DB03790035C30A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1CEC03706D3958A000918F3 /* qtaiff.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E1F6EF3005DB11980035C30A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E1F6EE8505DB03790035C30A /* qtaiff */;
+			targetProxy = E1F6EF2F05DB11980035C30A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		089C165CFE840E0CC02AAC07 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089C165DFE840E0CC02AAC07 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		29B97318FDCFA39411CA2CEA /* MainMenu.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				29B97319FDCFA39411CA2CEA /* English */,
+			);
+			name = MainMenu.nib;
+			sourceTree = "<group>";
+		};
+		E1656EE204879E2100000009 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E1656EE004879D4900000009 /* English */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		E1656F050487A0BF00000009 /* EncodingHelp.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E1656EDB0487903700000009 /* English */,
+			);
+			name = EncodingHelp.rtf;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D5E1D0830C876CC100D01C21 /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Headers/Carbon.h";
+				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
+				GCC_WARN_UNKNOWN_PRAGMAS = NO;
+				INSTALL_PATH = /usr/local/bin;
+				OPTIMIZATION_CFLAGS = "-O0";
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Carbon,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = qtaiff;
+				REZ_EXECUTABLE = YES;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = "-Wmost";
+				ZERO_LINK = YES;
+			};
+			name = Development;
+		};
+		D5E1D0840C876CC100D01C21 /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEPLOYMENT_POSTPROCESSING = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Headers/Carbon.h";
+				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
+				GCC_WARN_UNKNOWN_PRAGMAS = NO;
+				INSTALL_PATH = /usr/local/bin;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Carbon,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = qtaiff;
+				REZ_EXECUTABLE = YES;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = "-Wmost";
+				ZERO_LINK = NO;
+			};
+			name = Deployment;
+		};
+		D5E1D0850C876CC100D01C21 /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Headers/Carbon.h";
+				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
+				GCC_WARN_UNKNOWN_PRAGMAS = NO;
+				INSTALL_PATH = /usr/local/bin;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Carbon,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = qtaiff;
+				REZ_EXECUTABLE = YES;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = "-Wmost";
+			};
+			name = Default;
+		};
+		D5E1D0870C876CC100D01C21 /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CC = "/usr/bin/gcc-3.3";
+				COPY_PHASE_STRIP = NO;
+				CPLUSPLUS = "/usr/bin/g++-3.3";
+				FRAMEWORK_SEARCH_PATHS = "";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREFIX_HEADER = "iTunes-LAME_Prefix.h";
+				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
+				GCC_WARN_UNKNOWN_PRAGMAS = NO;
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = "";
+				OPTIMIZATION_CFLAGS = "-O0";
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "iTunes-LAME";
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = "-Wmost";
+				WRAPPER_EXTENSION = app;
+				ZERO_LINK = YES;
+			};
+			name = Development;
+		};
+		D5E1D0880C876CC100D01C21 /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CC = "/usr/bin/gcc-3.3";
+				COPY_PHASE_STRIP = YES;
+				CPLUSPLUS = "/usr/bin/g++-3.3";
+				DEPLOYMENT_POSTPROCESSING = YES;
+				FRAMEWORK_SEARCH_PATHS = "";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_PREFIX_HEADER = "iTunes-LAME_Prefix.h";
+				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
+				GCC_WARN_UNKNOWN_PRAGMAS = NO;
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "iTunes-LAME";
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = "-Wmost";
+				WRAPPER_EXTENSION = app;
+				ZERO_LINK = NO;
+			};
+			name = Deployment;
+		};
+		D5E1D0890C876CC100D01C21 /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CC = "/usr/bin/gcc-3.3";
+				CPLUSPLUS = "/usr/bin/g++-3.3";
+				FRAMEWORK_SEARCH_PATHS = "";
+				GCC_PREFIX_HEADER = "iTunes-LAME_Prefix.h";
+				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
+				GCC_WARN_UNKNOWN_PRAGMAS = NO;
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "iTunes-LAME";
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = "-Wmost";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Default;
+		};
+		D5E1D08B0C876CC100D01C21 /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Development;
+		};
+		D5E1D08C0C876CC100D01C21 /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Deployment;
+		};
+		D5E1D08D0C876CC100D01C21 /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Default;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D5E1D0820C876CC100D01C21 /* Build configuration list for PBXNativeTarget "qtaiff" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5E1D0830C876CC100D01C21 /* Development */,
+				D5E1D0840C876CC100D01C21 /* Deployment */,
+				D5E1D0850C876CC100D01C21 /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+		D5E1D0860C876CC100D01C21 /* Build configuration list for PBXNativeTarget "iTunes-LAME" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5E1D0870C876CC100D01C21 /* Development */,
+				D5E1D0880C876CC100D01C21 /* Deployment */,
+				D5E1D0890C876CC100D01C21 /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+		D5E1D08A0C876CC100D01C21 /* Build configuration list for PBXProject "iTunes-LAME" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5E1D08B0C876CC100D01C21 /* Development */,
+				D5E1D08C0C876CC100D01C21 /* Deployment */,
+				D5E1D08D0C876CC100D01C21 /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}
