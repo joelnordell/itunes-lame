@@ -9,7 +9,7 @@
 	<key>CFBundleExecutable</key>
 	<string>iTunes-LAME</string>
 	<key>CFBundleGetInfoString</key>
-	<string>iTunes-LAME Encoder version 2.0.8, Copyright 2002-2004 Blacktree, Inc.</string>
+	<string>iTunes-LAME Encoder version 2.0.9, Copyright 2002-2004 Blacktree, Inc.</string>
 	<key>CFBundleIconFile</key>
 	<string>iTunes-LAME</string>
 	<key>CFBundleIdentifier</key>
@@ -21,7 +21,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2.0.8</string>
+	<string>2.0.9</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>

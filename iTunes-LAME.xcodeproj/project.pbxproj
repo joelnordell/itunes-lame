@@ -186,7 +186,7 @@
 		E1CEC00206D394F8000918F3 /* NSWorkspace_BLTRExtensions.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = NSWorkspace_BLTRExtensions.m; path = Code/NSWorkspace_BLTRExtensions.m; sourceTree = "<group>"; };
 		E1CEC02406D39526000918F3 /* qtaiff.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = qtaiff.c; path = Code/qtaiff.c; sourceTree = "<group>"; };
 		E1CEC02506D39526000918F3 /* qtaiff.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = qtaiff.h; path = Code/qtaiff.h; sourceTree = "<group>"; };
-		E1E177850502C11B0014EE93 /* iTunes-LAME.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iTunes-LAME.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1E177850502C11B0014EE93 /* iTunes-LAME.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "iTunes-LAME.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1EA32B806B6D930007178DA /* lame */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = lame; path = "lame-3.97/lame"; sourceTree = "<group>"; };
 		E1F6EE8605DB03790035C30A /* qtaiff */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = qtaiff; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1F9A85203F0086700D3C7A0 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };

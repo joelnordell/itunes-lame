@@ -83,9 +83,9 @@
 			mainGroup = BA68B2850C865D9000238747;
 			projectDirPath = "";
 			targets = (
+				BA68B2F30C865F0F00238747 /* Build lame (Universal) */,
 				BA68B2D80C865DE000238747 /* Build lame (PPC) */,
 				BA68B2E70C865EBB00238747 /* Build lame (Intel) */,
-				BA68B2F30C865F0F00238747 /* Build lame (Universal) */,
 			);
 		};
 /* End PBXProject section */
