@@ -808,7 +808,7 @@
 /* Begin PBXProject section */
 		BA68B2870C865D9000238747 /* Project object */ = {
 			isa = PBXProject;
-			buildConfigurationList = BA68B2880C865D9000238747 /* Build configuration list for PBXProject "lame-3.97" */;
+			buildConfigurationList = BA68B2880C865D9000238747 /* Build configuration list for PBXProject "libid3tag-0.15.1b" */;
 			hasScannedForEncodings = 0;
 			mainGroup = BA68B2850C865D9000238747;
 			projectDirPath = "";
@@ -959,7 +959,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BA68B2880C865D9000238747 /* Build configuration list for PBXProject "lame-3.97" */ = {
+		BA68B2880C865D9000238747 /* Build configuration list for PBXProject "libid3tag-0.15.1b" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BA68B2890C865D9000238747 /* Debug */,

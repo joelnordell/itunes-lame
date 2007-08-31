@@ -20,7 +20,6 @@
 		E1CEBFE206D394D5000918F3 /* ImportButtonS.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CEBFD606D394D5000918F3 /* ImportButtonS.png */; };
 		E1CEBFE306D394D5000918F3 /* ImportButtonSP.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CEBFD706D394D5000918F3 /* ImportButtonSP.png */; };
 		E1CEBFE406D394D5000918F3 /* iTunes-LAME.icns in Resources */ = {isa = PBXBuildFile; fileRef = E1CEBFD806D394D5000918F3 /* iTunes-LAME.icns */; };
-		E1CEBFE506D394D5000918F3 /* lame in Resources */ = {isa = PBXBuildFile; fileRef = E1CEBFD906D394D5000918F3 /* lame */; };
 		E1CEC00306D394F8000918F3 /* BDAlias.h in Headers */ = {isa = PBXBuildFile; fileRef = E1CEBFEB06D394F8000918F3 /* BDAlias.h */; };
 		E1CEC00406D394F8000918F3 /* BDAlias.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CEBFEC06D394F8000918F3 /* BDAlias.m */; };
 		E1CEC00506D394F8000918F3 /* BLITApp.h in Headers */ = {isa = PBXBuildFile; fileRef = E1CEBFED06D394F8000918F3 /* BLITApp.h */; };
@@ -559,7 +558,6 @@
 				E1CEBFE206D394D5000918F3 /* ImportButtonS.png in Resources */,
 				E1CEBFE306D394D5000918F3 /* ImportButtonSP.png in Resources */,
 				E1CEBFE406D394D5000918F3 /* iTunes-LAME.icns in Resources */,
-				E1CEBFE506D394D5000918F3 /* lame in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
