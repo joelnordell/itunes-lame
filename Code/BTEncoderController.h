@@ -117,7 +117,8 @@
 - (void)taskDidTerminate:(NSNotification *)aNotification;
 - (NSMutableDictionary *)trackForTask:(NSTask *)task;
 -(bool)removeFileAndTrack:(NSString *)path;
--(bool)addAndTagTrack:(NSMutableDictionary *)trackInfo;
+-(bool)writeTag:(NSMutableDictionary *)trackInfo;
+-(bool)addTrack:(NSMutableDictionary *)trackInfo;
 -(NSTask *)cacheTaskWithTool:(NSString *)tool source:(NSString *)source destination:(NSString*)destination valid:(BOOL)valid;
 -(NSTask *)lameTaskWithOptions:(NSString *)options source:(NSString *)source destination:(NSString*)destination valid:(BOOL)valid;
 -(NSArray *)getCDPaths;

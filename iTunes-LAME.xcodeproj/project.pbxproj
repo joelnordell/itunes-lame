@@ -147,6 +147,7 @@
 		BA68B37D0C86652C00238747 /* version.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = version.h; path = "libid3tag-0.15.1b/version.h"; sourceTree = "<group>"; };
 		BA68B3D20C86725600238747 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = /usr/lib/libz.dylib; sourceTree = "<absolute>"; };
 		BA68B5D50C87B88F00238747 /* libid3tag-0.15.1b.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "libid3tag-0.15.1b.xcodeproj"; sourceTree = "<group>"; };
+		BA68B75E0C87C44600238747 /* lame-3.97.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "lame-3.97.xcodeproj"; sourceTree = "<group>"; };
 		E1656EDB0487903700000009 /* English */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = English; path = English.lproj/EncodingHelp.rtf; sourceTree = "<group>"; };
 		E1656EE004879D4900000009 /* English */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E19ABD6704EE574A00C2F9F2 /* QuickTime.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickTime.framework; path = /System/Library/Frameworks/QuickTime.framework; sourceTree = "<absolute>"; };
@@ -186,8 +187,8 @@
 		E1CEC00206D394F8000918F3 /* NSWorkspace_BLTRExtensions.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = NSWorkspace_BLTRExtensions.m; path = Code/NSWorkspace_BLTRExtensions.m; sourceTree = "<group>"; };
 		E1CEC02406D39526000918F3 /* qtaiff.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = qtaiff.c; path = Code/qtaiff.c; sourceTree = "<group>"; };
 		E1CEC02506D39526000918F3 /* qtaiff.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = qtaiff.h; path = Code/qtaiff.h; sourceTree = "<group>"; };
-		E1E177850502C11B0014EE93 /* iTunes-LAME.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = file; path = "iTunes-LAME.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E1EA32B806B6D930007178DA /* lame */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = lame; path = /usr/local/bin/lame; sourceTree = "<absolute>"; };
+		E1E177850502C11B0014EE93 /* iTunes-LAME.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iTunes-LAME.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1EA32B806B6D930007178DA /* lame */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = lame; path = "lame-3.97/lame"; sourceTree = "<group>"; };
 		E1F6EE8605DB03790035C30A /* qtaiff */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = qtaiff; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1F9A85203F0086700D3C7A0 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
@@ -250,7 +251,6 @@
 			isa = PBXGroup;
 			children = (
 				BA68B3D20C86725600238747 /* libz.dylib */,
-				BA68B31B0C86642400238747 /* libid3tag.a */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
 				E1F9A85203F0086700D3C7A0 /* Carbon.framework */,
 				E19ABD6704EE574A00C2F9F2 /* QuickTime.framework */,
@@ -272,6 +272,8 @@
 			children = (
 				E1E177850502C11B0014EE93 /* iTunes-LAME.app */,
 				E1F6EE8605DB03790035C30A /* qtaiff */,
+				E1EA32B806B6D930007178DA /* lame */,
+				BA68B31B0C86642400238747 /* libid3tag.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -280,7 +282,8 @@
 			isa = PBXGroup;
 			children = (
 				BA68B5D50C87B88F00238747 /* libid3tag-0.15.1b.xcodeproj */,
-				E1EA32B806B6D930007178DA /* lame */,
+				BA68B75E0C87C44600238747 /* lame-3.97.xcodeproj */,
+				BA68B3390C86652C00238747 /* libid3tag-0.15.1b */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -293,7 +296,6 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
-				BA68B3390C86652C00238747 /* libid3tag-0.15.1b */,
 				E1CEC02406D39526000918F3 /* qtaiff.c */,
 				E1CEC02506D39526000918F3 /* qtaiff.h */,
 				32CA4F630368D1EE00C91783 /* iTunes-LAME_Prefix.h */,
@@ -424,6 +426,13 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		BA68B75F0C87C44600238747 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -513,6 +522,10 @@
 			mainGroup = 29B97314FDCFA39411CA2CEA /* iTunes-LAME */;
 			projectDirPath = "";
 			projectReferences = (
+				{
+					ProductGroup = BA68B75F0C87C44600238747 /* Products */;
+					ProjectRef = BA68B75E0C87C44600238747 /* lame-3.97.xcodeproj */;
+				},
 				{
 					ProductGroup = BA68B5D60C87B88F00238747 /* Products */;
 					ProjectRef = BA68B5D50C87B88F00238747 /* libid3tag-0.15.1b.xcodeproj */;

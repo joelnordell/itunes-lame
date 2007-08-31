@@ -14,9 +14,14 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 #include <sys/param.h>
 #include <sys/ucred.h>
 #include <sys/mount.h>
+#include <sys/types.h>
+#include <sys/uio.h>
+
+#include "id3tag.h"
 
 #define encodingOptionsKey @"encodingOptions"
 #define GETTER_SCRIPT @"tell application \"iTunes\"\rset thePlaylist to view of front window\rif class of thePlaylist is not in {user playlist, audio CD playlist} then error \"Invalid Playlist\"\rset theList to every track in thePlaylist whose enabled is true\rset theRecordList to {}\rrepeat with theTrack in theList\rset theLocation to \"\"\rtry\rif class of theTrack = file track then set theLocation to POSIX path of (location of theTrack as alias)\rtell theTrack to set end of theRecordList to {kind,class of theTrack as string, theLocation, name as string, artist as string, composer as string, album as string, comment as string, genre as string, year, track number, track count, disc number, disc count, compilation}\rend try\rend repeat\rend tell\rdelay 0.1\rreturn {theRecordList, name of thePlaylist}"
@@ -95,6 +100,78 @@ OSType fourCharCodeToOSType(NSString* inCode)
     NSData* data = [inCode dataUsingEncoding: NSMacOSRomanStringEncoding];
     [data getBytes:&rval length:sizeof(rval)];
     return rval;
+}
+
+static void set_text_frame(struct id3_tag *tag, const char *id, const id3_utf8_t *value) {
+  struct id3_frame *frame = NULL;
+  
+  if (!value || !*value) return; // Blank value == skip this frame
+  
+  // We shouldn't have to bother looking for existing frames, because we know this
+  // file was just encoded.
+  frame = id3_frame_new(id);
+  if (frame == 0) {
+    NSLog(@"Unable to create frame %s",id);
+    return;
+  }
+  id3_tag_attachframe(tag, frame);
+  
+  id3_ucs4_t *ucs4 = id3_utf8_ucs4duplicate(value);
+  if (id3_field_setstrings(&frame->fields[1], 1, &ucs4) == -1) {
+    NSLog(@"Unable to set frame %s",id);
+    id3_frame_delete(frame);
+    return;
+  }
+}
+
+
+static void set_comment(struct id3_tag *tag, const id3_utf8_t *value) {
+  struct id3_frame *frame = NULL;
+  if (!value || !*value) return;
+
+  frame = id3_frame_new(ID3_FRAME_COMMENT);
+  if (frame == 0) {
+    NSLog(@"Unable to create frame %s",ID3_FRAME_COMMENT);
+    return;
+  }
+  id3_tag_attachframe(tag, frame);
+
+  if (id3_field_setlanguage(&frame->fields[1], "eng") != 0) {
+    NSLog(@"Failed setting comment language\n");
+    id3_frame_delete(frame);
+    return;
+  }
+
+  id3_ucs4_t *ucs4 = id3_utf8_ucs4duplicate(value);
+  if (id3_field_setfullstring(&frame->fields[3], ucs4) == -1) {
+    NSLog(@"Unable to set frame %s",ID3_FRAME_COMMENT);
+    id3_frame_delete(frame);
+    return;
+  }
+}
+
+
+static void prepend_bytes_to_file(int fd, int n) {
+  // Go through the file, starting at the end, and move everything over by n bytes.
+  int fsize = lseek(fd, 0, SEEK_END);
+  int p = fsize;
+  int chunkSize = 1024 * 128; // Seems like a reasonable tradeoff between speed and memory efficiency
+  char *buf = (char*)malloc(chunkSize);
+
+  while (p > 0) {
+    p -= chunkSize;
+    if (p < 0) {
+      chunkSize = (0-p);
+      p = 0;
+    }
+
+    lseek(fd, p, SEEK_SET);
+    read(fd, buf, chunkSize);
+    lseek(fd, p + n, SEEK_SET);
+    write(fd, buf, chunkSize);
+  }
+
+  free(buf);
 }
 
 
@@ -651,7 +728,6 @@ FOUNDATION_EXPORT BOOL NSDebugEnabled;
     
     //    [[[encoder standardError]fileHandleForReading]waitForDataInBackgroundAndNotify];
     [encoder launch];
-    
 }
 
 - (IBAction)openWebsiteForToolTip:(id)sender{[[NSWorkspace sharedWorkspace]openURL:[NSURL URLWithString:[sender toolTip]]];}
@@ -847,10 +923,11 @@ FOUNDATION_EXPORT BOOL NSDebugEnabled;
 			[thisProgressBar display];
             [thisNameField setStringValue:[NSString stringWithFormat:@"Finishing: \"%@\"",[track objectForKey:kTrackName]]];
             [thisNameField display];
-            [thisProgressField setStringValue:NSLocalizedString(@"Adding ID3 Tags", @"Adding ID3 Tags")];
+            [thisProgressField setStringValue:NSLocalizedString(@"Adding Track to Library", @"Adding Track to Library")];
             [thisProgressField display];
 			
-            [self addAndTagTrack:track];
+            [self writeTag:track];
+            [self addTrack:track];
             
             
 			//[[[track objectForKey:kEncoderTask]standardError]autorelease];
@@ -930,7 +1007,106 @@ FOUNDATION_EXPORT BOOL NSDebugEnabled;
 }
 
 
--(bool)addAndTagTrack:(NSMutableDictionary *)trackInfo{
+-(bool)writeTag:(NSMutableDictionary *)trackInfo{
+  NSDictionary *tags=[trackInfo objectForKey:kTrackTags];
+
+  struct id3_file *id3file;
+  struct id3_tag *id3tag;
+  id key;
+  char *tmp;
+
+  id3tag = id3_tag_new();
+
+  NSEnumerator *enumerator = [keyArray objectEnumerator];
+  while ((key = [enumerator nextObject])) {
+
+    if ([key isEqualToString:@"pAlb"]) { // ID3_FRAME_ALBUM (TALB)
+      set_text_frame(id3tag, ID3_FRAME_ALBUM, [[[tags objectForKey:key]stringValue]UTF8String]);
+
+    } else if ([key isEqualToString:@"pArt"]) { // ID3_FRAME_ARTIST (TPE1)
+      set_text_frame(id3tag, ID3_FRAME_ARTIST, [[[tags objectForKey:key]stringValue]UTF8String]);
+
+    } else if ([key isEqualToString:@"pnam"]) { // ID3_FRAME_TITLE (TIT2)
+      set_text_frame(id3tag, ID3_FRAME_TITLE, [[[tags objectForKey:key]stringValue]UTF8String]);
+
+    } else if ([key isEqualToString:@"pCmt"]) { // ID3_FRAME_COMMENT (COMM)
+      set_comment(id3tag, [[[tags objectForKey:key]stringValue]UTF8String]);
+
+    } else if ([key isEqualToString:@"pCmp"]) { // COMPOSER (TCOM)
+      set_text_frame(id3tag, "TCOM", [[[tags objectForKey:key]stringValue]UTF8String]);
+
+    } else if ([key isEqualToString:@"pGen"]) { // ID3_FRAME_GENRE (TCON)
+      set_text_frame(id3tag, "TCON", [[[tags objectForKey:key]stringValue]UTF8String]);
+
+    } else if ([key isEqualToString:@"pGrp"]) { // GROUPING (TIT1)
+      set_text_frame(id3tag, "TIT1", [[[tags objectForKey:key]stringValue]UTF8String]);
+
+    } else if ([key isEqualToString:@"pYr "]) { // ID3_FRAME_YEAR
+      asprintf(&tmp, "%d", [[tags objectForKey:key]int32Value]);
+      set_text_frame(id3tag, ID3_FRAME_YEAR, tmp);
+      free(tmp);
+
+    }
+        // TODO: ID3 Beats Per Minute (TBPM)
+        // TODO: Compilation (YTCP, "pAnt")
+  }
+
+  // Track Number and Disc Number are a little funky because one frame includes
+  // TWO items from the iTunes tag data.  So do them here, rather than in the enumerator.
+  int trackNumber=[[tags objectForKey:@"pTrN"]int32Value];
+  int trackCount=[[tags objectForKey:@"pTrC"]int32Value];
+  int discNumber=[[tags objectForKey:@"pDsN"]int32Value];
+  int discCount=[[tags objectForKey:@"pDsC"]int32Value];
+
+  if (trackNumber) {
+    if (trackCount) {
+      asprintf(&tmp, "%d/%d", trackNumber, trackCount);
+    } else {
+      asprintf(&tmp, "%d", trackNumber);
+    }
+    set_text_frame(id3tag, ID3_FRAME_TRACK, tmp);
+    free(tmp);
+  }
+
+  if (discNumber) {
+    if (discCount) {
+      asprintf(&tmp, "%d/%d", discNumber, discCount);
+    } else {
+      asprintf(&tmp, "%d", discNumber);
+    }
+    set_text_frame(id3tag, "TPOS", tmp);
+    free(tmp);
+  }
+
+  // Render the tag
+  id3tag->options |= ID3_TAG_OPTION_COMPRESSION | ID3_TAG_OPTION_APPENDEDTAG;
+  id3tag->options &= ~ID3_TAG_OPTION_ID3V1;
+  id3tag->flags |= ID3_TAG_FLAG_FOOTERPRESENT;
+  id3_length_t len = id3_tag_render(id3tag, NULL);
+  char *buf = (char*)malloc(len);
+  len = id3_tag_render(id3tag, buf);
+
+  // Open the file (it should have been already created by lame.)
+  const char *filename=[[trackInfo objectForKey:kLameOutFile]UTF8String];
+  int fd = open(filename, O_RDWR, 0644);
+  if (fd == -1) {
+    NSLog(@"Error opening output file");
+    id3_tag_delete(id3tag);
+    return NO;
+  }
+
+  // Write the ID3 tag to the beginning of the file.  But first we need to move the whole file n bytes over.
+  prepend_bytes_to_file(fd, len);
+  lseek(fd, 0, SEEK_SET);
+  write(fd, buf, len);
+  free(buf);
+  close(fd);
+
+  id3_tag_delete(id3tag);
+  return YES;
+}
+
+-(bool)addTrack:(NSMutableDictionary *)trackInfo{
     //NSLog(@"Tagging");
 	
     NSWorkspace *workspace=[NSWorkspace sharedWorkspace];
@@ -954,51 +1130,7 @@ FOUNDATION_EXPORT BOOL NSDebugEnabled;
     if (errorDict)NSLog(@"%@",errorDict);
     //NSLog(@"descr%@",trackNSDesc);
     
-	
-	//    trackForFile([trackInfo objectForKey:kLameOutFile],&trackDescriptor);
-	
-    NSDictionary *tags=[trackInfo objectForKey:kTrackTags];
-    AppleEvent event, reply;
-    OSErr err;
-    OSType iTunesAdr = 'hook';
-    AEBuildError error;
-	
-	
-    SInt32 transactionID=(int)trackInfo;
-    NSEnumerator *enumerator = [keyArray objectEnumerator];
-    id key;
-	
-    while ((key = [enumerator nextObject])) {
-        if ([key isEqualToString:@"pLoc"] || [key isEqualToString:@"pKnd"] || [key isEqualToString:@"pcls"])continue;
-		
-        NSAppleEventDescriptor *propertyDescriptor=[tags objectForKey:key];
-        if (!propertyDescriptor)continue;
-		
-        //NSLog(@"tagging key: '%@' (%@)",key,[propertyDescriptor stringValue]);
-        err = AEBuildAppleEvent ('core', 'setd', typeApplSignature, &iTunesAdr, sizeof(iTunesAdr),
-                                 kAutoGenerateReturnID, transactionID, &event, &error,
-                                 [[NSString stringWithFormat:@"data: @,'----':'obj '{seld:type('%@'), form:'prop', want:type('prop'), from:@}",key] cString],
-                                 [propertyDescriptor aeDesc],
-                                 [trackDescriptor aeDesc]);
-		
-        if (err) // print the error and where it occurs
-            NSLog(@"%d: error at %d",error.fError,error.fErrorPos);
-		
-        err = AESend(&event, &reply, kAEWaitReply, kAENormalPriority,kAEDefaultTimeout, NULL, NULL);
-		
-        err= AEGetParamDesc (&reply, (AEKeyword) 'errn', 'shor', nil);
-        if (err == noErr) /*the reply isn't an error*/
-            NSLog(@"An error occured for: %@",[trackInfo objectForKey:kLameOutFile]);
-		
-    }
-    AEDisposeDesc(&event);
-    AEDisposeDesc(&reply);
-	
-    
-	
-    //    NSLog(@"Tagging Complete");
     return YES;
-	
 }
 
 -(NSTask *)paranoiaCacheTaskWithTool:(NSString *)tool source:(NSString *)source destination:(NSString*)destination valid:(BOOL)valid{
@@ -1044,7 +1176,11 @@ FOUNDATION_EXPORT BOOL NSDebugEnabled;
         NSString *fullOptions=[NSString stringWithFormat:@"%@ %@ %@ \'%@\'",[self lamePath], options, source, escapedDestination];
         [lameTask setCurrentDirectoryPath: [self currentCD]];
         [lameTask setLaunchPath:@"/bin/tcsh"];
-        [lameTask setArguments:[NSArray arrayWithObjects:@"-c",fullOptions]];
+
+        NSMutableArray *arguments=[NSMutableArray arrayWithCapacity:0];
+        [arguments addObject:@"-c"];
+        [arguments addObject:fullOptions];
+        [lameTask setArguments:arguments];
     }
     return lameTask;
 }
