@@ -277,12 +277,17 @@
 							<array>
 								<string>BA68B2850C865D9000238747</string>
 								<string>1C37FBAC04509CD000000102</string>
+								<string>BA68B7880C87C54000238747</string>
+								<string>BA68B7890C87C54000238747</string>
+								<string>BA68B78A0C87C54000238747</string>
 								<string>1C37FABC05509CD000000102</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>0</integer>
+									<integer>10</integer>
+									<integer>7</integer>
+									<integer>2</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
@@ -305,7 +310,7 @@
 							<real>186</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>216 244 690 397 0 0 1680 1028 </string>
+						<string>142 200 690 397 0 0 1680 1028 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -342,7 +347,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {482, 0}}</string>
 								<key>RubberWindowFrame</key>
-								<string>216 244 690 397 0 0 1680 1028 </string>
+								<string>142 200 690 397 0 0 1680 1028 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -362,7 +367,7 @@
 								<key>Frame</key>
 								<string>{{0, 5}, {482, 351}}</string>
 								<key>RubberWindowFrame</key>
-								<string>216 244 690 397 0 0 1680 1028 </string>
+								<string>142 200 690 397 0 0 1680 1028 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -386,9 +391,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>BA68B5B90C87B78100238747</string>
+				<string>BA68B78B0C87C54000238747</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>BA68B5BA0C87B78100238747</string>
+				<string>BA68B78C0C87C54000238747</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -507,7 +512,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>210220911.992217</real>
+	<real>210224448.64322001</real>
 	<key>ToolbarDisplayMode</key>
 	<integer>2</integer>
 	<key>ToolbarIsVisible</key>
@@ -522,10 +527,11 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>/Users/jnordell/Projects/iTunes-LAME/trunk/libid3tag-0.15.1b/libid3tag-0.15.1b.xcodeproj</string>
+		<string>BA68B3100C8660DA00238747</string>
+		<string>/Users/jnordell/Projects/iTunes-LAME/trunk/lame-3.97.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>216 244 690 397 0 0 1680 1028 </string>
+	<string>142 200 690 397 0 0 1680 1028 </string>
 	<key>WindowTools</key>
 	<array>
 		<dict>
@@ -568,7 +574,7 @@
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXBuildLogShowsTranscriptDefaultKey</key>
-								<string>{{0, 139}, {789, 264}}</string>
+								<string>{{0, 66}, {789, 337}}</string>
 								<key>PBXProjectModuleGUID</key>
 								<string>XCMainBuildResultsModuleGUID</string>
 								<key>PBXProjectModuleLabel</key>
@@ -606,7 +612,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>BA68B3100C8660DA00238747</string>
-				<string>BA68B3110C8660DA00238747</string>
+				<string>BA68B78D0C87C54000238747</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
