@@ -1278,7 +1278,7 @@ FOUNDATION_EXPORT BOOL NSDebugEnabled;
 	
     NSString *versionString=nil;
     NSScanner *versionScanner=[NSScanner scannerWithString:string];
-    [versionScanner scanString:@"LAME version " intoString:nil];
+    [versionScanner scanString:@"LAME 32bits version " intoString:nil];
     [versionScanner scanUpToString:@" " intoString:&versionString];
 	
     return versionString;
