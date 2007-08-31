@@ -1046,9 +1046,12 @@ FOUNDATION_EXPORT BOOL NSDebugEnabled;
       set_text_frame(id3tag, ID3_FRAME_YEAR, tmp);
       free(tmp);
 
+    } else if ([key isEqualToString:@"pAnt"]) { // COMPILATION (TCMP)
+      if ([[tags objectForKey:key]int32Value]) {
+        set_text_frame(id3tag, "TCMP", "1");
+      }
     }
         // TODO: ID3 Beats Per Minute (TBPM)
-        // TODO: Compilation (YTCP, "pAnt")
   }
 
   // Track Number and Disc Number are a little funky because one frame includes
