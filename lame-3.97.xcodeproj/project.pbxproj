@@ -1,0 +1,1001 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		BA68B2D80C865DE000238747 /* Build PPC */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = BA68B2E00C865DE200238747 /* Build configuration list for PBXAggregateTarget "Build PPC" */;
+			buildPhases = (
+				BA68B2E30C865DEF00238747 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = "Build PPC";
+			productName = "Build PPC";
+		};
+		BA68B2E70C865EBB00238747 /* Build Intel */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = BA68B2EE0C865ECC00238747 /* Build configuration list for PBXAggregateTarget "Build Intel" */;
+			buildPhases = (
+				BA68B2EA0C865EC000238747 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = "Build Intel";
+			productName = "Build Intel";
+		};
+		BA68B2F30C865F0F00238747 /* Build Universal */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = BA68B2FA0C865F1900238747 /* Build configuration list for PBXAggregateTarget "Build Universal" */;
+			buildPhases = (
+				BA68B2FD0C86600200238747 /* ShellScript */,
+			);
+			dependencies = (
+				BA68B2F50C865F1200238747 /* PBXTargetDependency */,
+				BA68B2F70C865F1500238747 /* PBXTargetDependency */,
+			);
+			name = "Build Universal";
+			productName = libid3tag.a;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXContainerItemProxy section */
+		BA68B2F40C865F1200238747 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BA68B2870C865D9000238747 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BA68B2D80C865DE000238747;
+			remoteInfo = "Build PPC";
+		};
+		BA68B2F60C865F1500238747 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BA68B2870C865D9000238747 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BA68B2E70C865EBB00238747;
+			remoteInfo = "Build Intel";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BA68B6230C87C40400238747 /* acinclude.m4 */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = acinclude.m4; sourceTree = "<group>"; };
+		BA68B6240C87C40400238747 /* aclocal.m4 */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = aclocal.m4; sourceTree = "<group>"; };
+		BA68B6260C87C40400238747 /* ACM.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; path = ACM.cpp; sourceTree = "<group>"; };
+		BA68B6270C87C40400238747 /* ACM.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = ACM.h; sourceTree = "<group>"; };
+		BA68B6280C87C40400238747 /* acm.rc */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = acm.rc; sourceTree = "<group>"; };
+		BA68B6290C87C40400238747 /* ACMStream.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; path = ACMStream.cpp; sourceTree = "<group>"; };
+		BA68B62A0C87C40400238747 /* ACMStream.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = ACMStream.h; sourceTree = "<group>"; };
+		BA68B62C0C87C40400238747 /* ADbg.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; path = ADbg.cpp; sourceTree = "<group>"; };
+		BA68B62D0C87C40400238747 /* ADbg.dsp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = ADbg.dsp; sourceTree = "<group>"; };
+		BA68B62E0C87C40400238747 /* ADbg.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = ADbg.h; sourceTree = "<group>"; };
+		BA68B62F0C87C40400238747 /* ADbg_vc7.vcproj */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xml; path = ADbg_vc7.vcproj; sourceTree = "<group>"; };
+		BA68B6300C87C40400238747 /* Makefile.am */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = Makefile.am; sourceTree = "<group>"; };
+		BA68B6310C87C40400238747 /* Makefile.in */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = Makefile.in; sourceTree = "<group>"; };
+		BA68B6320C87C40400238747 /* adebug.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = adebug.h; sourceTree = "<group>"; };
+		BA68B6330C87C40400238747 /* AEncodeProperties.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; path = AEncodeProperties.cpp; sourceTree = "<group>"; };
+		BA68B6340C87C40400238747 /* AEncodeProperties.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = AEncodeProperties.h; sourceTree = "<group>"; };
+		BA68B6360C87C40400238747 /* Makefile.am */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = Makefile.am; sourceTree = "<group>"; };
+		BA68B6370C87C40400238747 /* Makefile.in */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = Makefile.in; sourceTree = "<group>"; };
+		BA68B6380C87C40400238747 /* msacmdrv.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = msacmdrv.h; sourceTree = "<group>"; };
+		BA68B6390C87C40400238747 /* DecodeStream.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; path = DecodeStream.cpp; sourceTree = "<group>"; };
+		BA68B63A0C87C40400238747 /* DecodeStream.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = DecodeStream.h; sourceTree = "<group>"; };
+		BA68B63B0C87C40400238747 /* lame.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = lame.ico; sourceTree = "<group>"; };
+		BA68B63C0C87C40400238747 /* lame_acm.xml */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xml; path = lame_acm.xml; sourceTree = "<group>"; };
+		BA68B63D0C87C40400238747 /* lameACM.def */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = lameACM.def; sourceTree = "<group>"; };
+		BA68B63E0C87C40400238747 /* LameACM.inf */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = LameACM.inf; sourceTree = "<group>"; };
+		BA68B63F0C87C40400238747 /* lameACM_vc6.dsp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = lameACM_vc6.dsp; sourceTree = "<group>"; };
+		BA68B6400C87C40400238747 /* lameACM_vc7.vcproj */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xml; path = lameACM_vc7.vcproj; sourceTree = "<group>"; };
+		BA68B6410C87C40400238747 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		BA68B6420C87C40400238747 /* Makefile.am */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = Makefile.am; sourceTree = "<group>"; };
+		BA68B6430C87C40400238747 /* Makefile.in */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = Makefile.in; sourceTree = "<group>"; };
+		BA68B6440C87C40400238747 /* readme.txt */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
+		BA68B6450C87C40400238747 /* resource.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = resource.h; sourceTree = "<group>"; };
+		BA68B6470C87C40400238747 /* changes.txt */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = changes.txt; sourceTree = "<group>"; };
+		BA68B6480C87C40400238747 /* dox */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = dox; sourceTree = "<group>"; };
+		BA68B6490C87C40400238747 /* makedistlinux */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = makedistlinux; sourceTree = "<group>"; };
+		BA68B64A0C87C40400238747 /* makedistwin.bat */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = makedistwin.bat; sourceTree = "<group>"; };
+		BA68B64B0C87C40400238747 /* Makefile.am */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = Makefile.am; sourceTree = "<group>"; };
+		BA68B64C0C87C40400238747 /* Makefile.in */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = Makefile.in; sourceTree = "<group>"; };
+		BA68B64D0C87C40400238747 /* Makefile.tinyxml */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = Makefile.tinyxml; sourceTree = "<group>"; };
+		BA68B64E0C87C40400238747 /* readme.txt */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
+		BA68B64F0C87C40400238747 /* test.dsp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = test.dsp; sourceTree = "<group>"; };
+		BA68B6500C87C40400238747 /* test.dsw */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = test.dsw; sourceTree = "<group>"; };
+		BA68B6510C87C40400238747 /* tinyxml.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxml.cpp; sourceTree = "<group>"; };
+		BA68B6520C87C40400238747 /* tinyxml.dsp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = tinyxml.dsp; sourceTree = "<group>"; };
+		BA68B6530C87C40400238747 /* tinyxml.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = tinyxml.h; sourceTree = "<group>"; };
+		BA68B6540C87C40400238747 /* tinyxml_vc7.vcproj */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xml; path = tinyxml_vc7.vcproj; sourceTree = "<group>"; };
+		BA68B6550C87C40400238747 /* tinyxmlerror.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxmlerror.cpp; sourceTree = "<group>"; };
+		BA68B6560C87C40400238747 /* tinyxmlparser.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxmlparser.cpp; sourceTree = "<group>"; };
+		BA68B6570C87C40400238747 /* xmltest.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; path = xmltest.cpp; sourceTree = "<group>"; };
+		BA68B6580C87C40400238747 /* TODO */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = TODO; sourceTree = "<group>"; };
+		BA68B6590C87C40400238747 /* API */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = API; sourceTree = "<group>"; };
+		BA68B65A0C87C40400238747 /* ChangeLog */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = ChangeLog; sourceTree = "<group>"; };
+		BA68B65B0C87C40400238747 /* config.guess */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.script.sh; path = config.guess; sourceTree = "<group>"; };
+		BA68B65C0C87C40400238747 /* config.h.in */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = config.h.in; sourceTree = "<group>"; };
+		BA68B65D0C87C40400238747 /* config.sub */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.script.sh; path = config.sub; sourceTree = "<group>"; };
+		BA68B65E0C87C40400238747 /* configMS.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = configMS.h; sourceTree = "<group>"; };
+		BA68B65F0C87C40400238747 /* configure */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.script.sh; path = configure; sourceTree = "<group>"; };
+		BA68B6600C87C40400238747 /* configure.in */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = configure.in; sourceTree = "<group>"; };
+		BA68B6610C87C40400238747 /* COPYING */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = COPYING; sourceTree = "<group>"; };
+		BA68B6630C87C40400238747 /* changelog */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = changelog; sourceTree = "<group>"; };
+		BA68B6640C87C40400238747 /* control */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = control; sourceTree = "<group>"; };
+		BA68B6650C87C40400238747 /* copyright */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = copyright; sourceTree = "<group>"; };
+		BA68B6660C87C40400238747 /* lame.docs */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = lame.docs; sourceTree = "<group>"; };
+		BA68B6670C87C40400238747 /* lame.files */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = lame.files; sourceTree = "<group>"; };
+		BA68B6680C87C40400238747 /* libmp3lame0-dev.docs */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = "libmp3lame0-dev.docs"; sourceTree = "<group>"; };
+		BA68B6690C87C40400238747 /* libmp3lame0-dev.files */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = "libmp3lame0-dev.files"; sourceTree = "<group>"; };
+		BA68B66A0C87C40400238747 /* libmp3lame0.files */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = libmp3lame0.files; sourceTree = "<group>"; };
+		BA68B66B0C87C40400238747 /* Makefile.am */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = Makefile.am; sourceTree = "<group>"; };
+		BA68B66C0C87C40400238747 /* Makefile.in */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = Makefile.in; sourceTree = "<group>"; };
+		BA68B66D0C87C40400238747 /* rules */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = rules; sourceTree = "<group>"; };
+		BA68B66E0C87C40400238747 /* DEFINES */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = DEFINES; sourceTree = "<group>"; };
+		BA68B66F0C87C40400238747 /* depcomp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.script.sh; path = depcomp; sourceTree = "<group>"; };
+		BA68B6710C87C40400238747 /* BladeMP3EncDLL.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = BladeMP3EncDLL.c; sourceTree = "<group>"; };
+		BA68B6720C87C40400238747 /* BladeMP3EncDLL.def */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = BladeMP3EncDLL.def; sourceTree = "<group>"; };
+		BA68B6730C87C40400238747 /* BladeMP3EncDLL.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = BladeMP3EncDLL.h; sourceTree = "<group>"; };
+		BA68B6740C87C40400238747 /* Example.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; path = Example.cpp; sourceTree = "<group>"; };
+		BA68B6750C87C40400238747 /* Example_vc6.dsp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = Example_vc6.dsp; sourceTree = "<group>"; };
+		BA68B6760C87C40400238747 /* Example_vc6.dsw */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = Example_vc6.dsw; sourceTree = "<group>"; };
+		BA68B6770C87C40400238747 /* LameDll_vc6.dsp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = LameDll_vc6.dsp; sourceTree = "<group>"; };
+		BA68B6780C87C40400238747 /* LameDll_vc7.vcproj */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xml; path = LameDll_vc7.vcproj; sourceTree = "<group>"; };
+		BA68B6790C87C40400238747 /* LameDLLInterface.htm */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.html; path = LameDLLInterface.htm; sourceTree = "<group>"; };
+		BA68B67A0C87C40400238747 /* Makefile.am */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = Makefile.am; sourceTree = "<group>"; };
+		BA68B67B0C87C40400238747 /* Makefile.in */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = Makefile.in; sourceTree = "<group>"; };
+		BA68B67C0C87C40400238747 /* Makefile.mingw32 */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = Makefile.mingw32; sourceTree = "<group>"; };
+		BA68B67D0C87C40400238747 /* MP3export.pas */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.pascal; path = MP3export.pas; sourceTree = "<group>"; };
+		BA68B67E0C87C40400238747 /* README */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		BA68B6810C87C40400238747 /* basic.html */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.html; path = basic.html; sourceTree = "<group>"; };
+		BA68B6820C87C40400238747 /* contributors.html */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.html; path = contributors.html; sourceTree = "<group>"; };
+		BA68B6830C87C40400238747 /* examples.html */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.html; path = examples.html; sourceTree = "<group>"; };
+		BA68B6840C87C40400238747 /* history.html */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.html; path = history.html; sourceTree = "<group>"; };
+		BA68B6850C87C40400238747 /* id3.html */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.html; path = id3.html; sourceTree = "<group>"; };
+		BA68B6860C87C40400238747 /* index.html */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		BA68B6870C87C40400238747 /* lame.css */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = lame.css; sourceTree = "<group>"; };
+		BA68B6880C87C40400238747 /* Makefile.am */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = Makefile.am; sourceTree = "<group>"; };
+		BA68B6890C87C40400238747 /* Makefile.in */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = Makefile.in; sourceTree = "<group>"; };
+		BA68B68A0C87C40400238747 /* modes.html */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.html; path = modes.html; sourceTree = "<group>"; };
+		BA68B68B0C87C40400238747 /* node6.html */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.html; path = node6.html; sourceTree = "<group>"; };
+		BA68B68C0C87C40400238747 /* presets.html */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.html; path = presets.html; sourceTree = "<group>"; };
+		BA68B68D0C87C40400238747 /* switchs.html */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.html; path = switchs.html; sourceTree = "<group>"; };
+		BA68B68E0C87C40400238747 /* Makefile.am */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = Makefile.am; sourceTree = "<group>"; };
+		BA68B68F0C87C40400238747 /* Makefile.in */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = Makefile.in; sourceTree = "<group>"; };
+		BA68B6910C87C40400238747 /* lame.1 */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.man; path = lame.1; sourceTree = "<group>"; };
+		BA68B6920C87C40400238747 /* Makefile.am */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = Makefile.am; sourceTree = "<group>"; };
+		BA68B6930C87C40400238747 /* Makefile.in */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = Makefile.in; sourceTree = "<group>"; };
+		BA68B6950C87C40400238747 /* aboutprp.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; path = aboutprp.cpp; sourceTree = "<group>"; };
+		BA68B6960C87C40400238747 /* aboutprp.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = aboutprp.h; sourceTree = "<group>"; };
+		BA68B6970C87C40400238747 /* dshow.dsp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = dshow.dsp; sourceTree = "<group>"; };
+		BA68B6980C87C40400238747 /* dshow.dsw */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = dshow.dsw; sourceTree = "<group>"; };
+		BA68B6990C87C40400238747 /* elogo.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = elogo.ico; sourceTree = "<group>"; };
+		BA68B69A0C87C40400238747 /* Encoder.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; path = Encoder.cpp; sourceTree = "<group>"; };
+		BA68B69B0C87C40400238747 /* Encoder.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = Encoder.h; sourceTree = "<group>"; };
+		BA68B69C0C87C40400238747 /* iaudioprops.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = iaudioprops.h; sourceTree = "<group>"; };
+		BA68B69D0C87C40400238747 /* Makefile.am */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = Makefile.am; sourceTree = "<group>"; };
+		BA68B69E0C87C40400238747 /* Makefile.in */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = Makefile.in; sourceTree = "<group>"; };
+		BA68B69F0C87C40400238747 /* Mpegac.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; path = Mpegac.cpp; sourceTree = "<group>"; };
+		BA68B6A00C87C40400238747 /* Mpegac.def */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = Mpegac.def; sourceTree = "<group>"; };
+		BA68B6A10C87C40400238747 /* Mpegac.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = Mpegac.h; sourceTree = "<group>"; };
+		BA68B6A20C87C40400238747 /* Property.rc */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = Property.rc; sourceTree = "<group>"; };
+		BA68B6A30C87C40400238747 /* PropPage.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; path = PropPage.cpp; sourceTree = "<group>"; };
+		BA68B6A40C87C40400238747 /* PropPage.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = PropPage.h; sourceTree = "<group>"; };
+		BA68B6A50C87C40400238747 /* PropPage_adv.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; path = PropPage_adv.cpp; sourceTree = "<group>"; };
+		BA68B6A60C87C40400238747 /* PropPage_adv.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = PropPage_adv.h; sourceTree = "<group>"; };
+		BA68B6A70C87C40400238747 /* README */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		BA68B6A80C87C40400238747 /* REG.CPP */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; path = REG.CPP; sourceTree = "<group>"; };
+		BA68B6A90C87C40400238747 /* REG.H */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.h; path = REG.H; sourceTree = "<group>"; };
+		BA68B6AA0C87C40400238747 /* resource.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = resource.h; sourceTree = "<group>"; };
+		BA68B6AB0C87C40400238747 /* UIDS.H */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.h; path = UIDS.H; sourceTree = "<group>"; };
+		BA68B6AD0C87C40400238747 /* amiga_mpega.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = amiga_mpega.c; sourceTree = "<group>"; };
+		BA68B6AE0C87C40400238747 /* brhist.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = brhist.c; sourceTree = "<group>"; };
+		BA68B6AF0C87C40400238747 /* brhist.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = brhist.h; sourceTree = "<group>"; };
+		BA68B6B00C87C40400238747 /* console.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = console.c; sourceTree = "<group>"; };
+		BA68B6B10C87C40400238747 /* console.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = console.h; sourceTree = "<group>"; };
+		BA68B6B20C87C40400238747 /* depcomp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.script.sh; path = depcomp; sourceTree = "<group>"; };
+		BA68B6B30C87C40400238747 /* get_audio.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = get_audio.c; sourceTree = "<group>"; };
+		BA68B6B40C87C40400238747 /* get_audio.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = get_audio.h; sourceTree = "<group>"; };
+		BA68B6B50C87C40500238747 /* gpkplotting.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = gpkplotting.c; sourceTree = "<group>"; };
+		BA68B6B60C87C40500238747 /* gpkplotting.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = gpkplotting.h; sourceTree = "<group>"; };
+		BA68B6B70C87C40500238747 /* gtkanal.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = gtkanal.c; sourceTree = "<group>"; };
+		BA68B6B80C87C40500238747 /* gtkanal.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = gtkanal.h; sourceTree = "<group>"; };
+		BA68B6B90C87C40500238747 /* lame_vc6.dsp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = lame_vc6.dsp; sourceTree = "<group>"; };
+		BA68B6BA0C87C40500238747 /* lame_vc7.vcproj */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xml; path = lame_vc7.vcproj; sourceTree = "<group>"; };
+		BA68B6BB0C87C40500238747 /* lametime.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = lametime.c; sourceTree = "<group>"; };
+		BA68B6BC0C87C40500238747 /* lametime.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = lametime.h; sourceTree = "<group>"; };
+		BA68B6BD0C87C40500238747 /* main.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		BA68B6BE0C87C40500238747 /* main.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = main.h; sourceTree = "<group>"; };
+		BA68B6BF0C87C40500238747 /* Makefile.am */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = Makefile.am; sourceTree = "<group>"; };
+		BA68B6C00C87C40500238747 /* Makefile.in */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = Makefile.in; sourceTree = "<group>"; };
+		BA68B6C10C87C40500238747 /* mp3rtp.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = mp3rtp.c; sourceTree = "<group>"; };
+		BA68B6C20C87C40500238747 /* mp3x.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = mp3x.c; sourceTree = "<group>"; };
+		BA68B6C30C87C40500238747 /* mp3x_vc6.dsp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = mp3x_vc6.dsp; sourceTree = "<group>"; };
+		BA68B6C40C87C40500238747 /* mp3x_vc7.vcproj */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xml; path = mp3x_vc7.vcproj; sourceTree = "<group>"; };
+		BA68B6C50C87C40500238747 /* parse.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = parse.c; sourceTree = "<group>"; };
+		BA68B6C60C87C40500238747 /* parse.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = parse.h; sourceTree = "<group>"; };
+		BA68B6C70C87C40500238747 /* portableio.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = portableio.c; sourceTree = "<group>"; };
+		BA68B6C80C87C40500238747 /* portableio.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = portableio.h; sourceTree = "<group>"; };
+		BA68B6C90C87C40500238747 /* rtp.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = rtp.c; sourceTree = "<group>"; };
+		BA68B6CA0C87C40500238747 /* rtp.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = rtp.h; sourceTree = "<group>"; };
+		BA68B6CB0C87C40500238747 /* timestatus.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = timestatus.c; sourceTree = "<group>"; };
+		BA68B6CC0C87C40500238747 /* timestatus.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = timestatus.h; sourceTree = "<group>"; };
+		BA68B6CD0C87C40500238747 /* HACKING */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = HACKING; sourceTree = "<group>"; };
+		BA68B6CF0C87C40500238747 /* lame.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = lame.h; sourceTree = "<group>"; };
+		BA68B6D00C87C40500238747 /* Makefile.am */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = Makefile.am; sourceTree = "<group>"; };
+		BA68B6D10C87C40500238747 /* Makefile.in */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = Makefile.in; sourceTree = "<group>"; };
+		BA68B6D20C87C40500238747 /* INSTALL */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = INSTALL; sourceTree = "<group>"; };
+		BA68B6D30C87C40500238747 /* install-sh */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.script.sh; path = "install-sh"; sourceTree = "<group>"; };
+		BA68B6D40C87C40500238747 /* INSTALL.configure */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = INSTALL.configure; sourceTree = "<group>"; };
+		BA68B6D50C87C40500238747 /* lame.bat */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = lame.bat; sourceTree = "<group>"; };
+		BA68B6D60C87C40500238747 /* lame.spec */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = lame.spec; sourceTree = "<group>"; };
+		BA68B6D70C87C40500238747 /* lame.spec.in */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = lame.spec.in; sourceTree = "<group>"; };
+		BA68B6D80C87C40500238747 /* lame_projects_vc6.dsp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = lame_projects_vc6.dsp; sourceTree = "<group>"; };
+		BA68B6D90C87C40500238747 /* lame_vc6.dsw */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = lame_vc6.dsw; sourceTree = "<group>"; };
+		BA68B6DA0C87C40500238747 /* lame_vc7.sln */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = lame_vc7.sln; sourceTree = "<group>"; };
+		BA68B6DC0C87C40500238747 /* bitstream.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = bitstream.c; sourceTree = "<group>"; };
+		BA68B6DD0C87C40500238747 /* bitstream.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = bitstream.h; sourceTree = "<group>"; };
+		BA68B6DE0C87C40500238747 /* depcomp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.script.sh; path = depcomp; sourceTree = "<group>"; };
+		BA68B6DF0C87C40500238747 /* encoder.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = encoder.c; sourceTree = "<group>"; };
+		BA68B6E00C87C40500238747 /* encoder.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = encoder.h; sourceTree = "<group>"; };
+		BA68B6E10C87C40500238747 /* fft.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = fft.c; sourceTree = "<group>"; };
+		BA68B6E20C87C40500238747 /* fft.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = fft.h; sourceTree = "<group>"; };
+		BA68B6E30C87C40500238747 /* gain_analysis.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = gain_analysis.c; sourceTree = "<group>"; };
+		BA68B6E40C87C40500238747 /* gain_analysis.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = gain_analysis.h; sourceTree = "<group>"; };
+		BA68B6E60C87C40500238747 /* choose_table.nas */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = choose_table.nas; sourceTree = "<group>"; };
+		BA68B6E70C87C40500238747 /* cpu_feat.nas */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = cpu_feat.nas; sourceTree = "<group>"; };
+		BA68B6E80C87C40500238747 /* fft.nas */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = fft.nas; sourceTree = "<group>"; };
+		BA68B6E90C87C40500238747 /* fft3dn.nas */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = fft3dn.nas; sourceTree = "<group>"; };
+		BA68B6EA0C87C40500238747 /* fftfpu.nas */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = fftfpu.nas; sourceTree = "<group>"; };
+		BA68B6EB0C87C40500238747 /* fftsse.nas */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = fftsse.nas; sourceTree = "<group>"; };
+		BA68B6EC0C87C40500238747 /* ffttbl.nas */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = ffttbl.nas; sourceTree = "<group>"; };
+		BA68B6ED0C87C40500238747 /* Makefile.am */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = Makefile.am; sourceTree = "<group>"; };
+		BA68B6EE0C87C40500238747 /* Makefile.in */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = Makefile.in; sourceTree = "<group>"; };
+		BA68B6EF0C87C40500238747 /* nasm.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = nasm.h; sourceTree = "<group>"; };
+		BA68B6F00C87C40500238747 /* id3tag.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = id3tag.c; sourceTree = "<group>"; };
+		BA68B6F10C87C40500238747 /* id3tag.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = id3tag.h; sourceTree = "<group>"; };
+		BA68B6F20C87C40500238747 /* l3side.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = l3side.h; sourceTree = "<group>"; };
+		BA68B6F30C87C40500238747 /* lame-analysis.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = "lame-analysis.h"; sourceTree = "<group>"; };
+		BA68B6F40C87C40500238747 /* lame.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = lame.c; sourceTree = "<group>"; };
+		BA68B6F50C87C40500238747 /* lame_global_flags.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = lame_global_flags.h; sourceTree = "<group>"; };
+		BA68B6F60C87C40500238747 /* libmp3lame_vc6.dsp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = libmp3lame_vc6.dsp; sourceTree = "<group>"; };
+		BA68B6F70C87C40500238747 /* libmp3lame_vc7.vcproj */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xml; path = libmp3lame_vc7.vcproj; sourceTree = "<group>"; };
+		BA68B6F80C87C40500238747 /* machine.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = machine.h; sourceTree = "<group>"; };
+		BA68B6F90C87C40500238747 /* Makefile.am */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = Makefile.am; sourceTree = "<group>"; };
+		BA68B6FA0C87C40500238747 /* Makefile.in */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = Makefile.in; sourceTree = "<group>"; };
+		BA68B6FB0C87C40500238747 /* mpglib_interface.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = mpglib_interface.c; sourceTree = "<group>"; };
+		BA68B6FC0C87C40500238747 /* newmdct.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = newmdct.c; sourceTree = "<group>"; };
+		BA68B6FD0C87C40500238747 /* newmdct.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = newmdct.h; sourceTree = "<group>"; };
+		BA68B6FE0C87C40500238747 /* presets.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = presets.c; sourceTree = "<group>"; };
+		BA68B6FF0C87C40500238747 /* psymodel.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = psymodel.c; sourceTree = "<group>"; };
+		BA68B7000C87C40500238747 /* psymodel.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = psymodel.h; sourceTree = "<group>"; };
+		BA68B7010C87C40500238747 /* quantize.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = quantize.c; sourceTree = "<group>"; };
+		BA68B7020C87C40500238747 /* quantize.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = quantize.h; sourceTree = "<group>"; };
+		BA68B7030C87C40500238747 /* quantize_pvt.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = quantize_pvt.c; sourceTree = "<group>"; };
+		BA68B7040C87C40500238747 /* quantize_pvt.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = quantize_pvt.h; sourceTree = "<group>"; };
+		BA68B7050C87C40500238747 /* reservoir.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = reservoir.c; sourceTree = "<group>"; };
+		BA68B7060C87C40500238747 /* reservoir.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = reservoir.h; sourceTree = "<group>"; };
+		BA68B7070C87C40500238747 /* set_get.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = set_get.c; sourceTree = "<group>"; };
+		BA68B7080C87C40500238747 /* set_get.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = set_get.h; sourceTree = "<group>"; };
+		BA68B7090C87C40500238747 /* tables.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = tables.c; sourceTree = "<group>"; };
+		BA68B70A0C87C40500238747 /* tables.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = tables.h; sourceTree = "<group>"; };
+		BA68B70B0C87C40500238747 /* takehiro.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = takehiro.c; sourceTree = "<group>"; };
+		BA68B70C0C87C40500238747 /* util.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = util.c; sourceTree = "<group>"; };
+		BA68B70D0C87C40500238747 /* util.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = util.h; sourceTree = "<group>"; };
+		BA68B70E0C87C40500238747 /* vbrquantize.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = vbrquantize.c; sourceTree = "<group>"; };
+		BA68B70F0C87C40500238747 /* vbrquantize.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = vbrquantize.h; sourceTree = "<group>"; };
+		BA68B7100C87C40500238747 /* VbrTag.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = VbrTag.c; sourceTree = "<group>"; };
+		BA68B7110C87C40500238747 /* VbrTag.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = VbrTag.h; sourceTree = "<group>"; };
+		BA68B7120C87C40500238747 /* version.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = version.c; sourceTree = "<group>"; };
+		BA68B7130C87C40500238747 /* version.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = version.h; sourceTree = "<group>"; };
+		BA68B7140C87C40500238747 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		BA68B7150C87C40500238747 /* ltconfig */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.script.sh; path = ltconfig; sourceTree = "<group>"; };
+		BA68B7160C87C40500238747 /* ltmain.sh */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.script.sh; path = ltmain.sh; sourceTree = "<group>"; };
+		BA68B7180C87C40500238747 /* LAME.mcp */ = {isa = PBXFileReference; lastKnownFileType = file; path = LAME.mcp; sourceTree = "<group>"; };
+		BA68B7190C87C40500238747 /* LAME_Carbon_Debug.pch */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = LAME_Carbon_Debug.pch; sourceTree = "<group>"; };
+		BA68B71A0C87C40500238747 /* LAME_Carbon_Final.pch */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = LAME_Carbon_Final.pch; sourceTree = "<group>"; };
+		BA68B71B0C87C40500238747 /* LAME_Classic_Debug.pch */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = LAME_Classic_Debug.pch; sourceTree = "<group>"; };
+		BA68B71C0C87C40500238747 /* LAME_Classic_Final.pch */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = LAME_Classic_Final.pch; sourceTree = "<group>"; };
+		BA68B71D0C87C40500238747 /* MacDLLMain.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = MacDLLMain.c; sourceTree = "<group>"; };
+		BA68B71E0C87C40500238747 /* Makefile.am */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = Makefile.am; sourceTree = "<group>"; };
+		BA68B71F0C87C40500238747 /* Makefile.in */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = Makefile.in; sourceTree = "<group>"; };
+		BA68B7200C87C40500238747 /* Precompile_Common.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = Precompile_Common.h; sourceTree = "<group>"; };
+		BA68B7210C87C40500238747 /* Makefile.am */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = Makefile.am; sourceTree = "<group>"; };
+		BA68B7220C87C40500238747 /* Makefile.am.global */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = Makefile.am.global; sourceTree = "<group>"; };
+		BA68B7230C87C40500238747 /* Makefile.in */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = Makefile.in; sourceTree = "<group>"; };
+		BA68B7240C87C40500238747 /* Makefile.MSVC */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = Makefile.MSVC; sourceTree = "<group>"; };
+		BA68B7250C87C40500238747 /* Makefile.unix */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = Makefile.unix; sourceTree = "<group>"; };
+		BA68B7270C87C40500238747 /* abx.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = abx.c; sourceTree = "<group>"; };
+		BA68B7280C87C40500238747 /* ath.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = ath.c; sourceTree = "<group>"; };
+		BA68B7290C87C40500238747 /* auenc */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.script.sh; path = auenc; sourceTree = "<group>"; };
+		BA68B72A0C87C40500238747 /* depcomp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.script.sh; path = depcomp; sourceTree = "<group>"; };
+		BA68B72B0C87C40500238747 /* Lame.vbs */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = Lame.vbs; sourceTree = "<group>"; };
+		BA68B72C0C87C40500238747 /* lame4dos.bat */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = lame4dos.bat; sourceTree = "<group>"; };
+		BA68B72D0C87C40500238747 /* lameGUI.html */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.html; path = lameGUI.html; sourceTree = "<group>"; };
+		BA68B72E0C87C40500238747 /* lameid3.pl */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.script.perl; path = lameid3.pl; sourceTree = "<group>"; };
+		BA68B72F0C87C40500238747 /* Makefile.am */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = Makefile.am; sourceTree = "<group>"; };
+		BA68B7300C87C40500238747 /* Makefile.in */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = Makefile.in; sourceTree = "<group>"; };
+		BA68B7310C87C40500238747 /* mlame */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.script.sh; path = mlame; sourceTree = "<group>"; };
+		BA68B7320C87C40500238747 /* mlame_corr.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = mlame_corr.c; sourceTree = "<group>"; };
+		BA68B7330C87C40500238747 /* mugeco.sh */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.script.sh; path = mugeco.sh; sourceTree = "<group>"; };
+		BA68B7340C87C40500238747 /* scalartest.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = scalartest.c; sourceTree = "<group>"; };
+		BA68B7350C87C40500238747 /* missing */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.script.sh; path = missing; sourceTree = "<group>"; };
+		BA68B7360C87C40500238747 /* mkinstalldirs */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.script.sh; path = mkinstalldirs; sourceTree = "<group>"; };
+		BA68B7380C87C40500238747 /* common.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = common.c; sourceTree = "<group>"; };
+		BA68B7390C87C40500238747 /* common.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = common.h; sourceTree = "<group>"; };
+		BA68B73A0C87C40500238747 /* dct64_i386.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = dct64_i386.c; sourceTree = "<group>"; };
+		BA68B73B0C87C40500238747 /* dct64_i386.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = dct64_i386.h; sourceTree = "<group>"; };
+		BA68B73C0C87C40500238747 /* decode_i386.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = decode_i386.c; sourceTree = "<group>"; };
+		BA68B73D0C87C40500238747 /* decode_i386.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = decode_i386.h; sourceTree = "<group>"; };
+		BA68B73E0C87C40500238747 /* depcomp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.script.sh; path = depcomp; sourceTree = "<group>"; };
+		BA68B73F0C87C40500238747 /* huffman.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = huffman.h; sourceTree = "<group>"; };
+		BA68B7400C87C40500238747 /* interface.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = interface.c; sourceTree = "<group>"; };
+		BA68B7410C87C40500238747 /* interface.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = interface.h; sourceTree = "<group>"; };
+		BA68B7420C87C40500238747 /* l2tables.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = l2tables.h; sourceTree = "<group>"; };
+		BA68B7430C87C40500238747 /* layer1.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = layer1.c; sourceTree = "<group>"; };
+		BA68B7440C87C40500238747 /* layer1.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = layer1.h; sourceTree = "<group>"; };
+		BA68B7450C87C40500238747 /* layer2.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = layer2.c; sourceTree = "<group>"; };
+		BA68B7460C87C40500238747 /* layer2.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = layer2.h; sourceTree = "<group>"; };
+		BA68B7470C87C40500238747 /* layer3.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = layer3.c; sourceTree = "<group>"; };
+		BA68B7480C87C40500238747 /* layer3.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = layer3.h; sourceTree = "<group>"; };
+		BA68B7490C87C40500238747 /* Makefile.am */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = Makefile.am; sourceTree = "<group>"; };
+		BA68B74A0C87C40500238747 /* Makefile.in */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = Makefile.in; sourceTree = "<group>"; };
+		BA68B74B0C87C40500238747 /* mpg123.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = mpg123.h; sourceTree = "<group>"; };
+		BA68B74C0C87C40500238747 /* mpglib.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = mpglib.h; sourceTree = "<group>"; };
+		BA68B74D0C87C40500238747 /* mpglib_vc6.dsp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = mpglib_vc6.dsp; sourceTree = "<group>"; };
+		BA68B74E0C87C40500238747 /* mpglib_vc7.vcproj */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xml; path = mpglib_vc7.vcproj; sourceTree = "<group>"; };
+		BA68B74F0C87C40500238747 /* README */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		BA68B7500C87C40500238747 /* tabinit.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = tabinit.c; sourceTree = "<group>"; };
+		BA68B7510C87C40500238747 /* tabinit.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = tabinit.h; sourceTree = "<group>"; };
+		BA68B7520C87C40500238747 /* TODO */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = TODO; sourceTree = "<group>"; };
+		BA68B7530C87C40500238747 /* README */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		BA68B7540C87C40500238747 /* README.WINGTK */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = README.WINGTK; sourceTree = "<group>"; };
+		BA68B7550C87C40500238747 /* STYLEGUIDE */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = STYLEGUIDE; sourceTree = "<group>"; };
+		BA68B7560C87C40500238747 /* testcase.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = testcase.mp3; sourceTree = "<group>"; };
+		BA68B7570C87C40500238747 /* testcase.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = testcase.wav; sourceTree = "<group>"; };
+		BA68B7580C87C40500238747 /* TODO */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = TODO; sourceTree = "<group>"; };
+		BA68B7590C87C40500238747 /* USAGE */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = USAGE; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		BA68B2850C865D9000238747 = {
+			isa = PBXGroup;
+			children = (
+				BA68B6220C87C40400238747 /* lame-3.97 */,
+			);
+			sourceTree = "<group>";
+		};
+		BA68B6220C87C40400238747 /* lame-3.97 */ = {
+			isa = PBXGroup;
+			children = (
+				BA68B6230C87C40400238747 /* acinclude.m4 */,
+				BA68B6240C87C40400238747 /* aclocal.m4 */,
+				BA68B6250C87C40400238747 /* ACM */,
+				BA68B6590C87C40400238747 /* API */,
+				BA68B65A0C87C40400238747 /* ChangeLog */,
+				BA68B65B0C87C40400238747 /* config.guess */,
+				BA68B65C0C87C40400238747 /* config.h.in */,
+				BA68B65D0C87C40400238747 /* config.sub */,
+				BA68B65E0C87C40400238747 /* configMS.h */,
+				BA68B65F0C87C40400238747 /* configure */,
+				BA68B6600C87C40400238747 /* configure.in */,
+				BA68B6610C87C40400238747 /* COPYING */,
+				BA68B6620C87C40400238747 /* debian */,
+				BA68B66E0C87C40400238747 /* DEFINES */,
+				BA68B66F0C87C40400238747 /* depcomp */,
+				BA68B6700C87C40400238747 /* Dll */,
+				BA68B67F0C87C40400238747 /* doc */,
+				BA68B6940C87C40400238747 /* dshow */,
+				BA68B6AC0C87C40400238747 /* frontend */,
+				BA68B6CD0C87C40500238747 /* HACKING */,
+				BA68B6CE0C87C40500238747 /* include */,
+				BA68B6D20C87C40500238747 /* INSTALL */,
+				BA68B6D30C87C40500238747 /* install-sh */,
+				BA68B6D40C87C40500238747 /* INSTALL.configure */,
+				BA68B6D50C87C40500238747 /* lame.bat */,
+				BA68B6D60C87C40500238747 /* lame.spec */,
+				BA68B6D70C87C40500238747 /* lame.spec.in */,
+				BA68B6D80C87C40500238747 /* lame_projects_vc6.dsp */,
+				BA68B6D90C87C40500238747 /* lame_vc6.dsw */,
+				BA68B6DA0C87C40500238747 /* lame_vc7.sln */,
+				BA68B6DB0C87C40500238747 /* libmp3lame */,
+				BA68B7140C87C40500238747 /* LICENSE */,
+				BA68B7150C87C40500238747 /* ltconfig */,
+				BA68B7160C87C40500238747 /* ltmain.sh */,
+				BA68B7170C87C40500238747 /* mac */,
+				BA68B7210C87C40500238747 /* Makefile.am */,
+				BA68B7220C87C40500238747 /* Makefile.am.global */,
+				BA68B7230C87C40500238747 /* Makefile.in */,
+				BA68B7240C87C40500238747 /* Makefile.MSVC */,
+				BA68B7250C87C40500238747 /* Makefile.unix */,
+				BA68B7260C87C40500238747 /* misc */,
+				BA68B7350C87C40500238747 /* missing */,
+				BA68B7360C87C40500238747 /* mkinstalldirs */,
+				BA68B7370C87C40500238747 /* mpglib */,
+				BA68B7530C87C40500238747 /* README */,
+				BA68B7540C87C40500238747 /* README.WINGTK */,
+				BA68B7550C87C40500238747 /* STYLEGUIDE */,
+				BA68B7560C87C40500238747 /* testcase.mp3 */,
+				BA68B7570C87C40500238747 /* testcase.wav */,
+				BA68B7580C87C40500238747 /* TODO */,
+				BA68B7590C87C40500238747 /* USAGE */,
+			);
+			path = "lame-3.97";
+			sourceTree = "<group>";
+		};
+		BA68B6250C87C40400238747 /* ACM */ = {
+			isa = PBXGroup;
+			children = (
+				BA68B6260C87C40400238747 /* ACM.cpp */,
+				BA68B6270C87C40400238747 /* ACM.h */,
+				BA68B6280C87C40400238747 /* acm.rc */,
+				BA68B6290C87C40400238747 /* ACMStream.cpp */,
+				BA68B62A0C87C40400238747 /* ACMStream.h */,
+				BA68B62B0C87C40400238747 /* ADbg */,
+				BA68B6320C87C40400238747 /* adebug.h */,
+				BA68B6330C87C40400238747 /* AEncodeProperties.cpp */,
+				BA68B6340C87C40400238747 /* AEncodeProperties.h */,
+				BA68B6350C87C40400238747 /* ddk */,
+				BA68B6390C87C40400238747 /* DecodeStream.cpp */,
+				BA68B63A0C87C40400238747 /* DecodeStream.h */,
+				BA68B63B0C87C40400238747 /* lame.ico */,
+				BA68B63C0C87C40400238747 /* lame_acm.xml */,
+				BA68B63D0C87C40400238747 /* lameACM.def */,
+				BA68B63E0C87C40400238747 /* LameACM.inf */,
+				BA68B63F0C87C40400238747 /* lameACM_vc6.dsp */,
+				BA68B6400C87C40400238747 /* lameACM_vc7.vcproj */,
+				BA68B6410C87C40400238747 /* main.cpp */,
+				BA68B6420C87C40400238747 /* Makefile.am */,
+				BA68B6430C87C40400238747 /* Makefile.in */,
+				BA68B6440C87C40400238747 /* readme.txt */,
+				BA68B6450C87C40400238747 /* resource.h */,
+				BA68B6460C87C40400238747 /* tinyxml */,
+				BA68B6580C87C40400238747 /* TODO */,
+			);
+			path = ACM;
+			sourceTree = "<group>";
+		};
+		BA68B62B0C87C40400238747 /* ADbg */ = {
+			isa = PBXGroup;
+			children = (
+				BA68B62C0C87C40400238747 /* ADbg.cpp */,
+				BA68B62D0C87C40400238747 /* ADbg.dsp */,
+				BA68B62E0C87C40400238747 /* ADbg.h */,
+				BA68B62F0C87C40400238747 /* ADbg_vc7.vcproj */,
+				BA68B6300C87C40400238747 /* Makefile.am */,
+				BA68B6310C87C40400238747 /* Makefile.in */,
+			);
+			path = ADbg;
+			sourceTree = "<group>";
+		};
+		BA68B6350C87C40400238747 /* ddk */ = {
+			isa = PBXGroup;
+			children = (
+				BA68B6360C87C40400238747 /* Makefile.am */,
+				BA68B6370C87C40400238747 /* Makefile.in */,
+				BA68B6380C87C40400238747 /* msacmdrv.h */,
+			);
+			path = ddk;
+			sourceTree = "<group>";
+		};
+		BA68B6460C87C40400238747 /* tinyxml */ = {
+			isa = PBXGroup;
+			children = (
+				BA68B6470C87C40400238747 /* changes.txt */,
+				BA68B6480C87C40400238747 /* dox */,
+				BA68B6490C87C40400238747 /* makedistlinux */,
+				BA68B64A0C87C40400238747 /* makedistwin.bat */,
+				BA68B64B0C87C40400238747 /* Makefile.am */,
+				BA68B64C0C87C40400238747 /* Makefile.in */,
+				BA68B64D0C87C40400238747 /* Makefile.tinyxml */,
+				BA68B64E0C87C40400238747 /* readme.txt */,
+				BA68B64F0C87C40400238747 /* test.dsp */,
+				BA68B6500C87C40400238747 /* test.dsw */,
+				BA68B6510C87C40400238747 /* tinyxml.cpp */,
+				BA68B6520C87C40400238747 /* tinyxml.dsp */,
+				BA68B6530C87C40400238747 /* tinyxml.h */,
+				BA68B6540C87C40400238747 /* tinyxml_vc7.vcproj */,
+				BA68B6550C87C40400238747 /* tinyxmlerror.cpp */,
+				BA68B6560C87C40400238747 /* tinyxmlparser.cpp */,
+				BA68B6570C87C40400238747 /* xmltest.cpp */,
+			);
+			path = tinyxml;
+			sourceTree = "<group>";
+		};
+		BA68B6620C87C40400238747 /* debian */ = {
+			isa = PBXGroup;
+			children = (
+				BA68B6630C87C40400238747 /* changelog */,
+				BA68B6640C87C40400238747 /* control */,
+				BA68B6650C87C40400238747 /* copyright */,
+				BA68B6660C87C40400238747 /* lame.docs */,
+				BA68B6670C87C40400238747 /* lame.files */,
+				BA68B6680C87C40400238747 /* libmp3lame0-dev.docs */,
+				BA68B6690C87C40400238747 /* libmp3lame0-dev.files */,
+				BA68B66A0C87C40400238747 /* libmp3lame0.files */,
+				BA68B66B0C87C40400238747 /* Makefile.am */,
+				BA68B66C0C87C40400238747 /* Makefile.in */,
+				BA68B66D0C87C40400238747 /* rules */,
+			);
+			path = debian;
+			sourceTree = "<group>";
+		};
+		BA68B6700C87C40400238747 /* Dll */ = {
+			isa = PBXGroup;
+			children = (
+				BA68B6710C87C40400238747 /* BladeMP3EncDLL.c */,
+				BA68B6720C87C40400238747 /* BladeMP3EncDLL.def */,
+				BA68B6730C87C40400238747 /* BladeMP3EncDLL.h */,
+				BA68B6740C87C40400238747 /* Example.cpp */,
+				BA68B6750C87C40400238747 /* Example_vc6.dsp */,
+				BA68B6760C87C40400238747 /* Example_vc6.dsw */,
+				BA68B6770C87C40400238747 /* LameDll_vc6.dsp */,
+				BA68B6780C87C40400238747 /* LameDll_vc7.vcproj */,
+				BA68B6790C87C40400238747 /* LameDLLInterface.htm */,
+				BA68B67A0C87C40400238747 /* Makefile.am */,
+				BA68B67B0C87C40400238747 /* Makefile.in */,
+				BA68B67C0C87C40400238747 /* Makefile.mingw32 */,
+				BA68B67D0C87C40400238747 /* MP3export.pas */,
+				BA68B67E0C87C40400238747 /* README */,
+			);
+			path = Dll;
+			sourceTree = "<group>";
+		};
+		BA68B67F0C87C40400238747 /* doc */ = {
+			isa = PBXGroup;
+			children = (
+				BA68B6800C87C40400238747 /* html */,
+				BA68B68E0C87C40400238747 /* Makefile.am */,
+				BA68B68F0C87C40400238747 /* Makefile.in */,
+				BA68B6900C87C40400238747 /* man */,
+			);
+			path = doc;
+			sourceTree = "<group>";
+		};
+		BA68B6800C87C40400238747 /* html */ = {
+			isa = PBXGroup;
+			children = (
+				BA68B6810C87C40400238747 /* basic.html */,
+				BA68B6820C87C40400238747 /* contributors.html */,
+				BA68B6830C87C40400238747 /* examples.html */,
+				BA68B6840C87C40400238747 /* history.html */,
+				BA68B6850C87C40400238747 /* id3.html */,
+				BA68B6860C87C40400238747 /* index.html */,
+				BA68B6870C87C40400238747 /* lame.css */,
+				BA68B6880C87C40400238747 /* Makefile.am */,
+				BA68B6890C87C40400238747 /* Makefile.in */,
+				BA68B68A0C87C40400238747 /* modes.html */,
+				BA68B68B0C87C40400238747 /* node6.html */,
+				BA68B68C0C87C40400238747 /* presets.html */,
+				BA68B68D0C87C40400238747 /* switchs.html */,
+			);
+			path = html;
+			sourceTree = "<group>";
+		};
+		BA68B6900C87C40400238747 /* man */ = {
+			isa = PBXGroup;
+			children = (
+				BA68B6910C87C40400238747 /* lame.1 */,
+				BA68B6920C87C40400238747 /* Makefile.am */,
+				BA68B6930C87C40400238747 /* Makefile.in */,
+			);
+			path = man;
+			sourceTree = "<group>";
+		};
+		BA68B6940C87C40400238747 /* dshow */ = {
+			isa = PBXGroup;
+			children = (
+				BA68B6950C87C40400238747 /* aboutprp.cpp */,
+				BA68B6960C87C40400238747 /* aboutprp.h */,
+				BA68B6970C87C40400238747 /* dshow.dsp */,
+				BA68B6980C87C40400238747 /* dshow.dsw */,
+				BA68B6990C87C40400238747 /* elogo.ico */,
+				BA68B69A0C87C40400238747 /* Encoder.cpp */,
+				BA68B69B0C87C40400238747 /* Encoder.h */,
+				BA68B69C0C87C40400238747 /* iaudioprops.h */,
+				BA68B69D0C87C40400238747 /* Makefile.am */,
+				BA68B69E0C87C40400238747 /* Makefile.in */,
+				BA68B69F0C87C40400238747 /* Mpegac.cpp */,
+				BA68B6A00C87C40400238747 /* Mpegac.def */,
+				BA68B6A10C87C40400238747 /* Mpegac.h */,
+				BA68B6A20C87C40400238747 /* Property.rc */,
+				BA68B6A30C87C40400238747 /* PropPage.cpp */,
+				BA68B6A40C87C40400238747 /* PropPage.h */,
+				BA68B6A50C87C40400238747 /* PropPage_adv.cpp */,
+				BA68B6A60C87C40400238747 /* PropPage_adv.h */,
+				BA68B6A70C87C40400238747 /* README */,
+				BA68B6A80C87C40400238747 /* REG.CPP */,
+				BA68B6A90C87C40400238747 /* REG.H */,
+				BA68B6AA0C87C40400238747 /* resource.h */,
+				BA68B6AB0C87C40400238747 /* UIDS.H */,
+			);
+			path = dshow;
+			sourceTree = "<group>";
+		};
+		BA68B6AC0C87C40400238747 /* frontend */ = {
+			isa = PBXGroup;
+			children = (
+				BA68B6AD0C87C40400238747 /* amiga_mpega.c */,
+				BA68B6AE0C87C40400238747 /* brhist.c */,
+				BA68B6AF0C87C40400238747 /* brhist.h */,
+				BA68B6B00C87C40400238747 /* console.c */,
+				BA68B6B10C87C40400238747 /* console.h */,
+				BA68B6B20C87C40400238747 /* depcomp */,
+				BA68B6B30C87C40400238747 /* get_audio.c */,
+				BA68B6B40C87C40400238747 /* get_audio.h */,
+				BA68B6B50C87C40500238747 /* gpkplotting.c */,
+				BA68B6B60C87C40500238747 /* gpkplotting.h */,
+				BA68B6B70C87C40500238747 /* gtkanal.c */,
+				BA68B6B80C87C40500238747 /* gtkanal.h */,
+				BA68B6B90C87C40500238747 /* lame_vc6.dsp */,
+				BA68B6BA0C87C40500238747 /* lame_vc7.vcproj */,
+				BA68B6BB0C87C40500238747 /* lametime.c */,
+				BA68B6BC0C87C40500238747 /* lametime.h */,
+				BA68B6BD0C87C40500238747 /* main.c */,
+				BA68B6BE0C87C40500238747 /* main.h */,
+				BA68B6BF0C87C40500238747 /* Makefile.am */,
+				BA68B6C00C87C40500238747 /* Makefile.in */,
+				BA68B6C10C87C40500238747 /* mp3rtp.c */,
+				BA68B6C20C87C40500238747 /* mp3x.c */,
+				BA68B6C30C87C40500238747 /* mp3x_vc6.dsp */,
+				BA68B6C40C87C40500238747 /* mp3x_vc7.vcproj */,
+				BA68B6C50C87C40500238747 /* parse.c */,
+				BA68B6C60C87C40500238747 /* parse.h */,
+				BA68B6C70C87C40500238747 /* portableio.c */,
+				BA68B6C80C87C40500238747 /* portableio.h */,
+				BA68B6C90C87C40500238747 /* rtp.c */,
+				BA68B6CA0C87C40500238747 /* rtp.h */,
+				BA68B6CB0C87C40500238747 /* timestatus.c */,
+				BA68B6CC0C87C40500238747 /* timestatus.h */,
+			);
+			path = frontend;
+			sourceTree = "<group>";
+		};
+		BA68B6CE0C87C40500238747 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				BA68B6CF0C87C40500238747 /* lame.h */,
+				BA68B6D00C87C40500238747 /* Makefile.am */,
+				BA68B6D10C87C40500238747 /* Makefile.in */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		BA68B6DB0C87C40500238747 /* libmp3lame */ = {
+			isa = PBXGroup;
+			children = (
+				BA68B6DC0C87C40500238747 /* bitstream.c */,
+				BA68B6DD0C87C40500238747 /* bitstream.h */,
+				BA68B6DE0C87C40500238747 /* depcomp */,
+				BA68B6DF0C87C40500238747 /* encoder.c */,
+				BA68B6E00C87C40500238747 /* encoder.h */,
+				BA68B6E10C87C40500238747 /* fft.c */,
+				BA68B6E20C87C40500238747 /* fft.h */,
+				BA68B6E30C87C40500238747 /* gain_analysis.c */,
+				BA68B6E40C87C40500238747 /* gain_analysis.h */,
+				BA68B6E50C87C40500238747 /* i386 */,
+				BA68B6F00C87C40500238747 /* id3tag.c */,
+				BA68B6F10C87C40500238747 /* id3tag.h */,
+				BA68B6F20C87C40500238747 /* l3side.h */,
+				BA68B6F30C87C40500238747 /* lame-analysis.h */,
+				BA68B6F40C87C40500238747 /* lame.c */,
+				BA68B6F50C87C40500238747 /* lame_global_flags.h */,
+				BA68B6F60C87C40500238747 /* libmp3lame_vc6.dsp */,
+				BA68B6F70C87C40500238747 /* libmp3lame_vc7.vcproj */,
+				BA68B6F80C87C40500238747 /* machine.h */,
+				BA68B6F90C87C40500238747 /* Makefile.am */,
+				BA68B6FA0C87C40500238747 /* Makefile.in */,
+				BA68B6FB0C87C40500238747 /* mpglib_interface.c */,
+				BA68B6FC0C87C40500238747 /* newmdct.c */,
+				BA68B6FD0C87C40500238747 /* newmdct.h */,
+				BA68B6FE0C87C40500238747 /* presets.c */,
+				BA68B6FF0C87C40500238747 /* psymodel.c */,
+				BA68B7000C87C40500238747 /* psymodel.h */,
+				BA68B7010C87C40500238747 /* quantize.c */,
+				BA68B7020C87C40500238747 /* quantize.h */,
+				BA68B7030C87C40500238747 /* quantize_pvt.c */,
+				BA68B7040C87C40500238747 /* quantize_pvt.h */,
+				BA68B7050C87C40500238747 /* reservoir.c */,
+				BA68B7060C87C40500238747 /* reservoir.h */,
+				BA68B7070C87C40500238747 /* set_get.c */,
+				BA68B7080C87C40500238747 /* set_get.h */,
+				BA68B7090C87C40500238747 /* tables.c */,
+				BA68B70A0C87C40500238747 /* tables.h */,
+				BA68B70B0C87C40500238747 /* takehiro.c */,
+				BA68B70C0C87C40500238747 /* util.c */,
+				BA68B70D0C87C40500238747 /* util.h */,
+				BA68B70E0C87C40500238747 /* vbrquantize.c */,
+				BA68B70F0C87C40500238747 /* vbrquantize.h */,
+				BA68B7100C87C40500238747 /* VbrTag.c */,
+				BA68B7110C87C40500238747 /* VbrTag.h */,
+				BA68B7120C87C40500238747 /* version.c */,
+				BA68B7130C87C40500238747 /* version.h */,
+			);
+			path = libmp3lame;
+			sourceTree = "<group>";
+		};
+		BA68B6E50C87C40500238747 /* i386 */ = {
+			isa = PBXGroup;
+			children = (
+				BA68B6E60C87C40500238747 /* choose_table.nas */,
+				BA68B6E70C87C40500238747 /* cpu_feat.nas */,
+				BA68B6E80C87C40500238747 /* fft.nas */,
+				BA68B6E90C87C40500238747 /* fft3dn.nas */,
+				BA68B6EA0C87C40500238747 /* fftfpu.nas */,
+				BA68B6EB0C87C40500238747 /* fftsse.nas */,
+				BA68B6EC0C87C40500238747 /* ffttbl.nas */,
+				BA68B6ED0C87C40500238747 /* Makefile.am */,
+				BA68B6EE0C87C40500238747 /* Makefile.in */,
+				BA68B6EF0C87C40500238747 /* nasm.h */,
+			);
+			path = i386;
+			sourceTree = "<group>";
+		};
+		BA68B7170C87C40500238747 /* mac */ = {
+			isa = PBXGroup;
+			children = (
+				BA68B7180C87C40500238747 /* LAME.mcp */,
+				BA68B7190C87C40500238747 /* LAME_Carbon_Debug.pch */,
+				BA68B71A0C87C40500238747 /* LAME_Carbon_Final.pch */,
+				BA68B71B0C87C40500238747 /* LAME_Classic_Debug.pch */,
+				BA68B71C0C87C40500238747 /* LAME_Classic_Final.pch */,
+				BA68B71D0C87C40500238747 /* MacDLLMain.c */,
+				BA68B71E0C87C40500238747 /* Makefile.am */,
+				BA68B71F0C87C40500238747 /* Makefile.in */,
+				BA68B7200C87C40500238747 /* Precompile_Common.h */,
+			);
+			path = mac;
+			sourceTree = "<group>";
+		};
+		BA68B7260C87C40500238747 /* misc */ = {
+			isa = PBXGroup;
+			children = (
+				BA68B7270C87C40500238747 /* abx.c */,
+				BA68B7280C87C40500238747 /* ath.c */,
+				BA68B7290C87C40500238747 /* auenc */,
+				BA68B72A0C87C40500238747 /* depcomp */,
+				BA68B72B0C87C40500238747 /* Lame.vbs */,
+				BA68B72C0C87C40500238747 /* lame4dos.bat */,
+				BA68B72D0C87C40500238747 /* lameGUI.html */,
+				BA68B72E0C87C40500238747 /* lameid3.pl */,
+				BA68B72F0C87C40500238747 /* Makefile.am */,
+				BA68B7300C87C40500238747 /* Makefile.in */,
+				BA68B7310C87C40500238747 /* mlame */,
+				BA68B7320C87C40500238747 /* mlame_corr.c */,
+				BA68B7330C87C40500238747 /* mugeco.sh */,
+				BA68B7340C87C40500238747 /* scalartest.c */,
+			);
+			path = misc;
+			sourceTree = "<group>";
+		};
+		BA68B7370C87C40500238747 /* mpglib */ = {
+			isa = PBXGroup;
+			children = (
+				BA68B7380C87C40500238747 /* common.c */,
+				BA68B7390C87C40500238747 /* common.h */,
+				BA68B73A0C87C40500238747 /* dct64_i386.c */,
+				BA68B73B0C87C40500238747 /* dct64_i386.h */,
+				BA68B73C0C87C40500238747 /* decode_i386.c */,
+				BA68B73D0C87C40500238747 /* decode_i386.h */,
+				BA68B73E0C87C40500238747 /* depcomp */,
+				BA68B73F0C87C40500238747 /* huffman.h */,
+				BA68B7400C87C40500238747 /* interface.c */,
+				BA68B7410C87C40500238747 /* interface.h */,
+				BA68B7420C87C40500238747 /* l2tables.h */,
+				BA68B7430C87C40500238747 /* layer1.c */,
+				BA68B7440C87C40500238747 /* layer1.h */,
+				BA68B7450C87C40500238747 /* layer2.c */,
+				BA68B7460C87C40500238747 /* layer2.h */,
+				BA68B7470C87C40500238747 /* layer3.c */,
+				BA68B7480C87C40500238747 /* layer3.h */,
+				BA68B7490C87C40500238747 /* Makefile.am */,
+				BA68B74A0C87C40500238747 /* Makefile.in */,
+				BA68B74B0C87C40500238747 /* mpg123.h */,
+				BA68B74C0C87C40500238747 /* mpglib.h */,
+				BA68B74D0C87C40500238747 /* mpglib_vc6.dsp */,
+				BA68B74E0C87C40500238747 /* mpglib_vc7.vcproj */,
+				BA68B74F0C87C40500238747 /* README */,
+				BA68B7500C87C40500238747 /* tabinit.c */,
+				BA68B7510C87C40500238747 /* tabinit.h */,
+				BA68B7520C87C40500238747 /* TODO */,
+			);
+			path = mpglib;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXProject section */
+		BA68B2870C865D9000238747 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = BA68B2880C865D9000238747 /* Build configuration list for PBXProject "lame-3.97" */;
+			hasScannedForEncodings = 0;
+			mainGroup = BA68B2850C865D9000238747;
+			projectDirPath = "";
+			targets = (
+				BA68B2D80C865DE000238747 /* Build PPC */,
+				BA68B2E70C865EBB00238747 /* Build Intel */,
+				BA68B2F30C865F0F00238747 /* Build Universal */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BA68B2E30C865DEF00238747 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "BUILD_ARCH=build/ppc\ncd lame-3.97\n./configure ppc darwin-ppc-cc\nmake clean\nmake \"CC=gcc -arch ppc\"\nmkdir -p $BUILD_ARCH\nmv frontend/lame $BUILD_ARCH\necho \"Done\"\nexit 0\n";
+		};
+		BA68B2EA0C865EC000238747 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "BUILD_ARCH=build/i386\ncd lame-3.97\n./configure i386 darwin-i386-cc\nmake clean\nmake \"CC=gcc -arch i386\" \"CFLAGS=-Wall -g\"\nmkdir -p $BUILD_ARCH\nmv frontend/lame $BUILD_ARCH\necho \"Done\"\nexit 0\n";
+		};
+		BA68B2FD0C86600200238747 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here\ncd lame-3.97\nlipo -create build/*/lame -output lame\nexit 0";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BA68B2F50C865F1200238747 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BA68B2D80C865DE000238747 /* Build PPC */;
+			targetProxy = BA68B2F40C865F1200238747 /* PBXContainerItemProxy */;
+		};
+		BA68B2F70C865F1500238747 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BA68B2E70C865EBB00238747 /* Build Intel */;
+			targetProxy = BA68B2F60C865F1500238747 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		BA68B2890C865D9000238747 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Debug;
+		};
+		BA68B28A0C865D9000238747 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+			};
+			name = Release;
+		};
+		BA68B2E10C865DE200238747 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = "Build PPC";
+			};
+			name = Debug;
+		};
+		BA68B2E20C865DE200238747 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				PRODUCT_NAME = "Build PPC";
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		BA68B2EF0C865ECC00238747 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = "Build Intel";
+			};
+			name = Debug;
+		};
+		BA68B2F00C865ECC00238747 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				PRODUCT_NAME = "Build Intel";
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		BA68B2FB0C865F1900238747 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = libid3tag.a;
+			};
+			name = Debug;
+		};
+		BA68B2FC0C865F1900238747 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				PRODUCT_NAME = libid3tag.a;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BA68B2880C865D9000238747 /* Build configuration list for PBXProject "lame-3.97" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA68B2890C865D9000238747 /* Debug */,
+				BA68B28A0C865D9000238747 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BA68B2E00C865DE200238747 /* Build configuration list for PBXAggregateTarget "Build PPC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA68B2E10C865DE200238747 /* Debug */,
+				BA68B2E20C865DE200238747 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BA68B2EE0C865ECC00238747 /* Build configuration list for PBXAggregateTarget "Build Intel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA68B2EF0C865ECC00238747 /* Debug */,
+				BA68B2F00C865ECC00238747 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BA68B2FA0C865F1900238747 /* Build configuration list for PBXAggregateTarget "Build Universal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA68B2FB0C865F1900238747 /* Debug */,
+				BA68B2FC0C865F1900238747 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BA68B2870C865D9000238747 /* Project object */;
+}
