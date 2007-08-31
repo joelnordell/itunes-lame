@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA68B31E0C86644800238747 /* libid3tag.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA68B31B0C86642400238747 /* libid3tag.a */; };
+		BA68B3D30C86725D00238747 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BA68B3D20C86725600238747 /* libz.dylib */; };
 		E1CEBFDA06D394D5000918F3 /* BackgroundLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CEBFCE06D394D5000918F3 /* BackgroundLogo.png */; };
 		E1CEBFDB06D394D5000918F3 /* Cancel_Pressed.tif in Resources */ = {isa = PBXBuildFile; fileRef = E1CEBFCF06D394D5000918F3 /* Cancel_Pressed.tif */; };
 		E1CEBFDC06D394D5000918F3 /* Cancel.tif in Resources */ = {isa = PBXBuildFile; fileRef = E1CEBFD006D394D5000918F3 /* Cancel.tif */; };
@@ -57,33 +59,6 @@
 		E1F6EF3105DB11A50035C30A /* qtaiff in Resources */ = {isa = PBXBuildFile; fileRef = E1F6EE8605DB03790035C30A /* qtaiff */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXBuildStyle section */
-		4A9504CCFFE6A4B311CA0CBA /* Development */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				OPTIMIZATION_CFLAGS = "-O0";
-				ZERO_LINK = YES;
-			};
-			name = Development;
-		};
-		4A9504CDFFE6A4B311CA0CBA /* Deployment */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = YES;
-				DEPLOYMENT_POSTPROCESSING = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				ZERO_LINK = NO;
-			};
-			name = Deployment;
-		};
-/* End PBXBuildStyle section */
-
 /* Begin PBXContainerItemProxy section */
 		E1F6EF2F05DB11980035C30A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -102,6 +77,76 @@
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		32CA4F630368D1EE00C91783 /* iTunes-LAME_Prefix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "iTunes-LAME_Prefix.h"; sourceTree = "<group>"; };
+		BA68B31B0C86642400238747 /* libid3tag.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libid3tag.a; path = "libid3tag-0.15.1b/libid3tag.a"; sourceTree = "<group>"; };
+		BA68B33A0C86652C00238747 /* aclocal.m4 */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; name = aclocal.m4; path = "libid3tag-0.15.1b/aclocal.m4"; sourceTree = "<group>"; };
+		BA68B33B0C86652C00238747 /* CHANGES */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; name = CHANGES; path = "libid3tag-0.15.1b/CHANGES"; sourceTree = "<group>"; };
+		BA68B33C0C86652C00238747 /* compat.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = compat.c; path = "libid3tag-0.15.1b/compat.c"; sourceTree = "<group>"; };
+		BA68B33D0C86652C00238747 /* compat.gperf */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; name = compat.gperf; path = "libid3tag-0.15.1b/compat.gperf"; sourceTree = "<group>"; };
+		BA68B33E0C86652C00238747 /* compat.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = compat.h; path = "libid3tag-0.15.1b/compat.h"; sourceTree = "<group>"; };
+		BA68B33F0C86652C00238747 /* config.guess */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.script.sh; name = config.guess; path = "libid3tag-0.15.1b/config.guess"; sourceTree = "<group>"; };
+		BA68B3400C86652C00238747 /* config.h.in */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; name = config.h.in; path = "libid3tag-0.15.1b/config.h.in"; sourceTree = "<group>"; };
+		BA68B3410C86652C00238747 /* config.sub */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.script.sh; name = config.sub; path = "libid3tag-0.15.1b/config.sub"; sourceTree = "<group>"; };
+		BA68B3420C86652C00238747 /* configure */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.script.sh; name = configure; path = "libid3tag-0.15.1b/configure"; sourceTree = "<group>"; };
+		BA68B3430C86652C00238747 /* configure.ac */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; name = configure.ac; path = "libid3tag-0.15.1b/configure.ac"; sourceTree = "<group>"; };
+		BA68B3440C86652C00238747 /* COPYING */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; name = COPYING; path = "libid3tag-0.15.1b/COPYING"; sourceTree = "<group>"; };
+		BA68B3450C86652C00238747 /* COPYRIGHT */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; name = COPYRIGHT; path = "libid3tag-0.15.1b/COPYRIGHT"; sourceTree = "<group>"; };
+		BA68B3460C86652C00238747 /* crc.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = crc.c; path = "libid3tag-0.15.1b/crc.c"; sourceTree = "<group>"; };
+		BA68B3470C86652C00238747 /* crc.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = crc.h; path = "libid3tag-0.15.1b/crc.h"; sourceTree = "<group>"; };
+		BA68B3480C86652C00238747 /* CREDITS */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; name = CREDITS; path = "libid3tag-0.15.1b/CREDITS"; sourceTree = "<group>"; };
+		BA68B3490C86652C00238747 /* debug.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = debug.c; path = "libid3tag-0.15.1b/debug.c"; sourceTree = "<group>"; };
+		BA68B34A0C86652C00238747 /* debug.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = debug.h; path = "libid3tag-0.15.1b/debug.h"; sourceTree = "<group>"; };
+		BA68B34B0C86652C00238747 /* depcomp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.script.sh; name = depcomp; path = "libid3tag-0.15.1b/depcomp"; sourceTree = "<group>"; };
+		BA68B34C0C86652C00238747 /* field.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = field.c; path = "libid3tag-0.15.1b/field.c"; sourceTree = "<group>"; };
+		BA68B34D0C86652C00238747 /* field.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = field.h; path = "libid3tag-0.15.1b/field.h"; sourceTree = "<group>"; };
+		BA68B34E0C86652C00238747 /* file.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = file.c; path = "libid3tag-0.15.1b/file.c"; sourceTree = "<group>"; };
+		BA68B34F0C86652C00238747 /* file.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = file.h; path = "libid3tag-0.15.1b/file.h"; sourceTree = "<group>"; };
+		BA68B3500C86652C00238747 /* frame.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = frame.c; path = "libid3tag-0.15.1b/frame.c"; sourceTree = "<group>"; };
+		BA68B3510C86652C00238747 /* frame.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = frame.h; path = "libid3tag-0.15.1b/frame.h"; sourceTree = "<group>"; };
+		BA68B3520C86652C00238747 /* frametype.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = frametype.c; path = "libid3tag-0.15.1b/frametype.c"; sourceTree = "<group>"; };
+		BA68B3530C86652C00238747 /* frametype.gperf */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; name = frametype.gperf; path = "libid3tag-0.15.1b/frametype.gperf"; sourceTree = "<group>"; };
+		BA68B3540C86652C00238747 /* frametype.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = frametype.h; path = "libid3tag-0.15.1b/frametype.h"; sourceTree = "<group>"; };
+		BA68B3550C86652C00238747 /* genre.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = genre.c; path = "libid3tag-0.15.1b/genre.c"; sourceTree = "<group>"; };
+		BA68B3560C86652C00238747 /* genre.dat */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; name = genre.dat; path = "libid3tag-0.15.1b/genre.dat"; sourceTree = "<group>"; };
+		BA68B3570C86652C00238747 /* genre.dat.in */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; name = genre.dat.in; path = "libid3tag-0.15.1b/genre.dat.in"; sourceTree = "<group>"; };
+		BA68B3580C86652C00238747 /* genre.dat.sed */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; name = genre.dat.sed; path = "libid3tag-0.15.1b/genre.dat.sed"; sourceTree = "<group>"; };
+		BA68B3590C86652C00238747 /* genre.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = genre.h; path = "libid3tag-0.15.1b/genre.h"; sourceTree = "<group>"; };
+		BA68B35A0C86652C00238747 /* global.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = global.h; path = "libid3tag-0.15.1b/global.h"; sourceTree = "<group>"; };
+		BA68B35B0C86652C00238747 /* id3tag.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = id3tag.h; path = "libid3tag-0.15.1b/id3tag.h"; sourceTree = "<group>"; };
+		BA68B35C0C86652C00238747 /* INSTALL */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; name = INSTALL; path = "libid3tag-0.15.1b/INSTALL"; sourceTree = "<group>"; };
+		BA68B35D0C86652C00238747 /* install-sh */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.script.sh; name = "install-sh"; path = "libid3tag-0.15.1b/install-sh"; sourceTree = "<group>"; };
+		BA68B35E0C86652C00238747 /* latin1.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = latin1.c; path = "libid3tag-0.15.1b/latin1.c"; sourceTree = "<group>"; };
+		BA68B35F0C86652C00238747 /* latin1.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = latin1.h; path = "libid3tag-0.15.1b/latin1.h"; sourceTree = "<group>"; };
+		BA68B3600C86652C00238747 /* libid3tag.list.in */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; name = libid3tag.list.in; path = "libid3tag-0.15.1b/libid3tag.list.in"; sourceTree = "<group>"; };
+		BA68B3610C86652C00238747 /* ltmain.sh */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.script.sh; name = ltmain.sh; path = "libid3tag-0.15.1b/ltmain.sh"; sourceTree = "<group>"; };
+		BA68B3620C86652C00238747 /* Makefile.am */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; name = Makefile.am; path = "libid3tag-0.15.1b/Makefile.am"; sourceTree = "<group>"; };
+		BA68B3630C86652C00238747 /* Makefile.in */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; name = Makefile.in; path = "libid3tag-0.15.1b/Makefile.in"; sourceTree = "<group>"; };
+		BA68B3640C86652C00238747 /* missing */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.script.sh; name = missing; path = "libid3tag-0.15.1b/missing"; sourceTree = "<group>"; };
+		BA68B3650C86652C00238747 /* mkinstalldirs */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.script.sh; name = mkinstalldirs; path = "libid3tag-0.15.1b/mkinstalldirs"; sourceTree = "<group>"; };
+		BA68B3670C86652C00238747 /* config.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
+		BA68B3680C86652C00238747 /* libid3tag.dsp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = libid3tag.dsp; sourceTree = "<group>"; };
+		BA68B3690C86652C00238747 /* Makefile.am */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = Makefile.am; sourceTree = "<group>"; };
+		BA68B36A0C86652C00238747 /* Makefile.in */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = Makefile.in; sourceTree = "<group>"; };
+		BA68B36B0C86652C00238747 /* parse.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = parse.c; path = "libid3tag-0.15.1b/parse.c"; sourceTree = "<group>"; };
+		BA68B36C0C86652C00238747 /* parse.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = parse.h; path = "libid3tag-0.15.1b/parse.h"; sourceTree = "<group>"; };
+		BA68B36D0C86652C00238747 /* README */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; name = README; path = "libid3tag-0.15.1b/README"; sourceTree = "<group>"; };
+		BA68B36E0C86652C00238747 /* render.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = render.c; path = "libid3tag-0.15.1b/render.c"; sourceTree = "<group>"; };
+		BA68B36F0C86652C00238747 /* render.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = render.h; path = "libid3tag-0.15.1b/render.h"; sourceTree = "<group>"; };
+		BA68B3700C86652C00238747 /* tag.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = tag.c; path = "libid3tag-0.15.1b/tag.c"; sourceTree = "<group>"; };
+		BA68B3710C86652C00238747 /* tag.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = tag.h; path = "libid3tag-0.15.1b/tag.h"; sourceTree = "<group>"; };
+		BA68B3720C86652C00238747 /* TODO */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; name = TODO; path = "libid3tag-0.15.1b/TODO"; sourceTree = "<group>"; };
+		BA68B3730C86652C00238747 /* ucs4.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = ucs4.c; path = "libid3tag-0.15.1b/ucs4.c"; sourceTree = "<group>"; };
+		BA68B3740C86652C00238747 /* ucs4.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = ucs4.h; path = "libid3tag-0.15.1b/ucs4.h"; sourceTree = "<group>"; };
+		BA68B3750C86652C00238747 /* utf16.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = utf16.c; path = "libid3tag-0.15.1b/utf16.c"; sourceTree = "<group>"; };
+		BA68B3760C86652C00238747 /* utf16.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = utf16.h; path = "libid3tag-0.15.1b/utf16.h"; sourceTree = "<group>"; };
+		BA68B3770C86652C00238747 /* utf8.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = utf8.c; path = "libid3tag-0.15.1b/utf8.c"; sourceTree = "<group>"; };
+		BA68B3780C86652C00238747 /* utf8.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = utf8.h; path = "libid3tag-0.15.1b/utf8.h"; sourceTree = "<group>"; };
+		BA68B3790C86652C00238747 /* util.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = util.c; path = "libid3tag-0.15.1b/util.c"; sourceTree = "<group>"; };
+		BA68B37A0C86652C00238747 /* util.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = util.h; path = "libid3tag-0.15.1b/util.h"; sourceTree = "<group>"; };
+		BA68B37B0C86652C00238747 /* VERSION */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; name = VERSION; path = "libid3tag-0.15.1b/VERSION"; sourceTree = "<group>"; };
+		BA68B37C0C86652C00238747 /* version.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = version.c; path = "libid3tag-0.15.1b/version.c"; sourceTree = "<group>"; };
+		BA68B37D0C86652C00238747 /* version.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = version.h; path = "libid3tag-0.15.1b/version.h"; sourceTree = "<group>"; };
+		BA68B3D20C86725600238747 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = /usr/lib/libz.dylib; sourceTree = "<absolute>"; };
+		BA68B5D50C87B88F00238747 /* libid3tag-0.15.1b.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "libid3tag-0.15.1b.xcodeproj"; sourceTree = "<group>"; };
 		E1656EDB0487903700000009 /* English */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = English; path = English.lproj/EncodingHelp.rtf; sourceTree = "<group>"; };
 		E1656EE004879D4900000009 /* English */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E19ABD6704EE574A00C2F9F2 /* QuickTime.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickTime.framework; path = /System/Library/Frameworks/QuickTime.framework; sourceTree = "<absolute>"; };
@@ -141,7 +186,7 @@
 		E1CEC00206D394F8000918F3 /* NSWorkspace_BLTRExtensions.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = NSWorkspace_BLTRExtensions.m; path = Code/NSWorkspace_BLTRExtensions.m; sourceTree = "<group>"; };
 		E1CEC02406D39526000918F3 /* qtaiff.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = qtaiff.c; path = Code/qtaiff.c; sourceTree = "<group>"; };
 		E1CEC02506D39526000918F3 /* qtaiff.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = qtaiff.h; path = Code/qtaiff.h; sourceTree = "<group>"; };
-		E1E177850502C11B0014EE93 /* iTunes-LAME.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iTunes-LAME.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1E177850502C11B0014EE93 /* iTunes-LAME.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = file; path = "iTunes-LAME.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1EA32B806B6D930007178DA /* lame */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = lame; path = /usr/local/bin/lame; sourceTree = "<absolute>"; };
 		E1F6EE8605DB03790035C30A /* qtaiff */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = qtaiff; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1F9A85203F0086700D3C7A0 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
@@ -155,6 +200,8 @@
 				E1E177800502C11B0014EE93 /* Cocoa.framework in Frameworks */,
 				E1E177810502C11B0014EE93 /* Carbon.framework in Frameworks */,
 				E1E177820502C11B0014EE93 /* QuickTime.framework in Frameworks */,
+				BA68B31E0C86644800238747 /* libid3tag.a in Frameworks */,
+				BA68B3D30C86725D00238747 /* libz.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,6 +249,8 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BA68B3D20C86725600238747 /* libz.dylib */,
+				BA68B31B0C86642400238747 /* libid3tag.a */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
 				E1F9A85203F0086700D3C7A0 /* Carbon.framework */,
 				E19ABD6704EE574A00C2F9F2 /* QuickTime.framework */,
@@ -230,6 +279,7 @@
 		29B97314FDCFA39411CA2CEA /* iTunes-LAME */ = {
 			isa = PBXGroup;
 			children = (
+				BA68B5D50C87B88F00238747 /* libid3tag-0.15.1b.xcodeproj */,
 				E1EA32B806B6D930007178DA /* lame */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -243,6 +293,7 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				BA68B3390C86652C00238747 /* libid3tag-0.15.1b */,
 				E1CEC02406D39526000918F3 /* qtaiff.c */,
 				E1CEC02506D39526000918F3 /* qtaiff.h */,
 				32CA4F630368D1EE00C91783 /* iTunes-LAME_Prefix.h */,
@@ -283,6 +334,96 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BA68B3390C86652C00238747 /* libid3tag-0.15.1b */ = {
+			isa = PBXGroup;
+			children = (
+				BA68B33A0C86652C00238747 /* aclocal.m4 */,
+				BA68B33B0C86652C00238747 /* CHANGES */,
+				BA68B33C0C86652C00238747 /* compat.c */,
+				BA68B33D0C86652C00238747 /* compat.gperf */,
+				BA68B33E0C86652C00238747 /* compat.h */,
+				BA68B33F0C86652C00238747 /* config.guess */,
+				BA68B3400C86652C00238747 /* config.h.in */,
+				BA68B3410C86652C00238747 /* config.sub */,
+				BA68B3420C86652C00238747 /* configure */,
+				BA68B3430C86652C00238747 /* configure.ac */,
+				BA68B3440C86652C00238747 /* COPYING */,
+				BA68B3450C86652C00238747 /* COPYRIGHT */,
+				BA68B3460C86652C00238747 /* crc.c */,
+				BA68B3470C86652C00238747 /* crc.h */,
+				BA68B3480C86652C00238747 /* CREDITS */,
+				BA68B3490C86652C00238747 /* debug.c */,
+				BA68B34A0C86652C00238747 /* debug.h */,
+				BA68B34B0C86652C00238747 /* depcomp */,
+				BA68B34C0C86652C00238747 /* field.c */,
+				BA68B34D0C86652C00238747 /* field.h */,
+				BA68B34E0C86652C00238747 /* file.c */,
+				BA68B34F0C86652C00238747 /* file.h */,
+				BA68B3500C86652C00238747 /* frame.c */,
+				BA68B3510C86652C00238747 /* frame.h */,
+				BA68B3520C86652C00238747 /* frametype.c */,
+				BA68B3530C86652C00238747 /* frametype.gperf */,
+				BA68B3540C86652C00238747 /* frametype.h */,
+				BA68B3550C86652C00238747 /* genre.c */,
+				BA68B3560C86652C00238747 /* genre.dat */,
+				BA68B3570C86652C00238747 /* genre.dat.in */,
+				BA68B3580C86652C00238747 /* genre.dat.sed */,
+				BA68B3590C86652C00238747 /* genre.h */,
+				BA68B35A0C86652C00238747 /* global.h */,
+				BA68B35B0C86652C00238747 /* id3tag.h */,
+				BA68B35C0C86652C00238747 /* INSTALL */,
+				BA68B35D0C86652C00238747 /* install-sh */,
+				BA68B35E0C86652C00238747 /* latin1.c */,
+				BA68B35F0C86652C00238747 /* latin1.h */,
+				BA68B3600C86652C00238747 /* libid3tag.list.in */,
+				BA68B3610C86652C00238747 /* ltmain.sh */,
+				BA68B3620C86652C00238747 /* Makefile.am */,
+				BA68B3630C86652C00238747 /* Makefile.in */,
+				BA68B3640C86652C00238747 /* missing */,
+				BA68B3650C86652C00238747 /* mkinstalldirs */,
+				BA68B3660C86652C00238747 /* msvc++ */,
+				BA68B36B0C86652C00238747 /* parse.c */,
+				BA68B36C0C86652C00238747 /* parse.h */,
+				BA68B36D0C86652C00238747 /* README */,
+				BA68B36E0C86652C00238747 /* render.c */,
+				BA68B36F0C86652C00238747 /* render.h */,
+				BA68B3700C86652C00238747 /* tag.c */,
+				BA68B3710C86652C00238747 /* tag.h */,
+				BA68B3720C86652C00238747 /* TODO */,
+				BA68B3730C86652C00238747 /* ucs4.c */,
+				BA68B3740C86652C00238747 /* ucs4.h */,
+				BA68B3750C86652C00238747 /* utf16.c */,
+				BA68B3760C86652C00238747 /* utf16.h */,
+				BA68B3770C86652C00238747 /* utf8.c */,
+				BA68B3780C86652C00238747 /* utf8.h */,
+				BA68B3790C86652C00238747 /* util.c */,
+				BA68B37A0C86652C00238747 /* util.h */,
+				BA68B37B0C86652C00238747 /* VERSION */,
+				BA68B37C0C86652C00238747 /* version.c */,
+				BA68B37D0C86652C00238747 /* version.h */,
+			);
+			name = "libid3tag-0.15.1b";
+			sourceTree = "<group>";
+		};
+		BA68B3660C86652C00238747 /* msvc++ */ = {
+			isa = PBXGroup;
+			children = (
+				BA68B3670C86652C00238747 /* config.h */,
+				BA68B3680C86652C00238747 /* libid3tag.dsp */,
+				BA68B3690C86652C00238747 /* Makefile.am */,
+				BA68B36A0C86652C00238747 /* Makefile.in */,
+			);
+			name = "msvc++";
+			path = "libid3tag-0.15.1b/msvc++";
+			sourceTree = "<group>";
+		};
+		BA68B5D60C87B88F00238747 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -318,7 +459,7 @@
 /* Begin PBXNativeTarget section */
 		E1E177490502C11B0014EE93 /* iTunes-LAME */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D5E1D0860C876CC100D01C21 /* Build configuration list for PBXNativeTarget "iTunes-LAME" */;
+			buildConfigurationList = BA68B22C0C865BA500238747 /* Build configuration list for PBXNativeTarget "iTunes-LAME" */;
 			buildPhases = (
 				E1E1774A0502C11B0014EE93 /* Headers */,
 				E1E1775C0502C11B0014EE93 /* Resources */,
@@ -327,24 +468,6 @@
 			);
 			buildRules = (
 			);
-			buildSettings = {
-				CC = "/usr/bin/gcc-3.3";
-				CPLUSPLUS = "/usr/bin/g++-3.3";
-				FRAMEWORK_SEARCH_PATHS = "";
-				GCC_PREFIX_HEADER = "iTunes-LAME_Prefix.h";
-				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
-				GCC_WARN_UNKNOWN_PRAGMAS = NO;
-				HEADER_SEARCH_PATHS = "";
-				INFOPLIST_FILE = Info.plist;
-				INSTALL_PATH = "$(HOME)/Applications";
-				LIBRARY_SEARCH_PATHS = "";
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "";
-				PRODUCT_NAME = "iTunes-LAME";
-				SECTORDER_FLAGS = "";
-				WARNING_CFLAGS = "-Wmost";
-				WRAPPER_EXTENSION = app;
-			};
 			dependencies = (
 				E1F6EF3005DB11980035C30A /* PBXTargetDependency */,
 			);
@@ -356,7 +479,7 @@
 		};
 		E1F6EE8505DB03790035C30A /* qtaiff */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D5E1D0820C876CC100D01C21 /* Build configuration list for PBXNativeTarget "qtaiff" */;
+			buildConfigurationList = BA68B2280C865BA500238747 /* Build configuration list for PBXNativeTarget "qtaiff" */;
 			buildPhases = (
 				E1F6EE8105DB03790035C30A /* Headers */,
 				E1F6EE8205DB03790035C30A /* Sources */,
@@ -365,23 +488,6 @@
 			);
 			buildRules = (
 			);
-			buildSettings = {
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Headers/Carbon.h";
-				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
-				GCC_WARN_UNKNOWN_PRAGMAS = NO;
-				INSTALL_PATH = /usr/local/bin;
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = (
-					"-framework",
-					Carbon,
-				);
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = qtaiff;
-				REZ_EXECUTABLE = YES;
-				SECTORDER_FLAGS = "";
-				WARNING_CFLAGS = "-Wmost";
-			};
 			dependencies = (
 			);
 			name = qtaiff;
@@ -394,13 +500,7 @@
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
-			buildConfigurationList = D5E1D08A0C876CC100D01C21 /* Build configuration list for PBXProject "iTunes-LAME" */;
-			buildSettings = {
-			};
-			buildStyles = (
-				4A9504CCFFE6A4B311CA0CBA /* Development */,
-				4A9504CDFFE6A4B311CA0CBA /* Deployment */,
-			);
+			buildConfigurationList = BA68B2300C865BA500238747 /* Build configuration list for PBXProject "iTunes-LAME" */;
 			hasScannedForEncodings = 1;
 			knownPlatforms = (
 				macos,
@@ -412,6 +512,12 @@
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* iTunes-LAME */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = BA68B5D60C87B88F00238747 /* Products */;
+					ProjectRef = BA68B5D50C87B88F00238747 /* libid3tag-0.15.1b.xcodeproj */;
+				},
+			);
 			targets = (
 				E1E177490502C11B0014EE93 /* iTunes-LAME */,
 				E1F6EE8505DB03790035C30A /* qtaiff */,
@@ -530,7 +636,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		D5E1D0830C876CC100D01C21 /* Development */ = {
+		BA68B2290C865BA500238747 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
@@ -558,7 +664,7 @@
 			};
 			name = Development;
 		};
-		D5E1D0840C876CC100D01C21 /* Deployment */ = {
+		BA68B22A0C865BA500238747 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = YES;
@@ -584,7 +690,7 @@
 			};
 			name = Deployment;
 		};
-		D5E1D0850C876CC100D01C21 /* Default */ = {
+		BA68B22B0C865BA500238747 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -605,15 +711,19 @@
 			};
 			name = Default;
 		};
-		D5E1D0870C876CC100D01C21 /* Development */ = {
+		BA68B22D0C865BA500238747 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CC = "/usr/bin/gcc-3.3";
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				CC = /usr/bin/gcc;
 				COPY_PHASE_STRIP = NO;
 				CPLUSPLUS = "/usr/bin/g++-3.3";
 				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREFIX_HEADER = "iTunes-LAME_Prefix.h";
@@ -622,7 +732,11 @@
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
-				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/libid3tag-0.15.1b\"";
 				OPTIMIZATION_CFLAGS = "-O0";
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
@@ -630,14 +744,18 @@
 				SECTORDER_FLAGS = "";
 				WARNING_CFLAGS = "-Wmost";
 				WRAPPER_EXTENSION = app;
-				ZERO_LINK = YES;
+				ZERO_LINK = NO;
 			};
 			name = Development;
 		};
-		D5E1D0880C876CC100D01C21 /* Deployment */ = {
+		BA68B22E0C865BA500238747 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CC = "/usr/bin/gcc-3.3";
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				CC = /usr/bin/gcc;
 				COPY_PHASE_STRIP = YES;
 				CPLUSPLUS = "/usr/bin/g++-3.3";
 				DEPLOYMENT_POSTPROCESSING = YES;
@@ -650,7 +768,11 @@
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
-				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/libid3tag-0.15.1b\"";
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "iTunes-LAME";
@@ -661,41 +783,51 @@
 			};
 			name = Deployment;
 		};
-		D5E1D0890C876CC100D01C21 /* Default */ = {
+		BA68B22F0C865BA500238747 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CC = "/usr/bin/gcc-3.3";
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				CC = /usr/bin/gcc;
 				CPLUSPLUS = "/usr/bin/g++-3.3";
 				FRAMEWORK_SEARCH_PATHS = "";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_PREFIX_HEADER = "iTunes-LAME_Prefix.h";
 				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
 				GCC_WARN_UNKNOWN_PRAGMAS = NO;
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
-				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/libid3tag-0.15.1b\"";
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "iTunes-LAME";
 				SECTORDER_FLAGS = "";
 				WARNING_CFLAGS = "-Wmost";
 				WRAPPER_EXTENSION = app;
+				ZERO_LINK = NO;
 			};
 			name = Default;
 		};
-		D5E1D08B0C876CC100D01C21 /* Development */ = {
+		BA68B2310C865BA500238747 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 			};
 			name = Development;
 		};
-		D5E1D08C0C876CC100D01C21 /* Deployment */ = {
+		BA68B2320C865BA500238747 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 			};
 			name = Deployment;
 		};
-		D5E1D08D0C876CC100D01C21 /* Default */ = {
+		BA68B2330C865BA500238747 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 			};
@@ -704,32 +836,32 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D5E1D0820C876CC100D01C21 /* Build configuration list for PBXNativeTarget "qtaiff" */ = {
+		BA68B2280C865BA500238747 /* Build configuration list for PBXNativeTarget "qtaiff" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D5E1D0830C876CC100D01C21 /* Development */,
-				D5E1D0840C876CC100D01C21 /* Deployment */,
-				D5E1D0850C876CC100D01C21 /* Default */,
+				BA68B2290C865BA500238747 /* Development */,
+				BA68B22A0C865BA500238747 /* Deployment */,
+				BA68B22B0C865BA500238747 /* Default */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Default;
 		};
-		D5E1D0860C876CC100D01C21 /* Build configuration list for PBXNativeTarget "iTunes-LAME" */ = {
+		BA68B22C0C865BA500238747 /* Build configuration list for PBXNativeTarget "iTunes-LAME" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D5E1D0870C876CC100D01C21 /* Development */,
-				D5E1D0880C876CC100D01C21 /* Deployment */,
-				D5E1D0890C876CC100D01C21 /* Default */,
+				BA68B22D0C865BA500238747 /* Development */,
+				BA68B22E0C865BA500238747 /* Deployment */,
+				BA68B22F0C865BA500238747 /* Default */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Default;
 		};
-		D5E1D08A0C876CC100D01C21 /* Build configuration list for PBXProject "iTunes-LAME" */ = {
+		BA68B2300C865BA500238747 /* Build configuration list for PBXProject "iTunes-LAME" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D5E1D08B0C876CC100D01C21 /* Development */,
-				D5E1D08C0C876CC100D01C21 /* Deployment */,
-				D5E1D08D0C876CC100D01C21 /* Default */,
+				BA68B2310C865BA500238747 /* Development */,
+				BA68B2320C865BA500238747 /* Deployment */,
+				BA68B2330C865BA500238747 /* Default */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Default;

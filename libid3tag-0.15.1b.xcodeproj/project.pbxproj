@@ -1,0 +1,421 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		BA68B2D80C865DE000238747 /* Build PPC */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = BA68B2E00C865DE200238747 /* Build configuration list for PBXAggregateTarget "Build PPC" */;
+			buildPhases = (
+				BA68B2E30C865DEF00238747 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = "Build PPC";
+			productName = "Build PPC";
+		};
+		BA68B2E70C865EBB00238747 /* Build Intel */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = BA68B2EE0C865ECC00238747 /* Build configuration list for PBXAggregateTarget "Build Intel" */;
+			buildPhases = (
+				BA68B2EA0C865EC000238747 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = "Build Intel";
+			productName = "Build Intel";
+		};
+		BA68B2F30C865F0F00238747 /* libid3tag.a */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = BA68B2FA0C865F1900238747 /* Build configuration list for PBXAggregateTarget "libid3tag.a" */;
+			buildPhases = (
+				BA68B2FD0C86600200238747 /* ShellScript */,
+			);
+			dependencies = (
+				BA68B2F50C865F1200238747 /* PBXTargetDependency */,
+				BA68B2F70C865F1500238747 /* PBXTargetDependency */,
+			);
+			name = libid3tag.a;
+			productName = libid3tag.a;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXContainerItemProxy section */
+		BA68B2F40C865F1200238747 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BA68B2870C865D9000238747 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BA68B2D80C865DE000238747;
+			remoteInfo = "Build PPC";
+		};
+		BA68B2F60C865F1500238747 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BA68B2870C865D9000238747 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BA68B2E70C865EBB00238747;
+			remoteInfo = "Build Intel";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BA68B2930C865DB200238747 /* aclocal.m4 */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = aclocal.m4; sourceTree = "<group>"; };
+		BA68B2940C865DB200238747 /* CHANGES */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = CHANGES; sourceTree = "<group>"; };
+		BA68B2950C865DB200238747 /* compat.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = compat.c; sourceTree = "<group>"; };
+		BA68B2960C865DB200238747 /* compat.gperf */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = compat.gperf; sourceTree = "<group>"; };
+		BA68B2970C865DB200238747 /* compat.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = compat.h; sourceTree = "<group>"; };
+		BA68B2980C865DB200238747 /* config.guess */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.script.sh; path = config.guess; sourceTree = "<group>"; };
+		BA68B2990C865DB200238747 /* config.h.in */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = config.h.in; sourceTree = "<group>"; };
+		BA68B29A0C865DB200238747 /* config.sub */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.script.sh; path = config.sub; sourceTree = "<group>"; };
+		BA68B29B0C865DB200238747 /* configure */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.script.sh; path = configure; sourceTree = "<group>"; };
+		BA68B29C0C865DB200238747 /* configure.ac */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = configure.ac; sourceTree = "<group>"; };
+		BA68B29D0C865DB200238747 /* COPYING */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = COPYING; sourceTree = "<group>"; };
+		BA68B29E0C865DB200238747 /* COPYRIGHT */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = COPYRIGHT; sourceTree = "<group>"; };
+		BA68B29F0C865DB200238747 /* crc.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = crc.c; sourceTree = "<group>"; };
+		BA68B2A00C865DB200238747 /* crc.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = crc.h; sourceTree = "<group>"; };
+		BA68B2A10C865DB200238747 /* CREDITS */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = CREDITS; sourceTree = "<group>"; };
+		BA68B2A20C865DB200238747 /* debug.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = debug.c; sourceTree = "<group>"; };
+		BA68B2A30C865DB200238747 /* debug.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = debug.h; sourceTree = "<group>"; };
+		BA68B2A40C865DB200238747 /* depcomp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.script.sh; path = depcomp; sourceTree = "<group>"; };
+		BA68B2A50C865DB200238747 /* field.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = field.c; sourceTree = "<group>"; };
+		BA68B2A60C865DB200238747 /* field.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = field.h; sourceTree = "<group>"; };
+		BA68B2A70C865DB200238747 /* file.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = file.c; sourceTree = "<group>"; };
+		BA68B2A80C865DB200238747 /* file.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = file.h; sourceTree = "<group>"; };
+		BA68B2A90C865DB200238747 /* frame.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = frame.c; sourceTree = "<group>"; };
+		BA68B2AA0C865DB200238747 /* frame.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = frame.h; sourceTree = "<group>"; };
+		BA68B2AB0C865DB200238747 /* frametype.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = frametype.c; sourceTree = "<group>"; };
+		BA68B2AC0C865DB200238747 /* frametype.gperf */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = frametype.gperf; sourceTree = "<group>"; };
+		BA68B2AD0C865DB200238747 /* frametype.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = frametype.h; sourceTree = "<group>"; };
+		BA68B2AE0C865DB200238747 /* genre.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = genre.c; sourceTree = "<group>"; };
+		BA68B2AF0C865DB200238747 /* genre.dat */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = genre.dat; sourceTree = "<group>"; };
+		BA68B2B00C865DB200238747 /* genre.dat.in */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = genre.dat.in; sourceTree = "<group>"; };
+		BA68B2B10C865DB200238747 /* genre.dat.sed */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = genre.dat.sed; sourceTree = "<group>"; };
+		BA68B2B20C865DB200238747 /* genre.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = genre.h; sourceTree = "<group>"; };
+		BA68B2B30C865DB200238747 /* global.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = global.h; sourceTree = "<group>"; };
+		BA68B2B40C865DB200238747 /* id3tag.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = id3tag.h; sourceTree = "<group>"; };
+		BA68B2B50C865DB200238747 /* INSTALL */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = INSTALL; sourceTree = "<group>"; };
+		BA68B2B60C865DB200238747 /* install-sh */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.script.sh; path = "install-sh"; sourceTree = "<group>"; };
+		BA68B2B70C865DB200238747 /* latin1.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = latin1.c; sourceTree = "<group>"; };
+		BA68B2B80C865DB200238747 /* latin1.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = latin1.h; sourceTree = "<group>"; };
+		BA68B2B90C865DB200238747 /* libid3tag.list.in */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = libid3tag.list.in; sourceTree = "<group>"; };
+		BA68B2BA0C865DB200238747 /* ltmain.sh */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.script.sh; path = ltmain.sh; sourceTree = "<group>"; };
+		BA68B2BB0C865DB200238747 /* Makefile.am */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = Makefile.am; sourceTree = "<group>"; };
+		BA68B2BC0C865DB200238747 /* Makefile.in */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = Makefile.in; sourceTree = "<group>"; };
+		BA68B2BD0C865DB200238747 /* missing */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.script.sh; path = missing; sourceTree = "<group>"; };
+		BA68B2BE0C865DB200238747 /* mkinstalldirs */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.script.sh; path = mkinstalldirs; sourceTree = "<group>"; };
+		BA68B2C00C865DB200238747 /* config.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
+		BA68B2C10C865DB200238747 /* libid3tag.dsp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = libid3tag.dsp; sourceTree = "<group>"; };
+		BA68B2C20C865DB200238747 /* Makefile.am */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = Makefile.am; sourceTree = "<group>"; };
+		BA68B2C30C865DB200238747 /* Makefile.in */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = Makefile.in; sourceTree = "<group>"; };
+		BA68B2C40C865DB200238747 /* parse.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = parse.c; sourceTree = "<group>"; };
+		BA68B2C50C865DB200238747 /* parse.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = parse.h; sourceTree = "<group>"; };
+		BA68B2C60C865DB200238747 /* README */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		BA68B2C70C865DB200238747 /* render.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = render.c; sourceTree = "<group>"; };
+		BA68B2C80C865DB200238747 /* render.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = render.h; sourceTree = "<group>"; };
+		BA68B2C90C865DB200238747 /* tag.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = tag.c; sourceTree = "<group>"; };
+		BA68B2CA0C865DB200238747 /* tag.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = tag.h; sourceTree = "<group>"; };
+		BA68B2CB0C865DB200238747 /* TODO */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = TODO; sourceTree = "<group>"; };
+		BA68B2CC0C865DB200238747 /* ucs4.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = ucs4.c; sourceTree = "<group>"; };
+		BA68B2CD0C865DB200238747 /* ucs4.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = ucs4.h; sourceTree = "<group>"; };
+		BA68B2CE0C865DB200238747 /* utf16.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = utf16.c; sourceTree = "<group>"; };
+		BA68B2CF0C865DB200238747 /* utf16.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = utf16.h; sourceTree = "<group>"; };
+		BA68B2D00C865DB200238747 /* utf8.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = utf8.c; sourceTree = "<group>"; };
+		BA68B2D10C865DB200238747 /* utf8.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = utf8.h; sourceTree = "<group>"; };
+		BA68B2D20C865DB200238747 /* util.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = util.c; sourceTree = "<group>"; };
+		BA68B2D30C865DB200238747 /* util.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = util.h; sourceTree = "<group>"; };
+		BA68B2D40C865DB200238747 /* VERSION */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = VERSION; sourceTree = "<group>"; };
+		BA68B2D50C865DB200238747 /* version.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = version.c; sourceTree = "<group>"; };
+		BA68B2D60C865DB200238747 /* version.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = version.h; sourceTree = "<group>"; };
+		BA68B3120C86611300238747 /* libid3tag.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libid3tag.a; path = "libid3tag-0.15.1b/libid3tag.a"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		BA68B2850C865D9000238747 = {
+			isa = PBXGroup;
+			children = (
+				BA68B3120C86611300238747 /* libid3tag.a */,
+				BA68B2920C865DB200238747 /* libid3tag-0.15.1b */,
+			);
+			sourceTree = "<group>";
+		};
+		BA68B2920C865DB200238747 /* libid3tag-0.15.1b */ = {
+			isa = PBXGroup;
+			children = (
+				BA68B2930C865DB200238747 /* aclocal.m4 */,
+				BA68B2940C865DB200238747 /* CHANGES */,
+				BA68B2950C865DB200238747 /* compat.c */,
+				BA68B2960C865DB200238747 /* compat.gperf */,
+				BA68B2970C865DB200238747 /* compat.h */,
+				BA68B2980C865DB200238747 /* config.guess */,
+				BA68B2990C865DB200238747 /* config.h.in */,
+				BA68B29A0C865DB200238747 /* config.sub */,
+				BA68B29B0C865DB200238747 /* configure */,
+				BA68B29C0C865DB200238747 /* configure.ac */,
+				BA68B29D0C865DB200238747 /* COPYING */,
+				BA68B29E0C865DB200238747 /* COPYRIGHT */,
+				BA68B29F0C865DB200238747 /* crc.c */,
+				BA68B2A00C865DB200238747 /* crc.h */,
+				BA68B2A10C865DB200238747 /* CREDITS */,
+				BA68B2A20C865DB200238747 /* debug.c */,
+				BA68B2A30C865DB200238747 /* debug.h */,
+				BA68B2A40C865DB200238747 /* depcomp */,
+				BA68B2A50C865DB200238747 /* field.c */,
+				BA68B2A60C865DB200238747 /* field.h */,
+				BA68B2A70C865DB200238747 /* file.c */,
+				BA68B2A80C865DB200238747 /* file.h */,
+				BA68B2A90C865DB200238747 /* frame.c */,
+				BA68B2AA0C865DB200238747 /* frame.h */,
+				BA68B2AB0C865DB200238747 /* frametype.c */,
+				BA68B2AC0C865DB200238747 /* frametype.gperf */,
+				BA68B2AD0C865DB200238747 /* frametype.h */,
+				BA68B2AE0C865DB200238747 /* genre.c */,
+				BA68B2AF0C865DB200238747 /* genre.dat */,
+				BA68B2B00C865DB200238747 /* genre.dat.in */,
+				BA68B2B10C865DB200238747 /* genre.dat.sed */,
+				BA68B2B20C865DB200238747 /* genre.h */,
+				BA68B2B30C865DB200238747 /* global.h */,
+				BA68B2B40C865DB200238747 /* id3tag.h */,
+				BA68B2B50C865DB200238747 /* INSTALL */,
+				BA68B2B60C865DB200238747 /* install-sh */,
+				BA68B2B70C865DB200238747 /* latin1.c */,
+				BA68B2B80C865DB200238747 /* latin1.h */,
+				BA68B2B90C865DB200238747 /* libid3tag.list.in */,
+				BA68B2BA0C865DB200238747 /* ltmain.sh */,
+				BA68B2BB0C865DB200238747 /* Makefile.am */,
+				BA68B2BC0C865DB200238747 /* Makefile.in */,
+				BA68B2BD0C865DB200238747 /* missing */,
+				BA68B2BE0C865DB200238747 /* mkinstalldirs */,
+				BA68B2BF0C865DB200238747 /* msvc++ */,
+				BA68B2C40C865DB200238747 /* parse.c */,
+				BA68B2C50C865DB200238747 /* parse.h */,
+				BA68B2C60C865DB200238747 /* README */,
+				BA68B2C70C865DB200238747 /* render.c */,
+				BA68B2C80C865DB200238747 /* render.h */,
+				BA68B2C90C865DB200238747 /* tag.c */,
+				BA68B2CA0C865DB200238747 /* tag.h */,
+				BA68B2CB0C865DB200238747 /* TODO */,
+				BA68B2CC0C865DB200238747 /* ucs4.c */,
+				BA68B2CD0C865DB200238747 /* ucs4.h */,
+				BA68B2CE0C865DB200238747 /* utf16.c */,
+				BA68B2CF0C865DB200238747 /* utf16.h */,
+				BA68B2D00C865DB200238747 /* utf8.c */,
+				BA68B2D10C865DB200238747 /* utf8.h */,
+				BA68B2D20C865DB200238747 /* util.c */,
+				BA68B2D30C865DB200238747 /* util.h */,
+				BA68B2D40C865DB200238747 /* VERSION */,
+				BA68B2D50C865DB200238747 /* version.c */,
+				BA68B2D60C865DB200238747 /* version.h */,
+			);
+			path = "libid3tag-0.15.1b";
+			sourceTree = "<group>";
+		};
+		BA68B2BF0C865DB200238747 /* msvc++ */ = {
+			isa = PBXGroup;
+			children = (
+				BA68B2C00C865DB200238747 /* config.h */,
+				BA68B2C10C865DB200238747 /* libid3tag.dsp */,
+				BA68B2C20C865DB200238747 /* Makefile.am */,
+				BA68B2C30C865DB200238747 /* Makefile.in */,
+			);
+			path = "msvc++";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXProject section */
+		BA68B2870C865D9000238747 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = BA68B2880C865D9000238747 /* Build configuration list for PBXProject "libid3tag-0.15.1b" */;
+			hasScannedForEncodings = 0;
+			mainGroup = BA68B2850C865D9000238747;
+			projectDirPath = "";
+			targets = (
+				BA68B2D80C865DE000238747 /* Build PPC */,
+				BA68B2E70C865EBB00238747 /* Build Intel */,
+				BA68B2F30C865F0F00238747 /* libid3tag.a */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BA68B2E30C865DEF00238747 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "BUILD_ARCH=build/ppc\ncd libid3tag-0.15.1b\n./configure ppc darwin-ppc-cc\nmake clean\nmake \"CC=gcc -arch ppc\"\nmkdir -p $BUILD_ARCH\nmv .libs/*.a $BUILD_ARCH\necho \"Done\"\nexit 0\n";
+		};
+		BA68B2EA0C865EC000238747 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "BUILD_ARCH=build/i386\ncd libid3tag-0.15.1b\n./configure i386 darwin-i386-cc\nmake clean\nmake \"CC=gcc -arch i386\" \"CFLAGS=-Wall -g\"\nmkdir -p $BUILD_ARCH\nmv .libs/*.a $BUILD_ARCH\necho \"Done\"\nexit 0\n";
+		};
+		BA68B2FD0C86600200238747 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here\ncd libid3tag-0.15.1b\nfor lib in libid3tag.a; do\n lipo -create build/*/$lib -output $lib\n ranlib $lib\ndone\nexit 0";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BA68B2F50C865F1200238747 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BA68B2D80C865DE000238747 /* Build PPC */;
+			targetProxy = BA68B2F40C865F1200238747 /* PBXContainerItemProxy */;
+		};
+		BA68B2F70C865F1500238747 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BA68B2E70C865EBB00238747 /* Build Intel */;
+			targetProxy = BA68B2F60C865F1500238747 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		BA68B2890C865D9000238747 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Debug;
+		};
+		BA68B28A0C865D9000238747 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+			};
+			name = Release;
+		};
+		BA68B2E10C865DE200238747 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = "Build PPC";
+			};
+			name = Debug;
+		};
+		BA68B2E20C865DE200238747 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				PRODUCT_NAME = "Build PPC";
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		BA68B2EF0C865ECC00238747 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = "Build Intel";
+			};
+			name = Debug;
+		};
+		BA68B2F00C865ECC00238747 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				PRODUCT_NAME = "Build Intel";
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		BA68B2FB0C865F1900238747 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = libid3tag.a;
+			};
+			name = Debug;
+		};
+		BA68B2FC0C865F1900238747 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				PRODUCT_NAME = libid3tag.a;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BA68B2880C865D9000238747 /* Build configuration list for PBXProject "libid3tag-0.15.1b" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA68B2890C865D9000238747 /* Debug */,
+				BA68B28A0C865D9000238747 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BA68B2E00C865DE200238747 /* Build configuration list for PBXAggregateTarget "Build PPC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA68B2E10C865DE200238747 /* Debug */,
+				BA68B2E20C865DE200238747 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BA68B2EE0C865ECC00238747 /* Build configuration list for PBXAggregateTarget "Build Intel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA68B2EF0C865ECC00238747 /* Debug */,
+				BA68B2F00C865ECC00238747 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BA68B2FA0C865F1900238747 /* Build configuration list for PBXAggregateTarget "libid3tag.a" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA68B2FB0C865F1900238747 /* Debug */,
+				BA68B2FC0C865F1900238747 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BA68B2870C865D9000238747 /* Project object */;
+}
