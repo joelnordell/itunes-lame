@@ -1082,8 +1082,7 @@ FOUNDATION_EXPORT BOOL NSDebugEnabled;
   }
 
   // Render the tag
-  id3tag->options |= ID3_TAG_OPTION_COMPRESSION | ID3_TAG_OPTION_APPENDEDTAG;
-  id3tag->options &= ~ID3_TAG_OPTION_ID3V1;
+  id3tag->options = 0; // ID3_TAG_OPTION_CRC and ID3_TAG_OPTION_COMPRESSION, which are the default, cause interoperability problems.
   id3tag->flags |= ID3_TAG_FLAG_FOOTERPRESENT;
   id3_length_t len = id3_tag_render(id3tag, NULL);
   char *buf = (char*)malloc(len);
