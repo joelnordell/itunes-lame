@@ -161,16 +161,14 @@ static void prepend_bytes_to_file(int fd, int n) {
   while (p > 0) {
     p -= chunkSize;
     if (p < 0) {
-      chunkSize = (0-p);
+      chunkSize += p; // Reduce the chunk size by however far we overshot the beginning.
       p = 0;
     }
-
-    lseek(fd, p, SEEK_SET);
-    read(fd, buf, chunkSize);
-    lseek(fd, p + n, SEEK_SET);
-    write(fd, buf, chunkSize);
+    
+    pread(fd, buf, chunkSize, p);
+    pwrite(fd, buf, chunkSize, p+n);
   }
-
+  
   free(buf);
 }
 
