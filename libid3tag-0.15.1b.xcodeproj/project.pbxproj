@@ -7,6 +7,41 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
+		9BCCF6A10CA9716F00DA95D0 /* libid3tag (Intel) SDKs */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 9BCCF6A30CA9716F00DA95D0 /* Build configuration list for PBXAggregateTarget "libid3tag (Intel) SDKs" */;
+			buildPhases = (
+				9BCCF6A20CA9716F00DA95D0 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = "libid3tag (Intel) SDKs";
+			productName = "Build Intel";
+		};
+		9BCCF6A90CA9749900DA95D0 /* libid3tag (PPC) SDKs */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 9BCCF6AB0CA9749900DA95D0 /* Build configuration list for PBXAggregateTarget "libid3tag (PPC) SDKs" */;
+			buildPhases = (
+				9BCCF6AA0CA9749900DA95D0 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = "libid3tag (PPC) SDKs";
+			productName = "Build Intel";
+		};
+		9BCCF6B00CA9755C00DA95D0 /* libid3tag (UB) SDKs */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 9BCCF6B60CA9755C00DA95D0 /* Build configuration list for PBXAggregateTarget "libid3tag (UB) SDKs" */;
+			buildPhases = (
+				9BCCF6B50CA9755C00DA95D0 /* ShellScript */,
+			);
+			dependencies = (
+				9BCCF6BA0CA975BF00DA95D0 /* PBXTargetDependency */,
+				9BCCF6BC0CA975C500DA95D0 /* PBXTargetDependency */,
+			);
+			name = "libid3tag (UB) SDKs";
+			productName = libid3tag.a;
+		};
 		BA68B2D80C865DE000238747 /* Build libid3tag (PPC) */ = {
 			isa = PBXAggregateTarget;
 			buildConfigurationList = BA68B2E00C865DE200238747 /* Build configuration list for PBXAggregateTarget "Build libid3tag (PPC)" */;
@@ -45,6 +80,20 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXContainerItemProxy section */
+		9BCCF6B90CA975BF00DA95D0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BA68B2870C865D9000238747 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9BCCF6A10CA9716F00DA95D0;
+			remoteInfo = "libid3tag (Intel) SDKs";
+		};
+		9BCCF6BB0CA975C500DA95D0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BA68B2870C865D9000238747 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9BCCF6A90CA9749900DA95D0;
+			remoteInfo = "libid3tag (PPC) SDKs";
+		};
 		BA68B2F40C865F1200238747 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BA68B2870C865D9000238747 /* Project object */;
@@ -86,11 +135,55 @@
 				BA68B2F30C865F0F00238747 /* Build libid3tag (Universal) */,
 				BA68B2D80C865DE000238747 /* Build libid3tag (PPC) */,
 				BA68B2E70C865EBB00238747 /* Build libid3tag (Intel) */,
+				9BCCF6A10CA9716F00DA95D0 /* libid3tag (Intel) SDKs */,
+				9BCCF6A90CA9749900DA95D0 /* libid3tag (PPC) SDKs */,
+				9BCCF6B00CA9755C00DA95D0 /* libid3tag (UB) SDKs */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		9BCCF6A20CA9716F00DA95D0 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			comments = "This script builds the target for its platform using the libraries stored at /Developer/SDKs. Prior versions linked against whatever libraries were installed on the developer's machine, which may or may not be Universal Binaries. By redirecting the root to /Developer/SDKs, we can guarantee a complete ppc/i386 build environment for the Run Script.\n\nNote: I copied these new settings somewhat blindly from Apple's porting guide <http://developer.apple.com/documentation/Porting/Conceptual/PortingUnix/index.html?http://developer.apple.com/documentation/Porting/Conceptual/PortingUnix/compiling/chapter_4_section_3.html>. I'm unfamiliar with their meaning and usage, so I simply merged the settings from the prior version with the new settings from Apple. If this results in anything redundant or futile in make's options, please correct my errors.\n";
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "BUILD_ARCH=build/i386\ncd libid3tag-0.15.1b\n./configure i386 darwin-i386-cc\nmake clean\nmake \"CC=gcc -arch i386\" \"CFLAGS=-Wall -g -isysroot /Developer/SDKs/MacOSX10.4u.sdk -arch i386\" LDFLAGS=\"-Wl,-syslibroot,/Developer/SDKs/MacOSX10.4u.sdk -arch i386\"\nmkdir -p $BUILD_ARCH\nmv .libs/libid3tag.a $BUILD_ARCH\necho \"Done\"\nexit 0\n";
+		};
+		9BCCF6AA0CA9749900DA95D0 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			comments = "This script builds the target for its platform using the libraries stored at /Developer/SDKs. Prior versions linked against whatever libraries were installed on the developer's machine, which may or may not be Universal Binaries. By redirecting the root to /Developer/SDKs, we can guarantee a complete ppc/i386 build environment for the Run Script.\n\nNote: I copied these new settings somewhat blindly from Apple's porting guide <http://developer.apple.com/documentation/Porting/Conceptual/PortingUnix/index.html?http://developer.apple.com/documentation/Porting/Conceptual/PortingUnix/compiling/chapter_4_section_3.html>. I'm unfamiliar with their meaning and usage, so I simply merged the settings from the prior version with the new settings from Apple. If this results in anything redundant or futile in make's options, please correct my errors.\n";
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "BUILD_ARCH=build/ppc\ncd libid3tag-0.15.1b\n./configure ppc darwin-ppc-cc\nmake clean\nmake \"CC=gcc -arch ppc\" \"CFLAGS=-Wall -g -isysroot /Developer/SDKs/MacOSX10.4u.sdk -arch ppc\" LDFLAGS=\"-Wl,-syslibroot,/Developer/SDKs/MacOSX10.4u.sdk -arch ppc\"\nmkdir -p $BUILD_ARCH\nmv .libs/libid3tag.a $BUILD_ARCH\necho \"Done\"\nexit 0\n";
+		};
+		9BCCF6B50CA9755C00DA95D0 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here\ncd libid3tag-0.15.1b\nlipo -create build/*/libid3tag.a -output libid3tag.a\nranlib libid3tag.a\nexit 0";
+		};
 		BA68B2E30C865DEF00238747 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -133,6 +226,16 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		9BCCF6BA0CA975BF00DA95D0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9BCCF6A10CA9716F00DA95D0 /* libid3tag (Intel) SDKs */;
+			targetProxy = 9BCCF6B90CA975BF00DA95D0 /* PBXContainerItemProxy */;
+		};
+		9BCCF6BC0CA975C500DA95D0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9BCCF6A90CA9749900DA95D0 /* libid3tag (PPC) SDKs */;
+			targetProxy = 9BCCF6BB0CA975C500DA95D0 /* PBXContainerItemProxy */;
+		};
 		BA68B2F50C865F1200238747 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = BA68B2D80C865DE000238747 /* Build libid3tag (PPC) */;
@@ -146,6 +249,72 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		9BCCF6A40CA9716F00DA95D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = "Build Intel";
+			};
+			name = Debug;
+		};
+		9BCCF6A50CA9716F00DA95D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				PRODUCT_NAME = "Build Intel";
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		9BCCF6AC0CA9749900DA95D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = "Build Intel";
+			};
+			name = Debug;
+		};
+		9BCCF6AD0CA9749900DA95D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				PRODUCT_NAME = "Build Intel";
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		9BCCF6B70CA9755C00DA95D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = libid3tag.a;
+			};
+			name = Debug;
+		};
+		9BCCF6B80CA9755C00DA95D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				PRODUCT_NAME = libid3tag.a;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
 		BA68B2890C865D9000238747 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -229,6 +398,33 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		9BCCF6A30CA9716F00DA95D0 /* Build configuration list for PBXAggregateTarget "libid3tag (Intel) SDKs" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9BCCF6A40CA9716F00DA95D0 /* Debug */,
+				9BCCF6A50CA9716F00DA95D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9BCCF6AB0CA9749900DA95D0 /* Build configuration list for PBXAggregateTarget "libid3tag (PPC) SDKs" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9BCCF6AC0CA9749900DA95D0 /* Debug */,
+				9BCCF6AD0CA9749900DA95D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9BCCF6B60CA9755C00DA95D0 /* Build configuration list for PBXAggregateTarget "libid3tag (UB) SDKs" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9BCCF6B70CA9755C00DA95D0 /* Debug */,
+				9BCCF6B80CA9755C00DA95D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		BA68B2880C865D9000238747 /* Build configuration list for PBXProject "libid3tag-0.15.1b" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
