@@ -379,16 +379,23 @@ FOUNDATION_EXPORT BOOL NSDebugEnabled;
 }
 
 
-
+// The app's Main Action.
+// Called encode: but won't encode.
+// Button is called "Import".
+//		- haiku by Rich Martin
 - (IBAction)encode:(id)sender{
 	//  NSLog(@"encode");
-	
+
+	// Re-click Import Button means "Abort" (this should go into the docs _RAM)
+	// Shift-click Import Button means "Queue up some more tracks"
     if (encoding && !([[NSApp currentEvent]modifierFlags] & NSShiftKeyMask)){
         [self cancelEncoding:self];
         return;
     }
-    
-    NSString *validateError=nil;
+
+    // try to make sure the user-supplied LAME Encoding Options will actually work
+    // Option-click Import Button means "Force processing even if options won't validate" (this should go into the docs _RAM)
+    NSString *validateError=nil;	// whoops, validateOptions:error: returns bool now, no longer NSString _RAM
     if (canValidate && ![self validateOptions:[optionsField stringValue] error:&validateError]) {
         if (validateError) NSLog(@"Validation Error:%@",validateError);
         [self setProgressFieldValue:NSLocalizedString(@"Encoding Options are Invalid",@"Invalid Options Message")];
@@ -397,9 +404,11 @@ FOUNDATION_EXPORT BOOL NSDebugEnabled;
 		
 		
     }
+
     [encoderWindow makeFirstResponder:encoderWindow];
     [self setEncodingOptions:optionsField];
-	
+
+	// obtain track data from iTunes
 	[self updateTracksArray];
 	if (!tracksArray) return;
 	
@@ -408,21 +417,26 @@ FOUNDATION_EXPORT BOOL NSDebugEnabled;
         NSFileManager *manager=[NSFileManager defaultManager];
         
         NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
-        
+
+        // update the UI
         [progressIndicator setIndeterminate:YES];
         [progressIndicator startAnimation:self];
 		
         [self setProgressFieldValue: NSLocalizedString(@"Preparing Tracks", @"Preparing Tracks")];
         NSString *lameVersion=[self lameVersion];
-		
+
+		// ask iTunes whether user likes track numbers in front of their filenames,
+		// ask iTunes where user's root music folder is, just in case
         [self getMusicPreferences];
+		// This message is misleading: musicDirectory will only be used for encoding as a fallback _RAM
         NSLog(@"Encoding to folder: %@",musicDirectory);
         //    [self setProgressFieldValue:[NSString stringWithFormat:@"Encoding to %@",musicPath]];
 		
 		
         NSArray *trackPaths=nil;
 		
-		
+		// Prepare options for LAME,
+		// combining user-supplied LAME Encoding Options (internal settings) with iT-L prefs
 		// Get internal settings
 		NSMutableArray *arguments=[NSMutableArray arrayWithCapacity:1];
 		[arguments setArray:[[optionsField stringValue]componentsSeparatedByString:@" "]];
@@ -436,7 +450,10 @@ FOUNDATION_EXPORT BOOL NSDebugEnabled;
 		shouldCache=[defaults boolForKey:kShouldCache];
 		includeComment=[defaults boolForKey:kVComment];
 		multiProcess=[defaults boolForKey:kMulti];// || MPProcessors()>1 )
-			
+
+		// if "--delete-source" is in user-supplied LAME Encoding Options,
+		// we need to process that ourselves: it is not a valid option for LAME
+		// Hmmm...wouldn't validateOptions:error above choke on this? _RAM
 			if (deleteSource=[arguments containsObject:@"--delete-source"])
 				[arguments removeObject:@"--delete-source"];
 			
@@ -447,15 +464,19 @@ FOUNDATION_EXPORT BOOL NSDebugEnabled;
 			int i;
 			
 			BOOL protectedWarning=NO;
-			
+
+			// only reset totalTracks if we're not appending new tracks to the job
 			if(!encoding)
 				totalTracks=0;
-			
+
+			// this loop is too huge. it needs simplification _RAM
 			for(i=0; i<[tracksArray count];i++){
 				
 				track=[tracksArray objectAtIndex:i];
 				tags=[track objectForKey:kTrackTags];
-				
+
+				// all this outFile business could be encapsulated by yet another instance method _RAM
+				//=-=-=-=-=-=-=-=-=-=-=-= Construct Output Filepath =-=-=-=-=-=-=-=-=
 				NSString *escapedAlbum=	[[[[tags objectForKey:@"pAlb"]stringValue]stringByReplacing:@"/" with:@"_"]stringByReplacing:@":" with:@"_"];
 				NSString *escapedArtist=[[[[tags objectForKey:@"pArt"]stringValue]stringByReplacing:@"/" with:@"_"]stringByReplacing:@":" with:@"_"];
 				NSString *escapedName=	[[[[tags objectForKey:@"pnam"]stringValue]stringByReplacing:@"/" with:@"_"]stringByReplacing:@":" with:@"_"];
@@ -503,6 +524,7 @@ FOUNDATION_EXPORT BOOL NSDebugEnabled;
 						}
 					}
 				}
+				//=-=-=-=-=-=-=-=-=-= end Construct Output Filepath =-=-=-=-=-=-=-=-=
 				[outFiles addObject:outFile];
 				
 				if(includeComment && ![tags objectForKey:@"pCmt"])[tags setObject:[NSAppleEventDescriptor descriptorWithString:[NSString stringWithFormat:NSLocalizedString(@"Encoded with LAME v%@ (%@)", @"Encoded with LAME v%@ (%@)"),lameVersion,[arguments componentsJoinedByString:@" "]]] forKey:@"pCmt"];
@@ -510,7 +532,8 @@ FOUNDATION_EXPORT BOOL NSDebugEnabled;
 				NSString *kind=[[tags objectForKey:@"pKnd"]stringValue];
 				NSString *class=[[tags objectForKey:@"pcls"]stringValue];
 				//NSLog(@"class:%@",class);
-				
+
+				// is this track already an MP3? if so, we will tell LAME to re-encode later
 				mp3input=[kind rangeOfString:@"MPEG"].location!=NSNotFound; //*** can match a substring instead?
 				
 				int trackNumber=[[tags objectForKey:@"pTrN"]int32Value]-1;
@@ -520,6 +543,8 @@ FOUNDATION_EXPORT BOOL NSDebugEnabled;
 				bool cacheThisTrack=NO;
 				bool invalidInFile=NO;
 				NSString *cacheTool=nil;
+
+				// is the source file a track on a CD-Audio disc?
 				if ([class rangeOfString:@"CD"].location!=NSNotFound){
 					if (multiProcess && !shouldCache){
 						SInt32 version;
@@ -531,20 +556,26 @@ FOUNDATION_EXPORT BOOL NSDebugEnabled;
 					}
 					
 					cacheThisTrack=shouldCache;
+
+					// assert our list of filenames for this CD
 					if (!trackPaths){
 						NSString *CDPath=[self currentCD];
 						if (!CDPath) NSLog(@"Could not find CD");
 						trackPaths=[self getCDTrackPaths:CDPath]; //Get list of tracks, but only the first time.
 						
 					}
-					
+
+					// assert good source file: track number is valid and its filePath is valid
 					if (trackNumber<[trackPaths count]) inFile=[trackPaths objectAtIndex:trackNumber];
 					if (invalidInFile=![manager fileExistsAtPath:inFile]){ // Bypass for bad cd listings
 						NSLog(@"Track \"%@\" supposedly does not exist, using shell completion to match.",[inFile lastPathComponent]);
 						inFile=[NSString stringWithFormat:@"%d\\ *.aiff",[[tags objectForKey:@"pTrN"]int32Value]];
 					}
 				}else{
+					// the source file is on the hard disk
 					inFile=[[tags objectForKey:@"pLoc"]stringValue];
+
+					// skip over FairPlay-protected files
 					if ([kind rangeOfString:@"AAC"].location!=NSNotFound && [[inFile pathExtension]isEqual:@"m4p"]){
 						if (!protectedWarning){
 							NSBeginCriticalAlertSheet(@"Protected Files",nil,nil,nil,encoderWindow,nil,nil,nil,nil,@"Some of the selected tracks are protected, and iTunes-LAME is unable to read data from them.");
@@ -554,6 +585,8 @@ FOUNDATION_EXPORT BOOL NSDebugEnabled;
 						}
 						continue;
 					}
+
+					// unless source file is AIF, WAV or MP3, cache this track using qtaiff
 					if ([kind rangeOfString:@"AIFF"].location==NSNotFound && [kind rangeOfString:@"WAV"].location==NSNotFound && !mp3input){
 						cacheThisTrack=YES;
 						cacheTool=[[NSBundle mainBundle]pathForResource:@"qtaiff" ofType:@""];
@@ -561,13 +594,17 @@ FOUNDATION_EXPORT BOOL NSDebugEnabled;
 				}
 				
 				if (cacheThisTrack){
+					// create a name for the cache file
 					tempFile=[[defaults objectForKey:kCacheLocation]stringByStandardizingPath];
 					if (!tempFile)tempFile=NSTemporaryDirectory();
 					tempFile=[tempFile stringByAppendingPathComponent:[NSString stringWithFormat: @"lame_input_%04d.aiff",totalTracks+1]];
 				}
+				// this message seems a bit out of place. can't it follow assignment of inFile above? _RAM
 				if (!inFile) NSLog(@"Unable to obtain a source for track of kind \"%@\" and class \"%@\"",kind,class);
 				
-				
+				// append the re-encode option to LAME args if source file is an MP3
+				// this is an odd way to express it _RAM
+				// and shouldn't the assignment of mp3input be move to here? _RAM
 				NSString *options=[[optionsField stringValue]stringByAppendingString:(mp3input?@" --mp3input":@"")];
 				
 				if (NSDebugEnabled) NSLog(@"Track %d prepared%@\r\tSource:\t%@ (%@)\r\tDestination:\t%@\r\tOptions:\t%@",totalTracks+1, (tempFile?@" (Caching)":@""),inFile, kind, outFile, options);
@@ -594,7 +631,8 @@ FOUNDATION_EXPORT BOOL NSDebugEnabled;
 					[pendingArray addObject:track];
 				else
 					[preparedArray addObject:track];
-				
+
+				// totalTracks is displayed in UI
 				totalTracks++;
 			}
 			
@@ -603,8 +641,10 @@ FOUNDATION_EXPORT BOOL NSDebugEnabled;
 			if (NSDebugEnabled) NSLog(@"Preparing to Encode");
 			[self setCurrentCD:nil];
 			
-			
+			// we're done with tracksArray
 			[self setTracksArray:nil];
+
+			// update the UI
 			if (!encoding){
 				encoding=YES;
 				
@@ -636,7 +676,7 @@ FOUNDATION_EXPORT BOOL NSDebugEnabled;
 			[progressIndicator stopAnimation:self];
 			[self setProgressFieldValue:@""];
 			
-			
+			// let the real work begin
 			[self encodeLoop];
 			
 			
@@ -647,22 +687,27 @@ FOUNDATION_EXPORT BOOL NSDebugEnabled;
     
 }
 
+// Even though this contains no actual loop, it will be re-invoked often to process the list of tracks.
 - (void) encodeLoop{
     NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
     BOOL multiProcess=[defaults boolForKey:kMulti];
-    
+
+    // as long as there are prepared tracks and free processors, launch another encoding task
+	// Two CPUs hardcoded here _RAM
     while ([preparedArray count] && [encodingArray count]<(multiProcess?2:1))
         [self encodeTrack:[preparedArray objectAtIndex:0]];
 	
-    // Start encoding any prepared tracks if there is room.
+    // Any more tracks need caching? start another caching task only if none already in progress
     if ([pendingArray count] && ![cachingArray count])
         [self cacheTrack:[pendingArray objectAtIndex:0]];
-    
+
+    // update the UI
     [self updateTrackNumbers];
     [self updateEncoderWindowSizeEncoding:encoding multi:([encodingArray count]+[cachingArray count]>1)];
     
     NSLog(@"Status: %d pending, %d caching, %d prepared, %d encoding, %d complete",[pendingArray count],[cachingArray count],[preparedArray count],[encodingArray count],[completeArray count]);
-    
+
+    // all queues drained? another job well done!
     if (!([pendingArray count]+[cachingArray count]+[preparedArray count]+[encodingArray count])){
 		if (NSDebugEnabled) NSLog(@"Import Complete");   
         [self finishEncodingWithError:nil];
@@ -682,10 +727,19 @@ FOUNDATION_EXPORT BOOL NSDebugEnabled;
     [trackNumberField setStringValue:statusString];
     
 }
+
+// Launch the caching task for a given track.
 - (void) cacheTrack:(NSDictionary *)track{
     if (NSDebugEnabled) NSLog(@"Caching track: %@ to %@",[track objectForKey:kTrackName],[track objectForKey:kLameTempFile]);
     NSFileManager *manager=[NSFileManager defaultManager];
+
+	// Two CPUs hardcoded here _RAM
+	// but we only need to know: is there a free progress view? (is [encodingArray count] less than numProcessors?)
+	// we only need one free view, because there is only one cache task allowed at a time
     if ([encodingArray count]<2){
+    	// update the UI
+    	// this progress view will be at the top (primary) only if no encoding is underway
+    	// otherwise, caching progress shows at the bottom of the window
         int primary=(![encodingArray count]);
 		
         ILProgressView * thisProgressBar=primary?trackProgressBar:trackProgress2Bar;
@@ -697,17 +751,22 @@ FOUNDATION_EXPORT BOOL NSDebugEnabled;
         [thisNameField setStringValue:[NSString stringWithFormat:@"Caching: \"%@\"",[track objectForKey:kTrackName]]];
         [thisNameField display];
     }
-    
+
+    // if cache file already exists, delete it before we create ours
     [manager removeFileAtPath:[track objectForKey:kLameTempFile] handler:nil];
-	
+
+	// move this track from pending queue to caching queue
 	[cachingArray addObject:track];
     [pendingArray removeObject:track];
+
     [[track objectForKey:kCacheTask] launch];
 }
 
+// Launch the encoding task for a given track.
 - (void) encodeTrack:(NSDictionary *)track{
     NSFileManager *manager=[NSFileManager defaultManager];
-    
+
+    // move this track from prepared queue to encoding queue
     [encodingArray addObject:track];
     [preparedArray removeObject:track];
     
@@ -716,7 +775,8 @@ FOUNDATION_EXPORT BOOL NSDebugEnabled;
     
     
     NSTask *encoder=[track objectForKey:kEncoderTask];
-    
+
+    // assert path to destination folder
     [manager createDirectoriesForPath:[[track objectForKey:kLameOutFile]stringByDeletingLastPathComponent]];
     
     NSPipe *outputPipe=[NSPipe pipe];
@@ -883,10 +943,13 @@ FOUNDATION_EXPORT BOOL NSDebugEnabled;
 	
 }
 
-
+// Notification handler
+// We observe this notification to sense the completion of caching and encoding tasks.
 - (void)taskDidTerminate:(NSNotification *)aNotification{
     NSTask *task=[aNotification object];
     
+    // if the cache queue has a track in it (cache queue is limited to one track),
+    // if this is its completion, post a notification to start a new task, then bail.
     if ([cachingArray count]){
         NSDictionary *cachingTrack=[cachingArray lastObject];
         if (task==[cachingTrack objectForKey:kCacheTask]){
@@ -898,10 +961,14 @@ FOUNDATION_EXPORT BOOL NSDebugEnabled;
             return;
         }
     }
+
+	// so there was nothing in the cache queue - is this one of our encoding tasks?
     NSMutableDictionary *track=[self trackForTask:task];
 	
-    
+    // encoding becomes false on error or after the last track is encoded
     if (track && encoding){
+    	// primary is true when this task is at index zero,
+    	// so we will update the progress view at the top of the window
         int primary=![encodingArray indexOfObject:track];
 		
 		
@@ -913,42 +980,52 @@ FOUNDATION_EXPORT BOOL NSDebugEnabled;
             if (NSDebugEnabled) NSLog(string);
             [self finishEncodingWithError:string];
         }else{
+
+			// figure out which progress view to update in the UI, primary or secondary
             ILProgressView * thisProgressBar=primary?trackProgressBar:trackProgress2Bar;
             id thisNameField=primary?trackNameField:trackName2Field;
             id thisProgressField=primary?trackProgressField:trackProgress2Field;
-			
+
+			// update the UI
 			[thisProgressBar setIndeterminate:YES];
 			[thisProgressBar display];
             [thisNameField setStringValue:[NSString stringWithFormat:@"Finishing: \"%@\"",[track objectForKey:kTrackName]]];
             [thisNameField display];
             [thisProgressField setStringValue:NSLocalizedString(@"Adding Track to Library", @"Adding Track to Library")];
             [thisProgressField display];
-			
+
+			// write this track's iTunes metadata to ID3v2.4 tags via libid3tag
             [self writeTag:track];
+            // send AppleScript to iTunes to add this track to our playlist
             [self addTrack:track];
             
             
 			//[[[track objectForKey:kEncoderTask]standardError]autorelease];
             [track removeObjectForKey:kEncoderTask];
-			
+
+			// if user had "--delete-source" spec'd in their encoding options, honor that request here
             if ([[track objectForKey:kDeleteSource]boolValue] && ![[[[track objectForKey:kTrackTags] objectForKey:@"pKnd"]stringValue] isEqualToString:@"Audio CD Track"]){
                 [thisProgressField setStringValue:NSLocalizedString(@"Removing Source File", @"Removing Source File")];
                 [thisProgressField display];
                 [self removeFileAndTrack:[track objectForKey:kLameInFile]];
             }
+
+			// clean up the cache file, if any
 			NSString *tempFile=[track objectForKey:kLameTempFile];
             if (tempFile)
                 [[NSFileManager defaultManager] removeFileAtPath:tempFile handler:nil];
-			
+
+			// update the UI again
             [thisProgressBar setIndeterminate:NO];
             [thisProgressBar setDoubleValue:0];
             [thisProgressField setStringValue:NSLocalizedString(@"Track Complete", @"Track Complete")];
             [thisProgressField display];
 			
-			
+			// move this track from encoding queue to complete queue
             [completeArray addObject:track];
             [encodingArray removeObject:track];
 			
+ 		   // post a notification to start a new task.
             [[NSNotificationCenter defaultCenter]postNotificationName:kTrackEncodedNotification object:nil];
             
         }
