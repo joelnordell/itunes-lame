@@ -54,6 +54,7 @@
 #define kPlaylistName		@"playlistName"
 #define kUseSelection		@"useSelection"
 #define kCacheLocation		@"cacheLocation"
+#define kOmitDefiniteArticleInPathsKey	@"omitDefiniteArticleInPaths"
 
 #define gDefaultName @"%a:%l:%n. %t"
 #define gDefaultNameNoTrack @"%a:%l:%t"
@@ -501,8 +502,12 @@ FOUNDATION_EXPORT BOOL NSDebugEnabled;
 				nameTemplate= [nameTemplate stringByReplacing:@"/" with:@":"];
 				nameTemplate= [nameTemplate stringByReplacing:@"!#!" with:@"/"];
 				
-				// *** this will mess up if tags contain the sequences
-				nameTemplate= [nameTemplate stringByReplacing:@"%a" with:(escapedArtist?escapedArtist:NSLocalizedString(@"~Unknown Artist",@"Unknown Artist Folder Name"))];
+				// *** these substitutions will mess up if tags contain the tokens
+				if ([defaults boolForKey:kOmitDefiniteArticleInPathsKey]) {
+					nameTemplate = [nameTemplate stringByReplacing:@"%a" with:(escapedArtist?[escapedArtist stringByRemovingLeadingDefiniteArticle]:NSLocalizedString(@"~Unknown Artist",@"Unknown Artist Folder Name"))];	// _RAM
+				} else {
+					nameTemplate= [nameTemplate stringByReplacing:@"%a" with:(escapedArtist?escapedArtist:NSLocalizedString(@"~Unknown Artist",@"Unknown Artist Folder Name"))];
+				}
 				nameTemplate= [nameTemplate stringByReplacing:@"%l" with:(escapedAlbum?escapedAlbum:NSLocalizedString(@"~Unknown Album",@"Unknown Album Folder Name"))];
 				nameTemplate= [nameTemplate stringByReplacing:@"%n" with:[NSString stringWithFormat:@"%02d",[[tags objectForKey:@"pTrN"]int32Value]]];
 				nameTemplate= [nameTemplate stringByReplacing:@"%t" with:escapedName];

@@ -33,3 +33,25 @@
 }
 
 @end
+
+@implementation NSString (Sorting)
+
+-(NSString *)stringByRemovingLeadingDefiniteArticle {
+	return [self stringByRemovingPrefix:@"The "];
+}
+
+-(NSString *)stringByRemovingPrefix:(NSString *)prefix {
+	NSMutableString *result = [NSMutableString stringWithString:self];
+
+	if ([result length] > [prefix length]) {
+		NSRange r = NSMakeRange(0, [prefix length]);
+
+		if (NSOrderedSame == [result compare:prefix options:0 range:r]) {
+			[result setString:[result substringFromIndex:[prefix length]]];
+		}
+	}
+
+	return result;
+}
+
+@end

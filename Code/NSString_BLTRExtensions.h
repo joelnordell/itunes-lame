@@ -12,3 +12,8 @@
 - (NSString *) stringByReplacing:(NSString *)search with:(NSString *)replacement;
 
 @end
+
+@interface NSString (Sorting)
+-(NSString *)stringByRemovingLeadingDefiniteArticle;
+-(NSString *)stringByRemovingPrefix:(NSString *)prefix;
+@end
