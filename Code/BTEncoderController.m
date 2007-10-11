@@ -152,6 +152,46 @@ static void set_comment(struct id3_tag *tag, const id3_utf8_t *value) {
   }
 }
 
+static void add_comment(struct id3_tag *tag, NSString *language, NSString *description, NSString *comment) {
+	struct id3_frame *frame = NULL;
+
+	if (! comment || [comment isEqualToString:@""]) return;
+
+	frame = id3_frame_new(ID3_FRAME_COMMENT);
+	if (frame == 0) {
+		NSLog(@"Couldn't create frame %s", ID3_FRAME_COMMENT);
+		return;
+	}
+	id3_tag_attachframe(tag, frame);
+
+	if (! language || [language isEqualToString:@""]) language = @"eng";
+	char buf[4];
+	if (YES != [language getCString:buf maxLength:4 encoding:NSUTF8StringEncoding]) {
+		NSLog(@"Couldn't use [%@] as a language", language);
+		id3_frame_delete(frame);
+		return;
+	}
+
+	if (id3_field_setlanguage(&frame->fields[1], buf) != 0) {
+		NSLog(@"Couldn't set language [%@] in frame field 1", language);
+		id3_frame_delete(frame);
+		return;
+	}
+
+	if (! [description isEqualToString:@""]) {
+		if (id3_field_setstring(&frame->fields[2], id3_utf8_ucs4duplicate((id3_utf8_t const *)[description UTF8String])) != 0) {
+			NSLog(@"Couldn't set description [%@] in frame field 2", description);
+			id3_frame_delete(frame);
+			return;
+		}
+	}
+
+	if (id3_field_setfullstring(&frame->fields[3], id3_utf8_ucs4duplicate((id3_utf8_t const *)[comment UTF8String])) != 0) {
+		NSLog(@"Couldn't set user text [%@] in frame field 3", comment);
+		id3_frame_delete(frame);
+		return;
+	}
+}
 
 static void prepend_bytes_to_file(int fd, int n) {
   // Go through the file, starting at the end, and move everything over by n bytes.
