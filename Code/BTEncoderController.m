@@ -23,9 +23,8 @@
 
 #include "id3tag.h"
 
-#define encodingOptionsKey @"encodingOptions"
 #define GETTER_SCRIPT @"tell application \"iTunes\"\rset thePlaylist to view of front window\rif class of thePlaylist is not in {user playlist, audio CD playlist} then error \"Invalid Playlist\"\rset theList to every track in thePlaylist whose enabled is true\rset theRecordList to {}\rrepeat with theTrack in theList\rset theLocation to \"\"\rtry\rif class of theTrack = file track then set theLocation to POSIX path of (location of theTrack as alias)\rtell theTrack to set end of theRecordList to {kind,class of theTrack as string, theLocation, name as string, artist as string, composer as string, album as string, comment as string, genre as string, year, track number, track count, disc number, disc count, compilation}\rend try\rend repeat\rend tell\rdelay 0.1\rreturn {theRecordList, name of thePlaylist}"
-#define keyArray [NSArray arrayWithObjects: @"pKnd",@"pcls", @"pLoc", @"pnam", @"pArt",@"pCmp",@"pAlb", @"pCmt", @"pGen", @"pGrp", @"pYr ",@"pTrN",@"pTrC",@"pDsN", @"pDsC",@"pAnt",nil]
+#define keyArray [NSArray arrayWithObjects: @"pKnd",@"pcls", @"pLoc", @"pnam", @"pArt",@"pCmp",@"pAlb", @"pCmt", @"pGen", @"pGrp", @"pYr ",@"pTrN",@"pTrC",@"pDsN", @"pDsC",@"pAnt", @"pAlA", @"pSAr", @"pSAA", @"pSNm", @"pSAl", @"pSCm", nil]
 
 #define iTunesPath	@"/Applications/iTunes.app"
 
@@ -44,6 +43,8 @@
 #define kTrackCachedNotification @"Track Cached"
 #define kTrackEncodedNotification @"Track Encoded"
 
+// keys for UserDefaults
+#define encodingOptionsKey @"encodingOptions"
 #define kMulti		@"multi"
 #define kVComment		@"vcomment"
 #define kShouldCache @"cache"
@@ -76,7 +77,7 @@ bool trackForFile(NSString *filepath, AEDesc *replyDesc){
     OSType iTunesAdr = 'hook';
     FSRef fileRef;
     AliasHandle fileAlias;
-    err = FSPathMakeRef([filepath fileSystemRepresentation], &fileRef, NULL);
+    err = FSPathMakeRef((const UInt8 *)[filepath fileSystemRepresentation], &fileRef, NULL);
     if (err != noErr) return 0;
     err = FSNewAliasMinimal(&fileRef, &fileAlias);
     if (err != noErr) return 0;
@@ -1096,35 +1097,58 @@ FOUNDATION_EXPORT BOOL NSDebugEnabled;
   while ((key = [enumerator nextObject])) {
 
     if ([key isEqualToString:@"pAlb"]) { // ID3_FRAME_ALBUM (TALB)
-      set_text_frame(id3tag, ID3_FRAME_ALBUM, [[[tags objectForKey:key]stringValue]UTF8String]);
+      set_text_frame(id3tag, ID3_FRAME_ALBUM, (const id3_utf8_t *)[[[tags objectForKey:key]stringValue]UTF8String]);
 
     } else if ([key isEqualToString:@"pArt"]) { // ID3_FRAME_ARTIST (TPE1)
-      set_text_frame(id3tag, ID3_FRAME_ARTIST, [[[tags objectForKey:key]stringValue]UTF8String]);
+      set_text_frame(id3tag, ID3_FRAME_ARTIST, (const id3_utf8_t *)[[[tags objectForKey:key]stringValue]UTF8String]);
 
     } else if ([key isEqualToString:@"pnam"]) { // ID3_FRAME_TITLE (TIT2)
-      set_text_frame(id3tag, ID3_FRAME_TITLE, [[[tags objectForKey:key]stringValue]UTF8String]);
+      set_text_frame(id3tag, ID3_FRAME_TITLE, (const id3_utf8_t *)[[[tags objectForKey:key]stringValue]UTF8String]);
 
     } else if ([key isEqualToString:@"pCmt"]) { // ID3_FRAME_COMMENT (COMM)
-      set_comment(id3tag, [[[tags objectForKey:key]stringValue]UTF8String]);
+      set_comment(id3tag, (const id3_utf8_t *)[[[tags objectForKey:key]stringValue]UTF8String]);
 
     } else if ([key isEqualToString:@"pCmp"]) { // COMPOSER (TCOM)
-      set_text_frame(id3tag, "TCOM", [[[tags objectForKey:key]stringValue]UTF8String]);
+      set_text_frame(id3tag, "TCOM", (const id3_utf8_t *)[[[tags objectForKey:key]stringValue]UTF8String]);
 
     } else if ([key isEqualToString:@"pGen"]) { // ID3_FRAME_GENRE (TCON)
-      set_text_frame(id3tag, "TCON", [[[tags objectForKey:key]stringValue]UTF8String]);
+      set_text_frame(id3tag, "TCON", (const id3_utf8_t *)[[[tags objectForKey:key]stringValue]UTF8String]);
 
     } else if ([key isEqualToString:@"pGrp"]) { // GROUPING (TIT1)
-      set_text_frame(id3tag, "TIT1", [[[tags objectForKey:key]stringValue]UTF8String]);
+      set_text_frame(id3tag, "TIT1", (const id3_utf8_t *)[[[tags objectForKey:key]stringValue]UTF8String]);
 
     } else if ([key isEqualToString:@"pYr "]) { // ID3_FRAME_YEAR
       asprintf(&tmp, "%d", [[tags objectForKey:key]int32Value]);
-      set_text_frame(id3tag, ID3_FRAME_YEAR, tmp);
+      set_text_frame(id3tag, ID3_FRAME_YEAR, (const id3_utf8_t *)tmp);
       free(tmp);
 
     } else if ([key isEqualToString:@"pAnt"]) { // COMPILATION (TCMP)
       if ([[tags objectForKey:key]int32Value]) {
-        set_text_frame(id3tag, "TCMP", "1");
+        set_text_frame(id3tag, "TCMP", (const id3_utf8_t *)"1");
       }
+
+	} else if ([key isEqualToString:@"pAlA"]) {	// Album Artist (TPE2)
+		set_text_frame(id3tag, "TPE2", (const id3_utf8_t *)[[[tags objectForKey:key]stringValue]UTF8String]);
+
+	} else if ([key isEqualToString:@"pSAr"]) {	// Sort Artist (TSOP)
+		NSLog(@"setting sort artist: %@", [[tags objectForKey:key]stringValue]);
+		set_text_frame(id3tag, "TSOP", (const id3_utf8_t *)[[[tags objectForKey:key]stringValue]UTF8String]);
+
+	} else if ([key isEqualToString:@"pSAA"]) {
+		NSLog(@"setting sort album artist: %@", [[tags objectForKey:key]stringValue]);
+		set_text_frame(id3tag, "TSO2", (const id3_utf8_t *)[[[tags objectForKey:key]stringValue]UTF8String]);
+
+	} else if ([key isEqualToString:@"pSNm"]) {	// Sort Name (TSOT)
+		set_text_frame(id3tag, "TSOT", (const id3_utf8_t *)[[[tags objectForKey:key]stringValue]UTF8String]);
+
+	} else if ([key isEqualToString:@"pSAl"]) {	// Sort Album (TSOA)
+		set_text_frame(id3tag, "TSOA", (const id3_utf8_t *)[[[tags objectForKey:key]stringValue]UTF8String]);
+
+	} else if ([key isEqualToString:@"pSCm"]) {
+		set_text_frame(id3tag, "TSOC", (const id3_utf8_t *)[[[tags objectForKey:key]stringValue]UTF8String]);
+
+	} else {
+		//NSLog(@"Unhandled tag key: %@", key);
     }
         // TODO: ID3 Beats Per Minute (TBPM)
   }
@@ -1142,7 +1166,7 @@ FOUNDATION_EXPORT BOOL NSDebugEnabled;
     } else {
       asprintf(&tmp, "%d", trackNumber);
     }
-    set_text_frame(id3tag, ID3_FRAME_TRACK, tmp);
+    set_text_frame(id3tag, ID3_FRAME_TRACK, (const id3_utf8_t *)tmp);
     free(tmp);
   }
 
@@ -1152,7 +1176,7 @@ FOUNDATION_EXPORT BOOL NSDebugEnabled;
     } else {
       asprintf(&tmp, "%d", discNumber);
     }
-    set_text_frame(id3tag, "TPOS", tmp);
+    set_text_frame(id3tag, "TPOS", (const id3_utf8_t *)tmp);
     free(tmp);
   }
 
@@ -1161,7 +1185,7 @@ FOUNDATION_EXPORT BOOL NSDebugEnabled;
   id3tag->flags |= ID3_TAG_FLAG_FOOTERPRESENT;
   id3_length_t len = id3_tag_render(id3tag, NULL);
   char *buf = (char*)malloc(len);
-  len = id3_tag_render(id3tag, buf);
+  len = id3_tag_render(id3tag, (id3_byte_t *)buf);
 
   // Open the file (it should have been already created by lame.)
   const char *filename=[[trackInfo objectForKey:kLameOutFile]UTF8String];
@@ -1602,12 +1626,19 @@ FOUNDATION_EXPORT BOOL NSDebugEnabled;
 							if (cAEList==[itemDescriptor descriptorType]) {
 								int j;
 								for (j=0;j<[itemDescriptor numberOfItems];j++){
+									// if the user modifies our AppleScript resource, j can overflow. So we check.
+									if (j > [keyArray count]-1) break;
 									NSString *key=[keyArray objectAtIndex:j];
 									NSAppleEventDescriptor *descriptor=[itemDescriptor descriptorAtIndex:j+1];
 									DescType type=[descriptor descriptorType];
+									// When tagging AIFF files on the hard drive, iTunes makes the Sorting tab available for editing in the Info window.
+									// However, when ripping a CD, the Sorting tab is disabled (no idea why).
+									// When iTunes-LAME requests these sorting fields, iTunes will supply a 'missing data' descriptor for them when ripping a CD.
+									// You'd think it would just return "" or omit these from the reply, but it doesn't.
+									// So when we check the [descriptor stringValue] for length, we also have to make sure it isn't the string @"msng".
 									if ((type=='true') ||
 										(type==cLongInteger && [descriptor int32Value])||
-										[[descriptor stringValue]length]){
+										([[descriptor stringValue]length] && ! [[descriptor stringValue] isEqualToString:@"msng"])){
 										//  NSLog(@"KEY: %@, %@",key,osTypeToFourCharCode(type));
 										if (descriptor) [propertiesDict setObject:descriptor forKey:key];
 										else  NSLog(@"Invalid descriptor for key: %@", key);
