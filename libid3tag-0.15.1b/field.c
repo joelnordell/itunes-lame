@@ -50,6 +50,8 @@ void id3_field_init(union id3_field *field, enum id3_field_type type)
 
   switch (field->type = type) {
   case ID3_FIELD_TYPE_TEXTENCODING:
+    field->number.value = ID3_FIELD_TEXTENCODING_UTF_8;
+    break;
   case ID3_FIELD_TYPE_INT8:
   case ID3_FIELD_TYPE_INT16:
   case ID3_FIELD_TYPE_INT24:
