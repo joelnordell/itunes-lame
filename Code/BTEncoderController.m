@@ -214,6 +214,13 @@ static void prepend_bytes_to_file(int fd, int n) {
   free(buf);
 }
 
+@interface BTEncoderController (Tags)
+
+// assembles an ID3v1.1 tag from a track's tagData and returns it in an NSData
+-(NSData *)id3v1ForTrack:(NSDictionary *)track;
+
+@end
+
 
 FOUNDATION_EXPORT BOOL NSDebugEnabled;
 @implementation BTEncoderController
@@ -1176,11 +1183,9 @@ FOUNDATION_EXPORT BOOL NSDebugEnabled;
 		set_text_frame(id3tag, "TPE2", (const id3_utf8_t *)[[[tags objectForKey:key]stringValue]UTF8String]);
 
 	} else if ([key isEqualToString:@"pSAr"]) {	// Sort Artist (TSOP)
-		NSLog(@"setting sort artist: %@", [[tags objectForKey:key]stringValue]);
 		set_text_frame(id3tag, "TSOP", (const id3_utf8_t *)[[[tags objectForKey:key]stringValue]UTF8String]);
 
 	} else if ([key isEqualToString:@"pSAA"]) {
-		NSLog(@"setting sort album artist: %@", [[tags objectForKey:key]stringValue]);
 		set_text_frame(id3tag, "TSO2", (const id3_utf8_t *)[[[tags objectForKey:key]stringValue]UTF8String]);
 
 	} else if ([key isEqualToString:@"pSNm"]) {	// Sort Name (TSOT)
@@ -1246,6 +1251,12 @@ FOUNDATION_EXPORT BOOL NSDebugEnabled;
   lseek(fd, 0, SEEK_SET);
   write(fd, buf, len);
   free(buf);
+
+	// get an ID3v1.1 tag and append it to the file
+	NSData *v1data = [self id3v1ForTrack:trackInfo];
+	lseek(fd, 0, SEEK_END);
+	if (128 == [v1data length]) write(fd, [v1data bytes], 128);
+
   close(fd);
 
   id3_tag_delete(id3tag);
@@ -1986,4 +1997,70 @@ FOUNDATION_EXPORT BOOL NSDebugEnabled;
 
 @end
 
+
+@implementation BTEncoderController (Tags)
+
+// assembles an ID3v1.1 tag from a track's tagData and returns it in an NSData
+-(NSData *)id3v1ForTrack:(NSDictionary *)track {
+	NSDictionary	*tags = [track objectForKey:kTrackTags];
+	NSMutableData	*tagData = [NSMutableData dataWithCapacity:128];
+	NSArray *id3v1Genres = [NSArray arrayWithObjects:@"blues", @"classic rock", @"country", @"dance", @"disco", @"funk", @"grunge", @"hip-hop", @"jazz", @"metal", @"new age", @"oldies", @"other", @"pop", @"r&b", @"rap", @"reggae", @"rock", @"techno", @"industrial", @"alternative", @"ska", @"death metal", @"pranks", @"soundtrack", @"euro-techno", @"ambient", @"trip-hop", @"vocal", @"jazz+funk", @"fusion", @"trance", @"classical", @"instrumental", @"acid", @"house", @"game", @"sound clip", @"gospel", @"noise", @"alternrock", @"bass", @"soul", @"punk", @"space", @"meditative", @"instrumental pop", @"instrumental rock", @"ethnic", @"gothic", @"darkwave", @"techno-industrial", @"electronic", @"pop-folk", @"eurodance", @"dream", @"southern rock", @"comedy", @"cult", @"gangsta", @"top 40", @"christian rap", @"pop/funk", @"jungle", @"native american", @"cabaret", @"new wave", @"psychadelic", @"rave", @"showtunes", @"trailer", @"lo-fi", @"tribal", @"acid punk", @"acid jazz", @"polka", @"retro", @"musical", @"rock & roll", @"hard rock", @"folk", @"folk-rock", @"national folk", @"swing", @"fast fusion", @"bebob", @"latin", @"revival", @"celtic", @"bluegrass", @"avantgarde", @"gothic rock", @"progressive rock", @"psychedelic rock", @"symphonic rock", @"slow rock", @"big band", @"chorus", @"easy listening", @"acoustic", @"humour", @"speech", @"chanson", @"opera", @"chamber music", @"sonata", @"symphony", @"booty bass", @"primus", @"porn groove", @"satire", @"slow jam", @"club", @"tango", @"samba", @"folklore", @"ballad", @"power ballad", @"rhythmic soul", @"freestyle", @"duet", @"punk rock", @"drum solo", @"a capella", @"euro-house", @"dance hall", nil];
+	unsigned char buf[3];
+
+	// id3v1.x must begin with 'TAG'
+	buf[0] = 'T';
+	buf[1] = 'A';
+	buf[2] = 'G';
+	[tagData appendBytes:buf length:3];
+
+	// add the id3v1.x track title
+	NSString *tagValue = [(NSAppleEventDescriptor *)[tags objectForKey:@"pnam"] stringValue];
+	[tagData appendData:[[tagValue substringToIndex:MIN(30,[tagValue length])] dataUsingEncoding:NSISOLatin1StringEncoding allowLossyConversion:YES]];
+	// zero-pad to 30 chars
+	[tagData increaseLengthBy:33 - [tagData length]];
+
+	// add the id3v1.x artist name
+	tagValue = [(NSAppleEventDescriptor *)[tags objectForKey:@"pArt"] stringValue];
+	[tagData appendData:[[tagValue substringToIndex:MIN(30,[tagValue length])] dataUsingEncoding:NSISOLatin1StringEncoding allowLossyConversion:YES]];
+	// zero-pad to 30 chars
+	[tagData increaseLengthBy:63 - [tagData length]];
+
+	// add the id3v1.x album title
+	tagValue = [(NSAppleEventDescriptor *)[tags objectForKey:@"pAlb"] stringValue];
+	[tagData appendData:[[tagValue substringToIndex:MIN(30,[tagValue length])] dataUsingEncoding:NSISOLatin1StringEncoding allowLossyConversion:YES]];
+	// zero-pad to 30 chars
+	[tagData increaseLengthBy:93 - [tagData length]];
+
+	// add the id3v1.x year
+	tagValue = [(NSAppleEventDescriptor *)[tags objectForKey:@"pYr "] stringValue];
+	if (! [tagValue isEqualToString:@"0"]) {	// iTunes puts a zero here if there's no year
+		[tagData appendData:[[tagValue substringToIndex:MIN(4,[tagValue length])] dataUsingEncoding:NSISOLatin1StringEncoding allowLossyConversion:YES]];
+	// zero-pad to 4 chars
+		[tagData increaseLengthBy:97 - [tagData length]];
+	} else {	// there was no year, just write NULs
+		[tagData increaseLengthBy:4];
+	}
+
+	// add the comment, limited to 28 chars for ID3v1.1 compatibility
+	tagValue = [(NSAppleEventDescriptor *)[tags objectForKey:@"pCmt"] stringValue];
+	[tagData appendData:[[tagValue substringToIndex:MIN(28,[tagValue length])] dataUsingEncoding:NSISOLatin1StringEncoding allowLossyConversion:YES]];
+	// zero-pad to 28 chars
+	[tagData increaseLengthBy:125 - [tagData length]];
+
+	// terminate the comment for ID3v1.0 readers
+	[tagData increaseLengthBy:1];
+
+	// this is the special byte which is ID3v1.1 only: the track number
+	buf[0] = 0x000000FF & [(NSAppleEventDescriptor *)[tags objectForKey:@"pTrN"] int32Value];
+	[tagData appendBytes:buf length:1];
+
+	// add the ID3v1.x genre, or 0xFF if genre doesn't match any in id3v1Genres above
+	tagValue = [[(NSAppleEventDescriptor *)[tags objectForKey:@"pGen"] stringValue] lowercaseString];
+	buf[0] = 0x000000FF & [id3v1Genres indexOfObject:tagValue];
+	[tagData appendBytes:buf length:1];
+
+	return tagData;
+}
+
+@end
 
