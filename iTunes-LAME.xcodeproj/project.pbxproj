@@ -858,18 +858,21 @@
 		BA68B2310C865BA500238747 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
 			};
 			name = Development;
 		};
 		BA68B2320C865BA500238747 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
 			};
 			name = Deployment;
 		};
 		BA68B2330C865BA500238747 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
 			};
 			name = Default;
 		};
