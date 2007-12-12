@@ -526,9 +526,19 @@ FOUNDATION_EXPORT BOOL NSDebugEnabled;
 
 				// all this outFile business could be encapsulated by yet another instance method _RAM
 				//=-=-=-=-=-=-=-=-=-=-=-= Construct Output Filepath =-=-=-=-=-=-=-=-=
-				NSString *escapedAlbum=	[[[[tags objectForKey:@"pAlb"]stringValue]stringByReplacing:@"/" with:@"_"]stringByReplacing:@":" with:@"_"];
-				NSString *escapedArtist=[[[[tags objectForKey:@"pArt"]stringValue]stringByReplacing:@"/" with:@"_"]stringByReplacing:@":" with:@"_"];
-				NSString *escapedName=	[[[[tags objectForKey:@"pnam"]stringValue]stringByReplacing:@"/" with:@"_"]stringByReplacing:@":" with:@"_"];
+				NSString *escapedAlbum =			[[[[tags objectForKey:@"pAlb"]stringValue]stringByReplacing:@"/" with:@"_"]stringByReplacing:@":" with:@"_"];
+				NSString *escapedSortAlbum =		[[[[tags objectForKey:@"pSAl"]stringValue]stringByReplacing:@"/" with:@"_"]stringByReplacing:@":" with:@"_"];
+				NSString *escapedArtist =			[[[[tags objectForKey:@"pArt"]stringValue]stringByReplacing:@"/" with:@"_"]stringByReplacing:@":" with:@"_"];
+				NSString *escapedAlbumArtist =		[[[[tags objectForKey:@"pAlA"]stringValue]stringByReplacing:@"/" with:@"_"]stringByReplacing:@":" with:@"_"];
+				NSString *escapedSortAlbumArtist =	[[[[tags objectForKey:@"pSAA"]stringValue]stringByReplacing:@"/" with:@"_"]stringByReplacing:@":" with:@"_"];
+				NSString *escapedSortArtist =		[[[[tags objectForKey:@"pSAr"]stringValue]stringByReplacing:@"/" with:@"_"]stringByReplacing:@":" with:@"_"];
+				NSString *escapedName =				[[[[tags objectForKey:@"pnam"]stringValue]stringByReplacing:@"/" with:@"_"]stringByReplacing:@":" with:@"_"];
+				NSString *escapedSortName =			[[[[tags objectForKey:@"pSNm"]stringValue]stringByReplacing:@"/" with:@"_"]stringByReplacing:@":" with:@"_"];
+				NSString *escapedGenre =			[[[[tags objectForKey:@"pGen"]stringValue]stringByReplacing:@"/" with:@"_"]stringByReplacing:@":" with:@"_"];
+				NSString *escapedGrouping =			[[[[tags objectForKey:@"pGrp"]stringValue]stringByReplacing:@"/" with:@"_"]stringByReplacing:@":" with:@"_"];
+				NSString *year =					[NSString stringWithFormat:@"%d",[[tags objectForKey:@"pYr "] int32Value]];
+				NSString *escapedComposer =			[[[[tags objectForKey:@"pCmp"]stringValue]stringByReplacing:@"/" with:@"_"]stringByReplacing:@":" with:@"_"];
+				NSString *escapedSortComposer =		[[[[tags objectForKey:@"pSCm"]stringValue]stringByReplacing:@"/" with:@"_"]stringByReplacing:@":" with:@"_"];
 				
 				if ([[tags objectForKey:@"pAnt"]booleanValue])
 					escapedArtist = NSLocalizedString(@"Compilations",@"Compilations Folder Name");
@@ -555,10 +565,19 @@ FOUNDATION_EXPORT BOOL NSDebugEnabled;
 				} else {
 					nameTemplate= [nameTemplate stringByReplacing:@"%a" with:(escapedArtist?escapedArtist:NSLocalizedString(@"~Unknown Artist",@"Unknown Artist Folder Name"))];
 				}
-				nameTemplate= [nameTemplate stringByReplacing:@"%l" with:(escapedAlbum?escapedAlbum:NSLocalizedString(@"~Unknown Album",@"Unknown Album Folder Name"))];
-				nameTemplate= [nameTemplate stringByReplacing:@"%n" with:[NSString stringWithFormat:@"%02d",[[tags objectForKey:@"pTrN"]int32Value]]];
-				nameTemplate= [nameTemplate stringByReplacing:@"%t" with:escapedName];
-				
+				nameTemplate = [nameTemplate stringByReplacing:@"%l" with:(escapedAlbum?escapedAlbum:NSLocalizedString(@"~Unknown Album",@"Unknown Album Folder Name"))];
+				nameTemplate = [nameTemplate stringByReplacing:@"%n" with:[NSString stringWithFormat:@"%02d",[[tags objectForKey:@"pTrN"]int32Value]]];
+				nameTemplate = [nameTemplate stringByReplacing:@"%y" with:(year ? year: NSLocalizedString(@"Unknown Year", @"Unknown Year"))];
+				nameTemplate = [nameTemplate stringByReplacing:@"%t" with:(escapedName ? escapedName : NSLocalizedString(@"Unknown Title", @"Unknown Title"))];
+				nameTemplate = [nameTemplate stringByReplacing:@"%T" with:(escapedSortName ? escapedSortName : NSLocalizedString(@"Unknown Sort Title", @"Unknown Sort Title"))];
+				nameTemplate = [nameTemplate stringByReplacing:@"%g" with:(escapedGenre ? escapedGenre : NSLocalizedString(@"Unknown Genre", @"Unknown Genre"))];
+				nameTemplate = [nameTemplate stringByReplacing:@"%G" with:(escapedGrouping ? escapedGrouping : NSLocalizedString(@"Unknown Grouping", @"Unknown Grouping"))];
+				nameTemplate = [nameTemplate stringByReplacing:@"%A" with :(escapedSortArtist ? escapedSortArtist : NSLocalizedString(@"Unknown Sort Artist", @"Unknown Sort Artist"))];
+				nameTemplate = [nameTemplate stringByReplacing:@"%L" with :(escapedSortAlbum ? escapedSortAlbum : NSLocalizedString(@"Unknown Sort Album", @"Unknown Sort Album"))];
+				nameTemplate = [nameTemplate stringByReplacing:@"%b" with:(escapedAlbumArtist ? escapedAlbumArtist : NSLocalizedString(@"Unknown Album Artist", @"Unknown Album Artist"))];
+				nameTemplate = [nameTemplate stringByReplacing:@"%B" with:(escapedSortAlbumArtist ? escapedSortAlbumArtist : NSLocalizedString(@"Unknown Sort Album Artist", @"Unknown Sort Album Artist"))];
+				nameTemplate = [nameTemplate stringByReplacing:@"%c" with:(escapedComposer ? escapedComposer : NSLocalizedString(@"Unknown Composer", @"Unknown Composer"))];
+				nameTemplate = [nameTemplate stringByReplacing:@"%C" with:(escapedSortComposer ? escapedSortComposer : NSLocalizedString(@"Unknown Sort Composer", @"Unknown Sort Composer"))];
 				outFile =[outFile stringByAppendingPathComponent:nameTemplate];
 				NSString *proposedOutFile=[outFile stringByAppendingString:@".mp3"];
 				
