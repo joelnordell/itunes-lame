@@ -55,6 +55,7 @@
 #define kUseSelection		@"useSelection"
 #define kCacheLocation		@"cacheLocation"
 #define kOmitDefiniteArticleInPathsKey	@"omitDefiniteArticleInPaths"
+#define kUseRealArtistInFilenames	@"useRealArtistInFilenames"
 
 #define gDefaultName @"%a:%l:%n. %t"
 #define gDefaultNameNoTrack @"%a:%l:%t"
@@ -529,6 +530,22 @@ FOUNDATION_EXPORT BOOL NSDebugEnabled;
 				NSString *escapedAlbum =			[[[[tags objectForKey:@"pAlb"]stringValue]stringByReplacing:@"/" with:@"_"]stringByReplacing:@":" with:@"_"];
 				NSString *escapedSortAlbum =		[[[[tags objectForKey:@"pSAl"]stringValue]stringByReplacing:@"/" with:@"_"]stringByReplacing:@":" with:@"_"];
 				NSString *escapedArtist =			[[[[tags objectForKey:@"pArt"]stringValue]stringByReplacing:@"/" with:@"_"]stringByReplacing:@":" with:@"_"];
+				// remove 'The ' from the beginning of the artist name if desired
+				if ([defaults boolForKey:kOmitDefiniteArticleInPathsKey]) {
+					escapedArtist = (escapedArtist ? [escapedArtist stringByRemovingLeadingDefiniteArticle] : NSLocalizedString(@"~Unknown Artist",@"Unknown Artist Folder Name"));
+				}
+				// If useRealArtistInFilenames is true, a name template like %a:%l:%a - %t for a compilation album should result in a path which looks like:
+				//		Compilations/WWII Favorites/Andrews Sisters - Boogie Woogie Bugle Boy.mp3
+				// and not:
+				//		Compilations/WWII Favorites/Compilations - Boogie Woogie Bugle Boy.mp3
+				// So we shouldn't destroy the artist name since it is needed in the filename.
+				// We'll need an new string named for the artist when it is used as a folder name.
+				// So if the album is marked as a compilation, call it 'Compilations', else give it the regular artist name. _RAM
+				NSString *escapedArtistFolder =		[[tags objectForKey:@"pAnt"]booleanValue] ? NSLocalizedString(@"Compilations",@"Compilations Folder Name") : [NSString stringWithString:escapedArtist];
+				// remove 'The ' from the beginning of the artist folder name if desired
+				if ([defaults boolForKey:kOmitDefiniteArticleInPathsKey]) {
+					escapedArtistFolder = (escapedArtistFolder ? [escapedArtistFolder stringByRemovingLeadingDefiniteArticle] : NSLocalizedString(@"~Unknown Artist",@"Unknown Artist Folder Name"));
+				}
 				NSString *escapedAlbumArtist =		[[[[tags objectForKey:@"pAlA"]stringValue]stringByReplacing:@"/" with:@"_"]stringByReplacing:@":" with:@"_"];
 				NSString *escapedSortAlbumArtist =	[[[[tags objectForKey:@"pSAA"]stringValue]stringByReplacing:@"/" with:@"_"]stringByReplacing:@":" with:@"_"];
 				NSString *escapedSortArtist =		[[[[tags objectForKey:@"pSAr"]stringValue]stringByReplacing:@"/" with:@"_"]stringByReplacing:@":" with:@"_"];
@@ -539,9 +556,7 @@ FOUNDATION_EXPORT BOOL NSDebugEnabled;
 				NSString *year =					[NSString stringWithFormat:@"%d",[[tags objectForKey:@"pYr "] int32Value]];
 				NSString *escapedComposer =			[[[[tags objectForKey:@"pCmp"]stringValue]stringByReplacing:@"/" with:@"_"]stringByReplacing:@":" with:@"_"];
 				NSString *escapedSortComposer =		[[[[tags objectForKey:@"pSCm"]stringValue]stringByReplacing:@"/" with:@"_"]stringByReplacing:@":" with:@"_"];
-				
-				if ([[tags objectForKey:@"pAnt"]booleanValue])
-					escapedArtist = NSLocalizedString(@"Compilations",@"Compilations Folder Name");
+
 				
 				NSString *outFile =[defaults stringForKey:kDestination];
 				if (![outFile length])outFile=musicDirectory;
@@ -560,11 +575,24 @@ FOUNDATION_EXPORT BOOL NSDebugEnabled;
 				nameTemplate= [nameTemplate stringByReplacing:@"!#!" with:@"/"];
 				
 				// *** these substitutions will mess up if tags contain the tokens
-				if ([defaults boolForKey:kOmitDefiniteArticleInPathsKey]) {
-					nameTemplate = [nameTemplate stringByReplacing:@"%a" with:(escapedArtist?[escapedArtist stringByRemovingLeadingDefiniteArticle]:NSLocalizedString(@"~Unknown Artist",@"Unknown Artist Folder Name"))];	// _RAM
-				} else {
-					nameTemplate= [nameTemplate stringByReplacing:@"%a" with:(escapedArtist?escapedArtist:NSLocalizedString(@"~Unknown Artist",@"Unknown Artist Folder Name"))];
+
+				if ([defaults boolForKey:kUseRealArtistInFilenames]) {	// only substitute 'Compilations' where '%a' is used as a folder name in the nameTemplate
+					// is the first folder an artistname?
+					NSRange foundRange = [nameTemplate rangeOfString:@"%a/"];
+					if (foundRange.location == 0 && foundRange.length == 3) {
+						foundRange.length = 2;	// we don't want to erase the slash
+						NSMutableString *tempTemplate = [NSMutableString stringWithString:nameTemplate];
+						[tempTemplate replaceCharactersInRange:foundRange withString:(escapedArtistFolder ? escapedArtistFolder : NSLocalizedString(@"~Unknown Artist",@"Unknown Artist Folder Name"))];
+						nameTemplate = tempTemplate;
+					}
+					// are any subsequent folders an artistname?
+					nameTemplate= [nameTemplate stringByReplacing:@"/%a/" with:[NSString stringWithFormat:@"/%@/", (escapedArtistFolder ? escapedArtistFolder : NSLocalizedString(@"~Unknown Artist",@"Unknown Artist Folder Name"))]];
+				} else {	// it's OK to alter the artist name and use 'Compilations' everywhere '%a' appears in the nameTemplate 
+					if ([[tags objectForKey:@"pAnt"]booleanValue])
+						escapedArtist = NSLocalizedString(@"Compilations",@"Compilations Folder Name");
 				}
+
+				nameTemplate = [nameTemplate stringByReplacing:@"%a" with:(escapedArtist?escapedArtist:NSLocalizedString(@"~Unknown Artist",@"Unknown Artist Folder Name"))];
 				nameTemplate = [nameTemplate stringByReplacing:@"%l" with:(escapedAlbum?escapedAlbum:NSLocalizedString(@"~Unknown Album",@"Unknown Album Folder Name"))];
 				nameTemplate = [nameTemplate stringByReplacing:@"%n" with:[NSString stringWithFormat:@"%02d",[[tags objectForKey:@"pTrN"]int32Value]]];
 				nameTemplate = [nameTemplate stringByReplacing:@"%y" with:(year ? year: NSLocalizedString(@"Unknown Year", @"Unknown Year"))];
@@ -1343,6 +1371,7 @@ FOUNDATION_EXPORT BOOL NSDebugEnabled;
         [arguments setArray:[options componentsSeparatedByString:@" "]];
 		// [arguments addObject:@"--disptime"];
 		//                 [arguments addObject:@"0.5"];
+		[arguments addObject:@"--nohist"];	// make sure no histogram is output, since it wreaks havoc with our progress display _RAM
         [arguments addObject:source];
         [arguments addObject:destination];
         [lameTask setLaunchPath:[self lamePath]];
